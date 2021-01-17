@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   全能分段选择器
                    DESC
 
-  spec.homepage     = "https://github.com/13662049573/TFY_PageSegmentKit"
+  spec.homepage     = "https://github.com/13662049573/TFY_PageSegmentController"
 
   spec.license      = "MIT"
   
@@ -18,22 +18,22 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "12.0"
 
-  spec.source       = {:git => "https://github.com/13662049573/TFY_PageSegmentKit.git", :tag => spec.version" }
+  spec.source       = {:git => "https://github.com/13662049573/TFY_PageSegmentController.git", :tag => spec.version" }
 
-  spec.source_files  =  "TFY_PageSegmentKit/TFY_PageSegmentKit/TFY_PageSegmentKit.h"
+  spec.source_files  =  "TFY_PageSegmentController/TFY_PageSegmentKit/TFY_PageSegmentKit.h"
   
   spec.subspec 'CsutomScroller' do |ss|
     ss.dependency "TFY_PageSegmentKit/Param"
-    ss.source_files  = "TFY_PageSegmentKit/TFY_PageSegmentKit/CsutomScroller/**/*.{h,m}"
+    ss.source_files  = "TFY_PageSegmentController/TFY_PageSegmentKit/CsutomScroller/**/*.{h,m}"
   end
 
   spec.subspec 'ITools' do |ss|
-    ss.source_files  = "TFY_PageSegmentKit/TFY_PageSegmentKit/ITools/**/*.{h,m}"
+    ss.source_files  = "TFY_PageSegmentController/TFY_PageSegmentKit/ITools/**/*.{h,m}"
   end
 
   spec.subspec 'Param' do |ss|
     ss.dependency "TFY_PageSegmentKit/ITools"
-    ss.source_files  = "TFY_PageSegmentKit/TFY_PageSegmentKit/Param/**/*.{h,m}"
+    ss.source_files  = "TFY_PageSegmentController/TFY_PageSegmentKit/Param/**/*.{h,m}"
   end
 
   spec.requires_arc = true
