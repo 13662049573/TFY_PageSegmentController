@@ -10,7 +10,7 @@
 #import "TFY_TopSuspensionVC.h"
 
 @interface TFY_UsePageVC ()<UITableViewDataSource>
-@property(nonatomic , strong)UIScrollView *scrollView;
+
 @end
 
 @implementation TFY_UsePageVC

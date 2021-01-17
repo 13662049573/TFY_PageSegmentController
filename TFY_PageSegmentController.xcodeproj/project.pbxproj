@@ -237,7 +237,6 @@
 				36B7C77725B3DCAF005D81DF /* RootCoroller */,
 				36B7C77A25B3DCAF005D81DF /* TFY_AppDelegate */,
 				36B7C78625B3DD0A005D81DF /* DemoVC */,
-				36B7C78725B3DD0A005D81DF /* ITools */,
 				36B7C78525B3DD0A005D81DF /* PCH */,
 				36B7C74825B3DC44005D81DF /* Assets.xcassets */,
 				36B7C74A25B3DC44005D81DF /* LaunchScreen.storyboard */,
@@ -310,13 +309,6 @@
 				36B7C7DB25B3F304005D81DF /* app使用 */,
 			);
 			path = DemoVC;
-			sourceTree = "<group>";
-		};
-		36B7C78725B3DD0A005D81DF /* ITools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ITools;
 			sourceTree = "<group>";
 		};
 		36B7C78C25B3DED7005D81DF /* TFY_PageSegmentKit */ = {
