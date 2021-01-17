@@ -1,14 +1,13 @@
 
 Pod::Spec.new do |spec|
+
   spec.name         = "TFY_PageSegmentKit"
 
   spec.version      = "2.0.0"
 
   spec.summary      = "全能分段选择器"
 
-  spec.description  = <<-DESC 
-  全能分段选择器
-                   DESC
+  spec.description  = <<-DESC 全能分段选择器 DESC
 
   spec.homepage     = "https://github.com/13662049573/TFY_PageSegmentController"
 
@@ -18,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "12.0"
 
-  spec.source       = {:git => "https://github.com/13662049573/TFY_PageSegmentController.git", :tag => spec.version" }
+  spec.source       = {:git => "https://github.com/13662049573/TFY_PageSegmentController.git", :tag => spec.version }
 
   spec.source_files  =  "TFY_PageSegmentController/TFY_PageSegmentKit/TFY_PageSegmentKit.h"
   
@@ -35,6 +34,8 @@ Pod::Spec.new do |spec|
     ss.dependency "TFY_PageSegmentKit/ITools"
     ss.source_files  = "TFY_PageSegmentController/TFY_PageSegmentKit/Param/**/*.{h,m}"
   end
+
+  spec.frameworks    = "Foundation","UIKit"
 
   spec.requires_arc = true
 
