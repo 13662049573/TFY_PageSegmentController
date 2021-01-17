@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "12.0"
 
-  spec.source       = {:git => "https://github.com/13662049573/TFY_PageSegmentController.git", :tag => spec.version }
+  spec.source       = {:git => "https://github.com/13662049573/TFY_PageSegmentController.git",:tag => spec.version }
 
   spec.source_files  =  "TFY_PageSegmentController/TFY_PageSegmentKit/TFY_PageSegmentKit.h"
   
