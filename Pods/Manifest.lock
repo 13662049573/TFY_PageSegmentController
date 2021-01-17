@@ -1,0 +1,26 @@
+PODS:
+  - MJRefresh (3.5.0)
+  - SDWebImage (5.10.2):
+    - SDWebImage/Core (= 5.10.2)
+  - SDWebImage/Core (5.10.2)
+  - TFY_BannerscrollKit (2.1.6)
+
+DEPENDENCIES:
+  - MJRefresh
+  - SDWebImage
+  - TFY_BannerscrollKit
+
+SPEC REPOS:
+  trunk:
+    - MJRefresh
+    - SDWebImage
+    - TFY_BannerscrollKit
+
+SPEC CHECKSUMS:
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
+  TFY_BannerscrollKit: a28175a7879889db518120cc5a31ed440eb3b17b
+
+PODFILE CHECKSUM: 74d855a0f65eb6693f3cb488adc700b2682361bc
+
+COCOAPODS: 1.10.1

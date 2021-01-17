@@ -8,6 +8,10 @@
 #ifndef TFY_PrefixHeader_pch
 #define TFY_PrefixHeader_pch
 
+#import <MJRefresh.h>
+#import <TFY_BannerscrollKit.h>
+#import <SDWebImage.h>
+
 #import "TFY_PageSegmentKit.h"
 
 #endif /* TFY_PrefixHeader_pch */

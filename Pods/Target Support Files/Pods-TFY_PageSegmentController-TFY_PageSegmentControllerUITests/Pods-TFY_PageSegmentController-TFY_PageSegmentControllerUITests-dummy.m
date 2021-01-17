@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests : NSObject
+@end
+@implementation PodsDummy_Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests
+@end

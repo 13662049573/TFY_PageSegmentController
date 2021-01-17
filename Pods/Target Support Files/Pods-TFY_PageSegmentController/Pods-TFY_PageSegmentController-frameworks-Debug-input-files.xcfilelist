@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController-frameworks.sh
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/TFY_BannerscrollKit/TFY_BannerscrollKit.framework

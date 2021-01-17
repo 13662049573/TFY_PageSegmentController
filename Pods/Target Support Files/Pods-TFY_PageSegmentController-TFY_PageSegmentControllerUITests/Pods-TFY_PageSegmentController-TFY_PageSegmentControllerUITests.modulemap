@@ -1,0 +1,6 @@
+framework module Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests {
+  umbrella header "Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,37 @@
 		36B7C7AA25B3DED7005D81DF /* TFY_PageScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C79E25B3DED7005D81DF /* TFY_PageScrollerView.m */; };
 		36B7C7AB25B3DED7005D81DF /* TFY_PageBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7A025B3DED7005D81DF /* TFY_PageBaseController.m */; };
 		36B7C7AC25B3DED7005D81DF /* TFY_PageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7A225B3DED7005D81DF /* TFY_PageTableView.m */; };
+		36B7C80A25B3F304005D81DF /* TFY_UsePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7BB25B3F303005D81DF /* TFY_UsePageVC.m */; };
+		36B7C80B25B3F304005D81DF /* TFY_WeiBoSonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7BE25B3F303005D81DF /* TFY_WeiBoSonController.m */; };
+		36B7C80C25B3F304005D81DF /* TFY_WeiBoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7BF25B3F304005D81DF /* TFY_WeiBoController.m */; };
+		36B7C80D25B3F304005D81DF /* TFY_WZThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7C325B3F304005D81DF /* TFY_WZThirdController.m */; };
+		36B7C80E25B3F304005D81DF /* TFY_WZSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7C525B3F304005D81DF /* TFY_WZSecondController.m */; };
+		36B7C80F25B3F304005D81DF /* TFY_WangZheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7C825B3F304005D81DF /* TFY_WangZheController.m */; };
+		36B7C81025B3F304005D81DF /* TFY_TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7CA25B3F304005D81DF /* TFY_TestVC.m */; };
+		36B7C81125B3F304005D81DF /* TFY_CollectionViewPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7CF25B3F304005D81DF /* TFY_CollectionViewPop.m */; };
+		36B7C81225B3F304005D81DF /* TFY_FixSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D025B3F304005D81DF /* TFY_FixSonVC.m */; };
+		36B7C81325B3F304005D81DF /* TFY_TopSuspensionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D125B3F304005D81DF /* TFY_TopSuspensionVC.m */; };
+		36B7C81425B3F304005D81DF /* TFY_MeiTuanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D625B3F304005D81DF /* TFY_MeiTuanVC.m */; };
+		36B7C81525B3F304005D81DF /* TFY_MeiTuanSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D725B3F304005D81DF /* TFY_MeiTuanSonVC.m */; };
+		36B7C81625B3F304005D81DF /* TFY_TaoBaoDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7DA25B3F304005D81DF /* TFY_TaoBaoDemo.m */; };
+		36B7C81725B3F304005D81DF /* TFY_UseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7DD25B3F304005D81DF /* TFY_UseVC.m */; };
+		36B7C81825B3F304005D81DF /* TFY_TitleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */; };
+		36B7C81925B3F304005D81DF /* TFY_DemoTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7E425B3F304005D81DF /* TFY_DemoTwo.m */; };
+		36B7C81A25B3F304005D81DF /* TFY_DemoOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7E725B3F304005D81DF /* TFY_DemoOne.m */; };
+		36B7C81B25B3F304005D81DF /* TFY_DemoOneSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7E825B3F304005D81DF /* TFY_DemoOneSonVC.m */; };
+		36B7C81C25B3F304005D81DF /* TFY_DynamicOperatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7EB25B3F304005D81DF /* TFY_DynamicOperatVC.m */; };
+		36B7C81D25B3F304005D81DF /* TFY_PageRadiosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7EF25B3F304005D81DF /* TFY_PageRadiosVC.m */; };
+		36B7C81E25B3F304005D81DF /* TFY_BackGroundMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7F225B3F304005D81DF /* TFY_BackGroundMenuVC.m */; };
+		36B7C81F25B3F304005D81DF /* TFY_CustomThreePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7F625B3F304005D81DF /* TFY_CustomThreePage.m */; };
+		36B7C82025B3F304005D81DF /* TFY_ZFixVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7F925B3F304005D81DF /* TFY_ZFixVC.m */; };
+		36B7C82125B3F304005D81DF /* TFY_CustomOnePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7FD25B3F304005D81DF /* TFY_CustomOnePage.m */; };
+		36B7C82225B3F304005D81DF /* TFY_CustomTwoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7FF25B3F304005D81DF /* TFY_CustomTwoPage.m */; };
+		36B7C82325B3F304005D81DF /* TFY_PageCustomNaviVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C80325B3F304005D81DF /* TFY_PageCustomNaviVC.m */; };
+		36B7C82425B3F304005D81DF /* TFY_IndicatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C80525B3F304005D81DF /* TFY_IndicatorVC.m */; };
+		36B7C82525B3F304005D81DF /* TFY_AllPropertiesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C80925B3F304005D81DF /* TFY_AllPropertiesVC.m */; };
+		51D8496B7D90FAADFF332E28 /* Pods_TFY_PageSegmentController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BAF9D8C975BE6EF7E84D8 /* Pods_TFY_PageSegmentController.framework */; };
+		546199BD670677B00FB03DFC /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2516ABBB864B53C0AEE3FB88 /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework */; };
+		89281E45A1074C891853486F /* Pods_TFY_PageSegmentControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0103ED034E8FA621FE00AA4 /* Pods_TFY_PageSegmentControllerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		228E7B02EF52CD09E47AE9BC /* Pods-TFY_PageSegmentController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentController.release.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController.release.xcconfig"; sourceTree = "<group>"; };
+		239D48CDD5B05914FF3E2A00 /* Pods-TFY_PageSegmentController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentController.debug.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController.debug.xcconfig"; sourceTree = "<group>"; };
+		2516ABBB864B53C0AEE3FB88 /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C73925B3DC43005D81DF /* TFY_PageSegmentController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFY_PageSegmentController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C74825B3DC44005D81DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B7C74B25B3DC44005D81DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +116,68 @@
 		36B7C7A125B3DED7005D81DF /* TFY_PageScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageScrollerView.h; sourceTree = "<group>"; };
 		36B7C7A225B3DED7005D81DF /* TFY_PageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageTableView.m; sourceTree = "<group>"; };
 		36B7C7A325B3DED7005D81DF /* TFY_PageSegmentKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageSegmentKit.h; sourceTree = "<group>"; };
+		36B7C7BA25B3F303005D81DF /* TFY_UsePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_UsePageVC.h; sourceTree = "<group>"; };
+		36B7C7BB25B3F303005D81DF /* TFY_UsePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_UsePageVC.m; sourceTree = "<group>"; };
+		36B7C7BE25B3F303005D81DF /* TFY_WeiBoSonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WeiBoSonController.m; sourceTree = "<group>"; };
+		36B7C7BF25B3F304005D81DF /* TFY_WeiBoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WeiBoController.m; sourceTree = "<group>"; };
+		36B7C7C025B3F304005D81DF /* TFY_WeiBoSonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WeiBoSonController.h; sourceTree = "<group>"; };
+		36B7C7C125B3F304005D81DF /* TFY_WeiBoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WeiBoController.h; sourceTree = "<group>"; };
+		36B7C7C325B3F304005D81DF /* TFY_WZThirdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WZThirdController.m; sourceTree = "<group>"; };
+		36B7C7C425B3F304005D81DF /* TFY_WangZheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WangZheController.h; sourceTree = "<group>"; };
+		36B7C7C525B3F304005D81DF /* TFY_WZSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WZSecondController.m; sourceTree = "<group>"; };
+		36B7C7C625B3F304005D81DF /* TFY_WZThirdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WZThirdController.h; sourceTree = "<group>"; };
+		36B7C7C725B3F304005D81DF /* TFY_WZSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WZSecondController.h; sourceTree = "<group>"; };
+		36B7C7C825B3F304005D81DF /* TFY_WangZheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WangZheController.m; sourceTree = "<group>"; };
+		36B7C7CA25B3F304005D81DF /* TFY_TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TestVC.m; sourceTree = "<group>"; };
+		36B7C7CB25B3F304005D81DF /* TFY_CollectionViewPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CollectionViewPop.h; sourceTree = "<group>"; };
+		36B7C7CC25B3F304005D81DF /* TFY_TopSuspensionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TopSuspensionVC.h; sourceTree = "<group>"; };
+		36B7C7CD25B3F304005D81DF /* TFY_FixSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_FixSonVC.h; sourceTree = "<group>"; };
+		36B7C7CE25B3F304005D81DF /* TFY_TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TestVC.h; sourceTree = "<group>"; };
+		36B7C7CF25B3F304005D81DF /* TFY_CollectionViewPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CollectionViewPop.m; sourceTree = "<group>"; };
+		36B7C7D025B3F304005D81DF /* TFY_FixSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_FixSonVC.m; sourceTree = "<group>"; };
+		36B7C7D125B3F304005D81DF /* TFY_TopSuspensionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TopSuspensionVC.m; sourceTree = "<group>"; };
+		36B7C7D425B3F304005D81DF /* TFY_MeiTuanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_MeiTuanVC.h; sourceTree = "<group>"; };
+		36B7C7D525B3F304005D81DF /* TFY_MeiTuanSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_MeiTuanSonVC.h; sourceTree = "<group>"; };
+		36B7C7D625B3F304005D81DF /* TFY_MeiTuanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_MeiTuanVC.m; sourceTree = "<group>"; };
+		36B7C7D725B3F304005D81DF /* TFY_MeiTuanSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_MeiTuanSonVC.m; sourceTree = "<group>"; };
+		36B7C7D925B3F304005D81DF /* TFY_TaoBaoDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TaoBaoDemo.h; sourceTree = "<group>"; };
+		36B7C7DA25B3F304005D81DF /* TFY_TaoBaoDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TaoBaoDemo.m; sourceTree = "<group>"; };
+		36B7C7DC25B3F304005D81DF /* TFY_UseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_UseVC.h; sourceTree = "<group>"; };
+		36B7C7DD25B3F304005D81DF /* TFY_UseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_UseVC.m; sourceTree = "<group>"; };
+		36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TitleVC.m; sourceTree = "<group>"; };
+		36B7C7E025B3F304005D81DF /* TFY_TitleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TitleVC.h; sourceTree = "<group>"; };
+		36B7C7E325B3F304005D81DF /* TFY_DemoTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DemoTwo.h; sourceTree = "<group>"; };
+		36B7C7E425B3F304005D81DF /* TFY_DemoTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DemoTwo.m; sourceTree = "<group>"; };
+		36B7C7E625B3F304005D81DF /* TFY_DemoOneSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DemoOneSonVC.h; sourceTree = "<group>"; };
+		36B7C7E725B3F304005D81DF /* TFY_DemoOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DemoOne.m; sourceTree = "<group>"; };
+		36B7C7E825B3F304005D81DF /* TFY_DemoOneSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DemoOneSonVC.m; sourceTree = "<group>"; };
+		36B7C7E925B3F304005D81DF /* TFY_DemoOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DemoOne.h; sourceTree = "<group>"; };
+		36B7C7EB25B3F304005D81DF /* TFY_DynamicOperatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DynamicOperatVC.m; sourceTree = "<group>"; };
+		36B7C7EC25B3F304005D81DF /* TFY_DynamicOperatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DynamicOperatVC.h; sourceTree = "<group>"; };
+		36B7C7EF25B3F304005D81DF /* TFY_PageRadiosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageRadiosVC.m; sourceTree = "<group>"; };
+		36B7C7F025B3F304005D81DF /* TFY_PageRadiosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageRadiosVC.h; sourceTree = "<group>"; };
+		36B7C7F225B3F304005D81DF /* TFY_BackGroundMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_BackGroundMenuVC.m; sourceTree = "<group>"; };
+		36B7C7F325B3F304005D81DF /* TFY_BackGroundMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_BackGroundMenuVC.h; sourceTree = "<group>"; };
+		36B7C7F625B3F304005D81DF /* TFY_CustomThreePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CustomThreePage.m; sourceTree = "<group>"; };
+		36B7C7F725B3F304005D81DF /* TFY_CustomThreePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CustomThreePage.h; sourceTree = "<group>"; };
+		36B7C7F925B3F304005D81DF /* TFY_ZFixVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_ZFixVC.m; sourceTree = "<group>"; };
+		36B7C7FA25B3F304005D81DF /* TFY_ZFixVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_ZFixVC.h; sourceTree = "<group>"; };
+		36B7C7FC25B3F304005D81DF /* TFY_CustomOnePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CustomOnePage.h; sourceTree = "<group>"; };
+		36B7C7FD25B3F304005D81DF /* TFY_CustomOnePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CustomOnePage.m; sourceTree = "<group>"; };
+		36B7C7FF25B3F304005D81DF /* TFY_CustomTwoPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CustomTwoPage.m; sourceTree = "<group>"; };
+		36B7C80025B3F304005D81DF /* TFY_CustomTwoPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CustomTwoPage.h; sourceTree = "<group>"; };
+		36B7C80225B3F304005D81DF /* TFY_PageCustomNaviVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageCustomNaviVC.h; sourceTree = "<group>"; };
+		36B7C80325B3F304005D81DF /* TFY_PageCustomNaviVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageCustomNaviVC.m; sourceTree = "<group>"; };
+		36B7C80525B3F304005D81DF /* TFY_IndicatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_IndicatorVC.m; sourceTree = "<group>"; };
+		36B7C80625B3F304005D81DF /* TFY_IndicatorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_IndicatorVC.h; sourceTree = "<group>"; };
+		36B7C80825B3F304005D81DF /* TFY_AllPropertiesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_AllPropertiesVC.h; sourceTree = "<group>"; };
+		36B7C80925B3F304005D81DF /* TFY_AllPropertiesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_AllPropertiesVC.m; sourceTree = "<group>"; };
+		3A562279C53CB0881F6A8BD4 /* Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5A9B62B594E83D55F31799D4 /* Pods-TFY_PageSegmentControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentControllerTests.release.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentControllerTests/Pods-TFY_PageSegmentControllerTests.release.xcconfig"; sourceTree = "<group>"; };
+		70AA2D33212117BD59357003 /* Pods-TFY_PageSegmentControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentControllerTests.debug.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentControllerTests/Pods-TFY_PageSegmentControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		71CF4FA7DEB015A3FAE6AEEB /* Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.debug.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0103ED034E8FA621FE00AA4 /* Pods_TFY_PageSegmentControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_PageSegmentControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2BAF9D8C975BE6EF7E84D8 /* Pods_TFY_PageSegmentController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_PageSegmentController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D8496B7D90FAADFF332E28 /* Pods_TFY_PageSegmentController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89281E45A1074C891853486F /* Pods_TFY_PageSegmentControllerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546199BD670677B00FB03DFC /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +215,8 @@
 				36B7C75725B3DC45005D81DF /* TFY_PageSegmentControllerTests */,
 				36B7C76225B3DC45005D81DF /* TFY_PageSegmentControllerUITests */,
 				36B7C73A25B3DC43005D81DF /* Products */,
+				F3898E6D6A0AC8D5E7E778C5 /* Pods */,
+				6C77229338793DFEB48FAE42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +296,18 @@
 		36B7C78625B3DD0A005D81DF /* DemoVC */ = {
 			isa = PBXGroup;
 			children = (
+				36B7C7DE25B3F304005D81DF /* 标题样式 */,
+				36B7C7ED25B3F304005D81DF /* 菜单特殊样式 */,
+				36B7C7EA25B3F304005D81DF /* 动态增删菜单标题 */,
+				36B7C7D225B3F304005D81DF /* 复杂使用 */,
+				36B7C7B925B3F303005D81DF /* 配合内容使用 */,
+				36B7C7BC25B3F303005D81DF /* 嵌套使用 */,
+				36B7C80725B3F304005D81DF /* 全部属性 */,
+				36B7C7E125B3F304005D81DF /* 实际app使用实例 */,
+				36B7C7F425B3F304005D81DF /* 悬浮相关(+继承使用示范) */,
+				36B7C80425B3F304005D81DF /* 指示器样式 */,
+				36B7C7C925B3F304005D81DF /* 子控制器 */,
+				36B7C7DB25B3F304005D81DF /* app使用 */,
 			);
 			path = DemoVC;
 			sourceTree = "<group>";
@@ -257,6 +370,273 @@
 			path = CsutomScroller;
 			sourceTree = "<group>";
 		};
+		36B7C7B925B3F303005D81DF /* 配合内容使用 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7BA25B3F303005D81DF /* TFY_UsePageVC.h */,
+				36B7C7BB25B3F303005D81DF /* TFY_UsePageVC.m */,
+			);
+			path = "配合内容使用";
+			sourceTree = "<group>";
+		};
+		36B7C7BC25B3F303005D81DF /* 嵌套使用 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7BD25B3F303005D81DF /* 微博嵌套(导航栏+二级) */,
+				36B7C7C225B3F304005D81DF /* 王者营地(三层嵌套) */,
+			);
+			path = "嵌套使用";
+			sourceTree = "<group>";
+		};
+		36B7C7BD25B3F303005D81DF /* 微博嵌套(导航栏+二级) */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7BE25B3F303005D81DF /* TFY_WeiBoSonController.m */,
+				36B7C7BF25B3F304005D81DF /* TFY_WeiBoController.m */,
+				36B7C7C025B3F304005D81DF /* TFY_WeiBoSonController.h */,
+				36B7C7C125B3F304005D81DF /* TFY_WeiBoController.h */,
+			);
+			path = "微博嵌套(导航栏+二级)";
+			sourceTree = "<group>";
+		};
+		36B7C7C225B3F304005D81DF /* 王者营地(三层嵌套) */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7C325B3F304005D81DF /* TFY_WZThirdController.m */,
+				36B7C7C425B3F304005D81DF /* TFY_WangZheController.h */,
+				36B7C7C525B3F304005D81DF /* TFY_WZSecondController.m */,
+				36B7C7C625B3F304005D81DF /* TFY_WZThirdController.h */,
+				36B7C7C725B3F304005D81DF /* TFY_WZSecondController.h */,
+				36B7C7C825B3F304005D81DF /* TFY_WangZheController.m */,
+			);
+			path = "王者营地(三层嵌套)";
+			sourceTree = "<group>";
+		};
+		36B7C7C925B3F304005D81DF /* 子控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7CA25B3F304005D81DF /* TFY_TestVC.m */,
+				36B7C7CB25B3F304005D81DF /* TFY_CollectionViewPop.h */,
+				36B7C7CC25B3F304005D81DF /* TFY_TopSuspensionVC.h */,
+				36B7C7CD25B3F304005D81DF /* TFY_FixSonVC.h */,
+				36B7C7CE25B3F304005D81DF /* TFY_TestVC.h */,
+				36B7C7CF25B3F304005D81DF /* TFY_CollectionViewPop.m */,
+				36B7C7D025B3F304005D81DF /* TFY_FixSonVC.m */,
+				36B7C7D125B3F304005D81DF /* TFY_TopSuspensionVC.m */,
+			);
+			path = "子控制器";
+			sourceTree = "<group>";
+		};
+		36B7C7D225B3F304005D81DF /* 复杂使用 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7D325B3F304005D81DF /* 美团 */,
+				36B7C7D825B3F304005D81DF /* 淘宝 */,
+			);
+			path = "复杂使用";
+			sourceTree = "<group>";
+		};
+		36B7C7D325B3F304005D81DF /* 美团 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7D425B3F304005D81DF /* TFY_MeiTuanVC.h */,
+				36B7C7D525B3F304005D81DF /* TFY_MeiTuanSonVC.h */,
+				36B7C7D625B3F304005D81DF /* TFY_MeiTuanVC.m */,
+				36B7C7D725B3F304005D81DF /* TFY_MeiTuanSonVC.m */,
+			);
+			path = "美团";
+			sourceTree = "<group>";
+		};
+		36B7C7D825B3F304005D81DF /* 淘宝 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7D925B3F304005D81DF /* TFY_TaoBaoDemo.h */,
+				36B7C7DA25B3F304005D81DF /* TFY_TaoBaoDemo.m */,
+			);
+			path = "淘宝";
+			sourceTree = "<group>";
+		};
+		36B7C7DB25B3F304005D81DF /* app使用 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7DC25B3F304005D81DF /* TFY_UseVC.h */,
+				36B7C7DD25B3F304005D81DF /* TFY_UseVC.m */,
+			);
+			path = "app使用";
+			sourceTree = "<group>";
+		};
+		36B7C7DE25B3F304005D81DF /* 标题样式 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */,
+				36B7C7E025B3F304005D81DF /* TFY_TitleVC.h */,
+			);
+			path = "标题样式";
+			sourceTree = "<group>";
+		};
+		36B7C7E125B3F304005D81DF /* 实际app使用实例 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7E225B3F304005D81DF /* 示例2 */,
+				36B7C7E525B3F304005D81DF /* 示例1 */,
+			);
+			path = "实际app使用实例";
+			sourceTree = "<group>";
+		};
+		36B7C7E225B3F304005D81DF /* 示例2 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7E325B3F304005D81DF /* TFY_DemoTwo.h */,
+				36B7C7E425B3F304005D81DF /* TFY_DemoTwo.m */,
+			);
+			path = "示例2";
+			sourceTree = "<group>";
+		};
+		36B7C7E525B3F304005D81DF /* 示例1 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7E625B3F304005D81DF /* TFY_DemoOneSonVC.h */,
+				36B7C7E725B3F304005D81DF /* TFY_DemoOne.m */,
+				36B7C7E825B3F304005D81DF /* TFY_DemoOneSonVC.m */,
+				36B7C7E925B3F304005D81DF /* TFY_DemoOne.h */,
+			);
+			path = "示例1";
+			sourceTree = "<group>";
+		};
+		36B7C7EA25B3F304005D81DF /* 动态增删菜单标题 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7EB25B3F304005D81DF /* TFY_DynamicOperatVC.m */,
+				36B7C7EC25B3F304005D81DF /* TFY_DynamicOperatVC.h */,
+			);
+			path = "动态增删菜单标题";
+			sourceTree = "<group>";
+		};
+		36B7C7ED25B3F304005D81DF /* 菜单特殊样式 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7EE25B3F304005D81DF /* 菜单背景圆角 */,
+				36B7C7F125B3F304005D81DF /* 菜单栏带背景图 */,
+			);
+			path = "菜单特殊样式";
+			sourceTree = "<group>";
+		};
+		36B7C7EE25B3F304005D81DF /* 菜单背景圆角 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7EF25B3F304005D81DF /* TFY_PageRadiosVC.m */,
+				36B7C7F025B3F304005D81DF /* TFY_PageRadiosVC.h */,
+			);
+			path = "菜单背景圆角";
+			sourceTree = "<group>";
+		};
+		36B7C7F125B3F304005D81DF /* 菜单栏带背景图 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7F225B3F304005D81DF /* TFY_BackGroundMenuVC.m */,
+				36B7C7F325B3F304005D81DF /* TFY_BackGroundMenuVC.h */,
+			);
+			path = "菜单栏带背景图";
+			sourceTree = "<group>";
+		};
+		36B7C7F425B3F304005D81DF /* 悬浮相关(+继承使用示范) */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7F525B3F304005D81DF /* 导航栏透明度变化+头部刷新 */,
+				36B7C7F825B3F304005D81DF /* 某个子控制器固定底部 */,
+				36B7C7FB25B3F304005D81DF /* 显示导航栏+中间刷新 */,
+				36B7C7FE25B3F304005D81DF /* 全局背景色 */,
+				36B7C80125B3F304005D81DF /* 自定义导航栏 */,
+			);
+			path = "悬浮相关(+继承使用示范)";
+			sourceTree = "<group>";
+		};
+		36B7C7F525B3F304005D81DF /* 导航栏透明度变化+头部刷新 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7F625B3F304005D81DF /* TFY_CustomThreePage.m */,
+				36B7C7F725B3F304005D81DF /* TFY_CustomThreePage.h */,
+			);
+			path = "导航栏透明度变化+头部刷新";
+			sourceTree = "<group>";
+		};
+		36B7C7F825B3F304005D81DF /* 某个子控制器固定底部 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7F925B3F304005D81DF /* TFY_ZFixVC.m */,
+				36B7C7FA25B3F304005D81DF /* TFY_ZFixVC.h */,
+			);
+			path = "某个子控制器固定底部";
+			sourceTree = "<group>";
+		};
+		36B7C7FB25B3F304005D81DF /* 显示导航栏+中间刷新 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7FC25B3F304005D81DF /* TFY_CustomOnePage.h */,
+				36B7C7FD25B3F304005D81DF /* TFY_CustomOnePage.m */,
+			);
+			path = "显示导航栏+中间刷新";
+			sourceTree = "<group>";
+		};
+		36B7C7FE25B3F304005D81DF /* 全局背景色 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C7FF25B3F304005D81DF /* TFY_CustomTwoPage.m */,
+				36B7C80025B3F304005D81DF /* TFY_CustomTwoPage.h */,
+			);
+			path = "全局背景色";
+			sourceTree = "<group>";
+		};
+		36B7C80125B3F304005D81DF /* 自定义导航栏 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C80225B3F304005D81DF /* TFY_PageCustomNaviVC.h */,
+				36B7C80325B3F304005D81DF /* TFY_PageCustomNaviVC.m */,
+			);
+			path = "自定义导航栏";
+			sourceTree = "<group>";
+		};
+		36B7C80425B3F304005D81DF /* 指示器样式 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C80525B3F304005D81DF /* TFY_IndicatorVC.m */,
+				36B7C80625B3F304005D81DF /* TFY_IndicatorVC.h */,
+			);
+			path = "指示器样式";
+			sourceTree = "<group>";
+		};
+		36B7C80725B3F304005D81DF /* 全部属性 */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C80825B3F304005D81DF /* TFY_AllPropertiesVC.h */,
+				36B7C80925B3F304005D81DF /* TFY_AllPropertiesVC.m */,
+			);
+			path = "全部属性";
+			sourceTree = "<group>";
+		};
+		6C77229338793DFEB48FAE42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB2BAF9D8C975BE6EF7E84D8 /* Pods_TFY_PageSegmentController.framework */,
+				2516ABBB864B53C0AEE3FB88 /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework */,
+				C0103ED034E8FA621FE00AA4 /* Pods_TFY_PageSegmentControllerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3898E6D6A0AC8D5E7E778C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				239D48CDD5B05914FF3E2A00 /* Pods-TFY_PageSegmentController.debug.xcconfig */,
+				228E7B02EF52CD09E47AE9BC /* Pods-TFY_PageSegmentController.release.xcconfig */,
+				71CF4FA7DEB015A3FAE6AEEB /* Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.debug.xcconfig */,
+				3A562279C53CB0881F6A8BD4 /* Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig */,
+				70AA2D33212117BD59357003 /* Pods-TFY_PageSegmentControllerTests.debug.xcconfig */,
+				5A9B62B594E83D55F31799D4 /* Pods-TFY_PageSegmentControllerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,9 +644,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B7C76825B3DC45005D81DF /* Build configuration list for PBXNativeTarget "TFY_PageSegmentController" */;
 			buildPhases = (
+				0F4D8774519BC0E16D41B70D /* [CP] Check Pods Manifest.lock */,
 				36B7C73525B3DC43005D81DF /* Sources */,
 				36B7C73625B3DC43005D81DF /* Frameworks */,
 				36B7C73725B3DC43005D81DF /* Resources */,
+				5DAFF37E59FD06C297D98E49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +663,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B7C76B25B3DC45005D81DF /* Build configuration list for PBXNativeTarget "TFY_PageSegmentControllerTests" */;
 			buildPhases = (
+				A2E237E3B79B519AC8318970 /* [CP] Check Pods Manifest.lock */,
 				36B7C75025B3DC45005D81DF /* Sources */,
 				36B7C75125B3DC45005D81DF /* Frameworks */,
 				36B7C75225B3DC45005D81DF /* Resources */,
@@ -299,9 +682,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B7C76E25B3DC45005D81DF /* Build configuration list for PBXNativeTarget "TFY_PageSegmentControllerUITests" */;
 			buildPhases = (
+				393C04AE03DED794B2A4A3B1 /* [CP] Check Pods Manifest.lock */,
 				36B7C75B25B3DC45005D81DF /* Sources */,
 				36B7C75C25B3DC45005D81DF /* Frameworks */,
 				36B7C75D25B3DC45005D81DF /* Resources */,
+				B300C23FB0DD446031058B75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,6 +765,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F4D8774519BC0E16D41B70D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TFY_PageSegmentController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		393C04AE03DED794B2A4A3B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DAFF37E59FD06C297D98E49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2E237E3B79B519AC8318970 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TFY_PageSegmentControllerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B300C23FB0DD446031058B75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		36B7C73525B3DC43005D81DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -387,17 +875,45 @@
 			files = (
 				36B7C78125B3DCAF005D81DF /* AppDelegate.m in Sources */,
 				36B7C7AA25B3DED7005D81DF /* TFY_PageScrollerView.m in Sources */,
+				36B7C81325B3F304005D81DF /* TFY_TopSuspensionVC.m in Sources */,
 				36B7C7AC25B3DED7005D81DF /* TFY_PageTableView.m in Sources */,
+				36B7C82525B3F304005D81DF /* TFY_AllPropertiesVC.m in Sources */,
+				36B7C81125B3F304005D81DF /* TFY_CollectionViewPop.m in Sources */,
 				36B7C7A925B3DED7005D81DF /* TFY_PageLoopView.m in Sources */,
 				36B7C77F25B3DCAF005D81DF /* ViewController.m in Sources */,
+				36B7C81D25B3F304005D81DF /* TFY_PageRadiosVC.m in Sources */,
 				36B7C7A625B3DED7005D81DF /* TFY_PageParam.m in Sources */,
+				36B7C81425B3F304005D81DF /* TFY_MeiTuanVC.m in Sources */,
+				36B7C81925B3F304005D81DF /* TFY_DemoTwo.m in Sources */,
+				36B7C81025B3F304005D81DF /* TFY_TestVC.m in Sources */,
+				36B7C81C25B3F304005D81DF /* TFY_DynamicOperatVC.m in Sources */,
+				36B7C81A25B3F304005D81DF /* TFY_DemoOne.m in Sources */,
+				36B7C81625B3F304005D81DF /* TFY_TaoBaoDemo.m in Sources */,
+				36B7C82025B3F304005D81DF /* TFY_ZFixVC.m in Sources */,
+				36B7C81B25B3F304005D81DF /* TFY_DemoOneSonVC.m in Sources */,
+				36B7C81725B3F304005D81DF /* TFY_UseVC.m in Sources */,
 				36B7C7A825B3DED7005D81DF /* TFY_PageNavBtn.m in Sources */,
+				36B7C80B25B3F304005D81DF /* TFY_WeiBoSonController.m in Sources */,
+				36B7C81525B3F304005D81DF /* TFY_MeiTuanSonVC.m in Sources */,
 				36B7C7A425B3DED7005D81DF /* NSObject+ListenKVO.m in Sources */,
+				36B7C80F25B3F304005D81DF /* TFY_WangZheController.m in Sources */,
 				36B7C7A725B3DED7005D81DF /* TFY_PageMunuView.m in Sources */,
+				36B7C81F25B3F304005D81DF /* TFY_CustomThreePage.m in Sources */,
 				36B7C78025B3DCAF005D81DF /* SceneDelegate.m in Sources */,
+				36B7C82225B3F304005D81DF /* TFY_CustomTwoPage.m in Sources */,
 				36B7C7AB25B3DED7005D81DF /* TFY_PageBaseController.m in Sources */,
+				36B7C80C25B3F304005D81DF /* TFY_WeiBoController.m in Sources */,
 				36B7C74F25B3DC44005D81DF /* main.m in Sources */,
 				36B7C7A525B3DED7005D81DF /* TFY_PageTitleModel.m in Sources */,
+				36B7C80D25B3F304005D81DF /* TFY_WZThirdController.m in Sources */,
+				36B7C80E25B3F304005D81DF /* TFY_WZSecondController.m in Sources */,
+				36B7C82125B3F304005D81DF /* TFY_CustomOnePage.m in Sources */,
+				36B7C81825B3F304005D81DF /* TFY_TitleVC.m in Sources */,
+				36B7C80A25B3F304005D81DF /* TFY_UsePageVC.m in Sources */,
+				36B7C82425B3F304005D81DF /* TFY_IndicatorVC.m in Sources */,
+				36B7C81225B3F304005D81DF /* TFY_FixSonVC.m in Sources */,
+				36B7C82325B3F304005D81DF /* TFY_PageCustomNaviVC.m in Sources */,
+				36B7C81E25B3F304005D81DF /* TFY_BackGroundMenuVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +1074,7 @@
 		};
 		36B7C76925B3DC45005D81DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 239D48CDD5B05914FF3E2A00 /* Pods-TFY_PageSegmentController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -579,6 +1096,7 @@
 		};
 		36B7C76A25B3DC45005D81DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 228E7B02EF52CD09E47AE9BC /* Pods-TFY_PageSegmentController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -600,6 +1118,7 @@
 		};
 		36B7C76C25B3DC45005D81DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70AA2D33212117BD59357003 /* Pods-TFY_PageSegmentControllerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -620,6 +1139,7 @@
 		};
 		36B7C76D25B3DC45005D81DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A9B62B594E83D55F31799D4 /* Pods-TFY_PageSegmentControllerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -640,6 +1160,7 @@
 		};
 		36B7C76F25B3DC45005D81DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71CF4FA7DEB015A3FAE6AEEB /* Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QH95759TSS;
@@ -658,6 +1179,7 @@
 		};
 		36B7C77025B3DC45005D81DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A562279C53CB0881F6A8BD4 /* Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QH95759TSS;
