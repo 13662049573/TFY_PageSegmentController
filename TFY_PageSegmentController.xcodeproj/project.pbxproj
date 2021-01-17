@@ -333,10 +333,10 @@
 		36B7C78D25B3DED7005D81DF /* ITools */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C78E25B3DED7005D81DF /* TFY_PageTitleModel.h */,
-				36B7C78F25B3DED7005D81DF /* NSObject+ListenKVO.m */,
-				36B7C79025B3DED7005D81DF /* TFY_PageTitleModel.m */,
 				36B7C79125B3DED7005D81DF /* NSObject+ListenKVO.h */,
+				36B7C78F25B3DED7005D81DF /* NSObject+ListenKVO.m */,
+				36B7C78E25B3DED7005D81DF /* TFY_PageTitleModel.h */,
+				36B7C79025B3DED7005D81DF /* TFY_PageTitleModel.m */,
 			);
 			path = ITools;
 			sourceTree = "<group>";
@@ -344,13 +344,13 @@
 		36B7C79225B3DED7005D81DF /* Param */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C79325B3DED7005D81DF /* TFY_PageParam.m */,
-				36B7C79425B3DED7005D81DF /* TFY_PageMunuView.m */,
-				36B7C79525B3DED7005D81DF /* TFY_PageNavBtn.h */,
-				36B7C79625B3DED7005D81DF /* TFY_PageParam.h */,
-				36B7C79725B3DED7005D81DF /* TFY_PageMunuView.h */,
 				36B7C79825B3DED7005D81DF /* TFY_ConfigProtocol.h */,
+				36B7C79625B3DED7005D81DF /* TFY_PageParam.h */,
+				36B7C79325B3DED7005D81DF /* TFY_PageParam.m */,
+				36B7C79525B3DED7005D81DF /* TFY_PageNavBtn.h */,
 				36B7C79925B3DED7005D81DF /* TFY_PageNavBtn.m */,
+				36B7C79725B3DED7005D81DF /* TFY_PageMunuView.h */,
+				36B7C79425B3DED7005D81DF /* TFY_PageMunuView.m */,
 			);
 			path = Param;
 			sourceTree = "<group>";
@@ -358,14 +358,14 @@
 		36B7C79A25B3DED7005D81DF /* CsutomScroller */ = {
 			isa = PBXGroup;
 			children = (
+				36B7C79F25B3DED7005D81DF /* TFY_PageLoopView.h */,
 				36B7C79B25B3DED7005D81DF /* TFY_PageLoopView.m */,
 				36B7C79C25B3DED7005D81DF /* TFY_PageBaseController.h */,
-				36B7C79D25B3DED7005D81DF /* TFY_PageTableView.h */,
-				36B7C79E25B3DED7005D81DF /* TFY_PageScrollerView.m */,
-				36B7C79F25B3DED7005D81DF /* TFY_PageLoopView.h */,
 				36B7C7A025B3DED7005D81DF /* TFY_PageBaseController.m */,
-				36B7C7A125B3DED7005D81DF /* TFY_PageScrollerView.h */,
+				36B7C79D25B3DED7005D81DF /* TFY_PageTableView.h */,
 				36B7C7A225B3DED7005D81DF /* TFY_PageTableView.m */,
+				36B7C7A125B3DED7005D81DF /* TFY_PageScrollerView.h */,
+				36B7C79E25B3DED7005D81DF /* TFY_PageScrollerView.m */,
 			);
 			path = CsutomScroller;
 			sourceTree = "<group>";
@@ -468,8 +468,8 @@
 		36B7C7DE25B3F304005D81DF /* 标题样式 */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */,
 				36B7C7E025B3F304005D81DF /* TFY_TitleVC.h */,
+				36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */,
 			);
 			path = "标题样式";
 			sourceTree = "<group>";

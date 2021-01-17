@@ -41,7 +41,7 @@
     //头部
     .menuHeadViewSet(^UIView *{
         UIView *back = [UIView new];
-        back.frame = CGRectMake(0, 0, PageVCWidth, 300+PageVCStatusBarHeight);
+        back.frame = CGRectMake(0, 0, PageVCWidth, 250+PageVCStatusBarHeight);
         UIImageView *image = [UIImageView new];
         [image sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602673230263&di=c9290650541d8edf911ff008a3bfa4dc&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2Ff%2F33%2F648011013.jpg"]];
         image.frame =back.bounds;
@@ -57,7 +57,7 @@
         
          NSLog(@"---:%.2f------:%.2f",newPonit.y,oldPoint.y);
 
-         [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:newPonit.y/(500+300-2*PageVCNavBarHeight)]}];
+         [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:newPonit.y/(500+250-2*PageVCNavBarHeight)]}];
      });
     
     //实现tableview的协议
@@ -80,8 +80,16 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 4;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 80;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
