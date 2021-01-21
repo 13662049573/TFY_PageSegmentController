@@ -21,7 +21,7 @@
     }
 }
 
-- (void)removeAllObserverdKeyPath:(NSObject*)VC withKey:(NSString*)key{
+- (void)removeAllObserverdKeyPath:(NSObject*_Nonnull)VC withKey:(NSString*_Nonnull)key{
     id info = self.observationInfo;
     NSArray *arr = [info valueForKeyPath:@"_observances._property._keyPath"];
     NSArray *objArr = [info valueForKeyPath:@"_observances._observer"];

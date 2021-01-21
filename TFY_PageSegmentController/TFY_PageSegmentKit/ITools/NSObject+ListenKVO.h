@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   移除所有观察的keypath
  */
-- (void)removeAllObserverdKeyPath:(NSObject*)VC withKey:(NSString*)key;
+- (void)removeAllObserverdKeyPath:(NSObject*_Nonnull)VC withKey:(NSString*_Nonnull)key;
 /**
  安全增加观察者
 */

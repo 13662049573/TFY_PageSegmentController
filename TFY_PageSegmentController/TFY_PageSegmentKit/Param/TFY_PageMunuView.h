@@ -19,21 +19,21 @@ NS_ASSUME_NONNULL_BEGIN
 //当前index
 @property(nonatomic,assign)NSInteger currentTitleIndex;
 //配置
-@property(nonatomic,strong)TFY_PageParam *param;
+@property(nonatomic,strong)TFY_PageParam *_Nonnull param;
 //下划线
-@property(nonatomic,strong)UIButton *lineView;
+@property(nonatomic,strong)UIButton *_Nonnull lineView;
 //标题按钮
-@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>*btnArr;
+@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>* _Nonnull btnArr;
 //固定按钮
-@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>*fixBtnArr;
+@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>* _Nonnull fixBtnArr;
 //代理
-@property(nonatomic,weak)id <PageMunuDelegate> menuDelegate;
+@property(nonatomic,weak)id <PageMunuDelegate> _Nullable menuDelegate;
 //滚动到index
 - (void)scrollToIndex:(NSInteger)newIndex;
 - (void)scrollToIndex:(NSInteger)newIndex animal:(BOOL)animal;
 - (CGFloat)getMainHeight;
-- (void)setPropertiesWithBtn:(TFY_PageNavBtn*)btn withIndex:(NSInteger)index  withTemp:(TFY_PageNavBtn*)temp;
-- (void)resetMainViewContenSize:(TFY_PageNavBtn*)btn;
+- (void)setPropertiesWithBtn:(TFY_PageNavBtn*_Nonnull)btn withIndex:(NSInteger)index  withTemp:(TFY_PageNavBtn*_Nonnull)temp;
+- (void)resetMainViewContenSize:(TFY_PageNavBtn*_Nonnull)btn;
 
 @end
 

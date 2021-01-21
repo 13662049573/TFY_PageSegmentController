@@ -11,17 +11,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_PageBaseController : UIViewController<UIScrollViewDelegate,PageLoopDelegate,UITableViewDelegate>
 //参数
-@property(nonatomic,strong)TFY_PageParam *param;
+@property(nonatomic,strong)TFY_PageParam *_Nullable param;
 //头部标题滚动视图
-@property(nonatomic,strong)TFY_PageLoopView *upScHerder;
+@property(nonatomic,strong)TFY_PageLoopView *_Nullable upScHerder;
 //底部全屏滚动视图
 @property(nonatomic,strong,nullable)TFY_PageTableView *tableView;
 //缓存
-@property(nonatomic,strong)NSMutableDictionary *cache;
+@property(nonatomic,strong)NSMutableDictionary *_Nonnull cache;
 //子控制器中可以滚动的视图
-@property(nonatomic,strong)NSMutableDictionary *sonChildScrollerViewDic;
+@property(nonatomic,strong)NSMutableDictionary *_Nonnull sonChildScrollerViewDic;
 //子控制器中固定底部的视图
-@property(nonatomic,strong)NSMutableDictionary *sonChildFooterViewDic;
+@property(nonatomic,strong)NSMutableDictionary *_Nonnull sonChildFooterViewDic;
 //子控制器固定底部如果不是位于最左边  可设置此属性 默认为0
 @property(nonatomic,assign)CGFloat footViewOrginX;
 //子控制器固定底部宽度如果不是整个屏幕  可设置此属性 默认为底部滚动视图的宽度
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 //子控制器固定底部y值 default 最底部-height
 @property(nonatomic,assign)CGFloat footViewOrginY;
 //透明视图
-@property (nonatomic, strong) UIView *naviBarBackGround;
+@property (nonatomic, strong) UIView *_Nullable naviBarBackGround;
 /**
  更新全部(会全部重新渲染)
 */
@@ -67,26 +67,26 @@ NS_ASSUME_NONNULL_BEGIN
  动态插入菜单数据
  insertObject 插入对应model
 */
-- (BOOL)addMenuTitleWithObject:(TFY_PageTitleModel*)insertObject;
+- (BOOL)addMenuTitleWithObject:(TFY_PageTitleModel*_Nullable)insertObject;
 
 /**
  动态删除菜单数据
  deleteObject 删除的对应下标 如@(1) 或者 传入的标题对象
 */
-- (BOOL)deleteMenuTitleIndex:(id)deleteObject;
+- (BOOL)deleteMenuTitleIndex:(id _Nonnull)deleteObject;
 
 
 /**
  动态插入菜单数组
  insertArr 插入对应model的数组
 */
-- (BOOL)addMenuTitleWithObjectArr:(NSArray<TFY_PageTitleModel*>*)insertArr;
+- (BOOL)addMenuTitleWithObjectArr:(NSArray<TFY_PageTitleModel*>*_Nonnull)insertArr;
 
 /**
  动态删除菜单数组
  deleteArr @[ 如@(1) 或者 传入的标题对象]
 */
-- (BOOL)deleteMenuTitleIndexArr:(NSArray*)deleteArr;
+- (BOOL)deleteMenuTitleIndexArr:(NSArray*_Nonnull)deleteArr;
 
 @end
 

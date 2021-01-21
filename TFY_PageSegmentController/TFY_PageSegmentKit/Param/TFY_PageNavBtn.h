@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_PageNavBtn : UIButton
 
-@property(nonatomic,strong)TFY_PageParam *param;
+@property(nonatomic,strong)TFY_PageParam *_Nonnull param;
 //最大size
 @property(nonatomic,assign)CGSize maxSize;
 //处于动画状态
@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 //有红点提示
 @property(nonatomic,assign)NSInteger hasBadge;
 //初始文本内容
-@property(nonatomic,copy)NSString* normalText;
+@property(nonatomic,copy)NSString* _Nonnull normalText;
 //选中文本
-@property(nonatomic,copy)NSString* selectText;
+@property(nonatomic,copy)NSString* _Nonnull selectText;
 //RGB值
 @property (nonatomic, assign) CGFloat selectedColorR;
 @property (nonatomic, assign) CGFloat selectedColorG;
@@ -33,12 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat unSelectedColorG;
 @property (nonatomic, assign) CGFloat unSelectedColorB;
 //富文本图片
-@property(nonatomic,strong)NSAttributedString* attributedImage;
+@property(nonatomic,strong)NSAttributedString* _Nonnull attributedImage;
 //富文本选中图片
-@property(nonatomic,strong)NSAttributedString* attributedSelectImage;
+@property(nonatomic,strong)NSAttributedString* _Nonnull attributedSelectImage;
 
-- (NSAttributedString*)setImageWithStr:(NSString*)str
-                                  font:(UIFont*)font
+- (NSAttributedString*_Nonnull)setImageWithStr:(NSString*_Nonnull)str
+                                  font:(UIFont*_Nonnull)font
                          textAlignment:(NSTextAlignment)textAlignment
                              textColor:(nullable UIColor*)textColor
                                 height:(CGFloat)height
@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 //设置图文位置
 - (void)TagSetImagePosition:(PageBtnPosition)postion spacing:(CGFloat)spacing;
 //设置单边阴影
-- (void)viewShadowPathWithColor:(UIColor *)shadowColor shadowOpacity:(CGFloat)shadowOpacity shadowRadius:(CGFloat)shadowRadius shadowPathType:(PageShadowPathType)shadowPathType shadowPathWidth:(CGFloat)shadowPathWidth;
+- (void)viewShadowPathWithColor:(UIColor *_Nonnull)shadowColor shadowOpacity:(CGFloat)shadowOpacity shadowRadius:(CGFloat)shadowRadius shadowPathType:(PageShadowPathType)shadowPathType shadowPathWidth:(CGFloat)shadowPathWidth;
 //设置圆角
 -(void)setRadii:(CGSize)size RoundingCorners:(UIRectCorner)rectCorner;
 
@@ -55,12 +55,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_PageNavBtn (Badge)
 
-@property (nonatomic, strong) UILabel *badge;
+@property (nonatomic, strong) UILabel *_Nonnull badge;
 /**
  *  显示小红点
  *  @magin 小红点距离控件上方距离
  */
-- (void)showBadgeWithTopMagin:(NSDictionary*)info;
+- (void)showBadgeWithTopMagin:(NSDictionary*_Nonnull)info;
 
 /**
  *  隐藏小红点
@@ -69,15 +69,15 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UIColor (GradientColor)
-+ (instancetype)bm_colorGradientChangeWithSize:(CGSize)size
++ (instancetype _Nonnull )bm_colorGradientChangeWithSize:(CGSize)size
                 direction:(PageGradientChangeDirection)direction
-                startColor:(UIColor*)startcolor
-                endColor:(UIColor*)endColor;
+                startColor:(UIColor*_Nonnull)startcolor
+                endColor:(UIColor*_Nonnull)endColor;
 @end
 
 @interface UIView (PageBorder)
 //设置单边框
-- (void)viewPathWithColor:(UIColor *)shadowColor  PathType:(PageShadowPathType)shadowPathType PathWidth:(CGFloat)shadowPathWidth heightScale:(CGFloat)sacle;
+- (void)viewPathWithColor:(UIColor *_Nonnull)shadowColor  PathType:(PageShadowPathType)shadowPathType PathWidth:(CGFloat)shadowPathWidth heightScale:(CGFloat)sacle;
 @end
 
 NS_ASSUME_NONNULL_END

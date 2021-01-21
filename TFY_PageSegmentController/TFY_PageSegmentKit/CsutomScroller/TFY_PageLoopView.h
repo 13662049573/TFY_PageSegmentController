@@ -21,30 +21,30 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)selectBtnWithIndex:(NSInteger)index;
 
 //底部左滑的代理
-- (void)pageWithScrollView:(UIScrollView*)scrollView left:(BOOL)left;
+- (void)pageWithScrollView:(UIScrollView*_Nullable)scrollView left:(BOOL)left;
 
 //底部左滑结束的代理
-- (void)pageScrollEndWithScrollView:(UIScrollView*)scrollView;
+- (void)pageScrollEndWithScrollView:(UIScrollView*_Nullable)scrollView;
 
 //获取子tableview
-- (void)setUpSuspension:(UIViewController*)newVC index:(NSInteger)index end:(BOOL)end;
+- (void)setUpSuspension:(UIViewController*_Nullable)newVC index:(NSInteger)index end:(BOOL)end;
 
 @end
 
 @interface TFY_PageLoopView : UIView
 
 //下划线 此列属性和pageMenuView中的是同个
-@property(nonatomic,strong)UIButton *lineView;
+@property(nonatomic,strong)UIButton *_Nullable lineView;
 //标题按钮
-@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>*btnArr;
+@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>* _Nullable btnArr;
 //固定按钮
-@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>*fixBtnArr;
+@property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>* _Nullable fixBtnArr;
 
 
 //菜单视图
-@property(nonatomic,strong)TFY_PageMunuView *mainView;
+@property(nonatomic,strong)TFY_PageMunuView * _Nullable mainView;
 //底部视图
-@property(nonatomic,strong)TFY_PageScrollerView *dataView;
+@property(nonatomic,strong)TFY_PageScrollerView * _Nullable dataView;
 //当前index
 @property(nonatomic,assign)NSInteger currentTitleIndex;
 //可能的下一个视图
@@ -60,22 +60,22 @@ NS_ASSUME_NONNULL_BEGIN
 //当前显示VC
 @property(nonatomic,strong,nullable)UIViewController *currentVC;
 //代理
-@property(nonatomic,weak)id <PageLoopDelegate> loopDelegate;
+@property(nonatomic,weak)id <PageLoopDelegate> _Nullable loopDelegate;
 
 //初始化
-- (instancetype)initWithFrame:(CGRect)frame param:(TFY_PageParam*)param;
+- (instancetype)initWithFrame:(CGRect)frame param:(TFY_PageParam* _Nullable)param;
 
 //标题动画和scrollview联动
-- (void)animalAction:(UIScrollView*)scrollView lastContrnOffset:(CGFloat)lastContentOffset;
+- (void)animalAction:(UIScrollView*_Nullable)scrollView lastContrnOffset:(CGFloat)lastContentOffset;
 
 //结束动画处理
 - (void)endAninamal;
 
 //找寻view的父控制器
-- (nullable TFY_PageBaseController *)findBelongViewControllerForView:(UIView *)view;
+- (nullable TFY_PageBaseController *)findBelongViewControllerForView:(UIView *_Nullable)view;
 
 //添加
-- (void)addChildVC:(NSInteger)index VC:(UIViewController*)newVC;
+- (void)addChildVC:(NSInteger)index VC:(UIViewController*_Nullable)newVC;
 
 @end
 
