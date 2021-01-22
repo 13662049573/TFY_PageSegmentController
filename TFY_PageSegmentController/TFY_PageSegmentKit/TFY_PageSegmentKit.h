@@ -3,7 +3,7 @@
 //  TFY_PageSegmentKit
 //
 //  Created by 田风有 on 2021/1/16.
-//  最新版本:2.0.8
+//  最新版本:2.1.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

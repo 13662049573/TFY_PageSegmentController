@@ -98,15 +98,15 @@
         for (int i = ((int)fixData.count - 1); i>=0; i--) {
             id info = fixData[i];
             TFY_PageNavBtn *fixBtn = [TFY_PageNavBtn buttonWithType:UIButtonTypeCustom];
-            CGFloat menuFixWidth = [self getTitleData:info key:@"width"]?[[self getTitleData:info key:@"width"] floatValue]:self.param.menuFixWidth;
+            CGFloat menuFixWidth = [self getTitleData:info key:@"width"]?[[self getTitleData:info key:@"width"] floatValue]:self.param.menuFixRightWidth;
             CGFloat originY = [self getTitleData:info key:@"y"]?[[self getTitleData:info key:@"y"] floatValue]:temp.frame.origin.y;
             CGFloat menuFixHeight = [self getTitleData:info key:@"height"]?[[self getTitleData:info key:@"height"] floatValue]:temp.frame.size.height;
             id text = [self getTitleData:info key:@"name"];
             id selectText = [self getTitleData:info key:@"selectName"];
             id image = [self getTitleData:info key:@"image"];
             id selectImage = [self getTitleData:info key:@"selectImage"];
-            id titleColor = [self getTitleData:info key:@"titleColor"]?:self.param.menuTitleColor;
-            id titleSelectColor = [self getTitleData:info key:@"titleSelectColor"]?:self.param.menuTitleSelectColor;
+            id titleColor = [self getTitleData:info key:@"titleColor"]?:self.param.menuTitleRightColor;
+            id titleSelectColor = [self getTitleData:info key:@"titleSelectColor"]?:self.param.menuTitleSelectRightColor;
             if (text) {
                 [fixBtn setTitle:text forState:UIControlStateNormal];
             }
@@ -123,7 +123,7 @@
                 menuFixWidth+=30;
             }
             allWidth += menuFixWidth;
-            fixBtn.titleLabel.font = self.param.menuTitleUIFont;
+            fixBtn.titleLabel.font = self.param.menuTitleRightUIFont;
             [fixBtn setTitleColor:titleColor forState:UIControlStateNormal];
             [fixBtn setTitleColor:titleSelectColor forState:UIControlStateSelected];
             fixBtn.frame = CGRectMake(CGRectGetWidth(self.frame)-allWidth, originY, menuFixWidth, menuFixHeight);
@@ -131,9 +131,9 @@
             fixBtn.backgroundColor = temp.backgroundColor;
             [self addSubview:fixBtn];
             [self bringSubviewToFront:fixBtn];
-            CGFloat margin = [self getTitleData:info key:@"margin"]?[[self getTitleData:info key:@"margin"] floatValue]:self.param.menuImageMargin;
+            CGFloat margin = [self getTitleData:info key:@"margin"]?[[self getTitleData:info key:@"margin"] floatValue]:self.param.menuImageRightMargin;
             if (image) {
-                [fixBtn TagSetImagePosition:self.param.menuImagePosition spacing:margin];
+                [fixBtn TagSetImagePosition:self.param.menuImageRightPosition spacing:margin];
             }
             if (self.param.menuFixShadow) {
                [fixBtn viewShadowPathWithColor:PageColor(0x333333) shadowOpacity:0.8 shadowRadius:3 shadowPathType:PageShadowPathLeft shadowPathWidth:2];

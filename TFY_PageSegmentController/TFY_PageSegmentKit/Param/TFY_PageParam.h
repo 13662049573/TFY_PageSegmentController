@@ -107,6 +107,8 @@ TFY_PagePropertyStatement(assign, TFY_PageParam, NSInteger,             menuDefa
 TFY_PagePropertyStatement(strong, TFY_PageParam, id,                    menuFixRightData)
 //菜单最右边固定内容宽度 defaulf 45
 TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuFixWidth)
+//菜单最左侧独立按钮固定内容宽度 defaulf 45
+TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuFixRightWidth)
 //菜单标题动画效果 default  PageTitleMenuMove
 TFY_PagePropertyStatement(assign, TFY_PageParam, PageTitleMenu,         menuAnimal)
 //头部视图 default nil
@@ -131,6 +133,8 @@ TFY_PagePropertyStatement(assign, TFY_PageParam, PageMenuPosition,      menuPosi
 TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuTitleOffset)
 //菜单标题字体 default [UIFont 15]
 TFY_PagePropertyStatement(strong, TFY_PageParam, UIFont*,               menuTitleUIFont)
+//左侧按钮文字大小 默认 17
+TFY_PagePropertyStatement(strong, TFY_PageParam, UIFont*,               menuTitleRightUIFont)
 //菜单标题字体 default [UIFont MenuTitleFont+1.5]
 TFY_PagePropertyStatement(strong, TFY_PageParam, UIFont*,               menuTitleSelectUIFont)
 //菜单标题固定宽度 default 文本内容宽度+MenuCellMargin
@@ -139,12 +143,20 @@ TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuTitl
 TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuTitleWeight)
 //菜单字体颜色 default 333333
 TFY_PagePropertyStatement(strong, TFY_PageParam, UIColor*,              menuTitleColor)
+//左侧独立菜单字体颜色 default 333333
+TFY_PagePropertyStatement(strong, TFY_PageParam, UIColor*,              menuTitleRightColor)
 //菜单字体选中颜色 default E5193E
 TFY_PagePropertyStatement(strong, TFY_PageParam, UIColor*,              menuTitleSelectColor)
+//左侧菜单字体选中颜色 default E5193E
+TFY_PagePropertyStatement(strong, TFY_PageParam, UIColor*,              menuTitleSelectRightColor)
 //菜单图文位置 default PageBtnPositionTop
 TFY_PagePropertyStatement(assign, TFY_PageParam, PageBtnPosition,       menuImagePosition)
+//左侧菜单图文位置 default PageBtnPositionTop
+TFY_PagePropertyStatement(assign, TFY_PageParam, PageBtnPosition,       menuImageRightPosition)
 //菜单图文位置间距 default 5
 TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuImageMargin)
+//左侧菜单图文位置间距 default 5
+TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuImageRightMargin)
 //指示器颜色 default E5193E
 TFY_PagePropertyStatement(strong, TFY_PageParam, UIColor*,              menuIndicatorColor)
 //指示器宽度 default 标题宽度+10

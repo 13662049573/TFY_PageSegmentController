@@ -32,9 +32,11 @@ TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuTitleO
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuTitleWidth)
 TFY_PagePropertyImplementation(TFY_PageParam, NSInteger,              menuDefaultIndex)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuTitleColor)
+TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuTitleRightColor)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuCellMargin)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuCellPadding)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuTitleSelectColor)
+TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuTitleSelectRightColor)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuIndicatorColor)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuIndicatorWidth)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuIndicatorHeight)
@@ -44,11 +46,14 @@ TFY_PagePropertyImplementation(TFY_PageParam, NSString*,              menuIndica
 TFY_PagePropertyImplementation(TFY_PageParam, PageBtnPosition,        menuImagePosition)
 TFY_PagePropertyImplementation(TFY_PageParam, PageSpecialType,        menuSpecifial)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuImageMargin)
+TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuImageRightMargin)
+TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuImageRightPosition)
 TFY_PagePropertyImplementation(TFY_PageParam, id,                     menuFixRightData)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuTitleBackground)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuBgColor)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               bgColor)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuFixWidth)
+TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuFixRightWidth)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuCellMarginY)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                topChangeHeight)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuBottomMarginY)
@@ -76,13 +81,14 @@ TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuCircil
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuHeight)
 TFY_PagePropertyImplementation(TFY_PageParam, UIFont*,                menuTitleUIFont)
 TFY_PagePropertyImplementation(TFY_PageParam, UIFont*,                menuTitleSelectUIFont)
+TFY_PagePropertyImplementation(TFY_PageParam, UIFont*,                menuTitleRightUIFont)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuSelectTitleBackground)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuTitleRadios)
 - (instancetype)init{
     if (self = [super init]) {
         self.menuAnimal = PageTitleMenuNone;
-        self.menuTitleColor = PageColor(0x333333);
-        self.menuTitleSelectColor = PageColor(0xE5193E);
+        self.menuTitleRightColor = self.menuTitleColor = PageColor(0x333333);
+        self.menuTitleSelectRightColor = self.menuTitleSelectColor = PageColor(0xE5193E);
         self.menuIndicatorColor = PageColor(0xE5193E);
         self.menuBgColor = PageColor(0xffffff);
         self.menuIndicatorHeight = 3.0f;
@@ -90,11 +96,12 @@ TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuTitleR
         self.menuAnimalTitleGradient = YES;
         self.menuTitleUIFont = [UIFont systemFontOfSize:17.0f];
         self.menuTitleSelectUIFont = [UIFont systemFontOfSize:18.5f];
-        self.menuImagePosition = PageBtnPositionTop;
-        self.menuImageMargin = 5.0f;
+        self.menuTitleRightUIFont = [UIFont systemFontOfSize:17];
+        self.menuImageRightPosition = self.menuImagePosition = PageBtnPositionTop;
+        self.menuImageRightMargin = self.menuImageMargin = 5.0f;
         self.menuCellMargin = 30.0f;
         self.menuCellPadding = 30.0f;
-        self.menuFixWidth = 45.0f;
+        self.menuFixRightWidth = self.menuFixWidth = 45.0f;
         self.menuFixShadow = YES;
         self.fromNavi = YES;
         self.scrollCanTransfer = YES;
