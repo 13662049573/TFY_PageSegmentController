@@ -89,16 +89,13 @@
     
         if (index == 9) {
             param.menuImagePositionSet(PageBtnPositionLeft)
-                 .menuFixRightDataSet(@{@"name":@"金币",@"image":@"B"})
-            .eventFixedClickSet(^(id anyID, NSInteger index) {
+            .menuFixRightDataSet(@[@{@"name":@"金币",@"image":@"B"},@{@"name":@"金币",@"image":@"B"}])
+            .eventFixedClickSet(^(TFY_PageNavBtn *btn, NSInteger index) {
                 NSLog(@"固定标题点击%ld",(long)index);
-                //模拟更新
-                [self.upScHerder.btnArr enumerateObjectsUsingBlock:^(TFY_PageNavBtn*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    if (obj.tag == 10086) {
-                        [obj setTitle:@"更新" forState:UIControlStateNormal];
-                        *stop = YES;
-                    }
-                }];
+                if (index == 10086) {
+                    [btn setTitle:@"ss" forState:UIControlStateNormal];
+                    [btn TagSetImagePosition:PageBtnPositionTop spacing:2];
+                }
             });
         }
     

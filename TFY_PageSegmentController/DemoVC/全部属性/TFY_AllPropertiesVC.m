@@ -119,7 +119,7 @@
         NSLog(@"固定标题点击%ld",index);
     })
     .eventChildVCDidSrollSet(^(UIViewController *pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView *currentScrollView) {
-//           NSLog(@"滚动");
+           NSLog(@"滚动");
     });
  self.param = param;
 }

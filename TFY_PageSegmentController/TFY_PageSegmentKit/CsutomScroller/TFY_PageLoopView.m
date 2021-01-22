@@ -146,7 +146,7 @@
 //固定标题点击
 - (void)fixTap:(TFY_PageNavBtn*)btn{
     if (_fixLastBtn) {
-        if (_fixLastBtn == btn) return;
+//        if (_fixLastBtn != btn) return;
          _fixLastBtn.selected = NO;
     }
     btn.selected = YES;
