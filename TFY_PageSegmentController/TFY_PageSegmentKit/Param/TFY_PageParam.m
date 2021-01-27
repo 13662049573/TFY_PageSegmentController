@@ -47,7 +47,7 @@ TFY_PagePropertyImplementation(TFY_PageParam, PageBtnPosition,        menuImageP
 TFY_PagePropertyImplementation(TFY_PageParam, PageSpecialType,        menuSpecifial)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuImageMargin)
 TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuImageRightMargin)
-TFY_PagePropertyImplementation(TFY_PageParam, CGFloat,                menuImageRightPosition)
+TFY_PagePropertyImplementation(TFY_PageParam, PageBtnPosition,        menuImageRightPosition)
 TFY_PagePropertyImplementation(TFY_PageParam, id,                     menuFixRightData)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuTitleBackground)
 TFY_PagePropertyImplementation(TFY_PageParam, UIColor*,               menuBgColor)
