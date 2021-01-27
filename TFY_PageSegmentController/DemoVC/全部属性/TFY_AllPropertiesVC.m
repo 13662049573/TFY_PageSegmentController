@@ -118,7 +118,7 @@
     .eventFixedClickSet(^(id anyID, NSInteger index) {
         NSLog(@"固定标题点击%ld",index);
     })
-    .eventChildVCDidSrollSet(^(UIViewController *pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView *currentScrollView) {
+    .eventChildVCDidSrollSet(^(UIViewController* pageVC,CGFloat totalH,CGPoint offsetPonit,id currentTabelView) {
            NSLog(@"滚动");
     });
  self.param = param;

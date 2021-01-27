@@ -48,24 +48,24 @@
         [back addSubview:image];
         return back;
     })
-    //导航栏标题透明度变化
-     .eventChildVCDidSrollSet(^(UIViewController *pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView *currentScrollView) {
-          __strong TFY_UsePageVC* strongSelf = weakSelf;
-         if (newPonit.y/(-160) >= 1) {
-             NSLog(@"显示下一个界面");
-         }
-        
-         NSLog(@"---:%.2f------:%.2f",newPonit.y,oldPoint.y);
+    .eventChildVCDidSrollSet(^(UIViewController* pageVC,CGFloat totalH,CGPoint offsetPonit,id currentTabelView){
+        __strong TFY_UsePageVC* strongSelf = weakSelf;
+       if (offsetPonit.y/(-160) >= 1) {
+           NSLog(@"显示下一个界面");
+       }
+      
+       NSLog(@"---:%.2f------:%.2f",offsetPonit.y,totalH);
 
-         [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:newPonit.y/(500+250-2*PageVCNavBarHeight)]}];
-     });
+       [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:offsetPonit.y/(500+250-2*PageVCNavBarHeight)]}];
+    });
+   
     
     //实现tableview的协议
-    self.tableView.dataSource = self;
+    self.upSctableView.dataSource = self;
     self.param = param;
-    self.tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.upSctableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.tableView.mj_header endRefreshing];
+            [weakSelf.upSctableView.mj_header endRefreshing];
         });
     }];
 }

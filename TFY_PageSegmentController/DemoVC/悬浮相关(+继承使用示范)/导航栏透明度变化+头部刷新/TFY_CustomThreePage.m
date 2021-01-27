@@ -48,13 +48,13 @@
         return image;
     })
     //导航栏标题透明度变化
-    .eventChildVCDidSrollSet(^(UIViewController *pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView *currentScrollView) {
+    .eventChildVCDidSrollSet(^(UIViewController* pageVC,CGFloat totalH,CGPoint offsetPonit,id currentTabelView) {
         __strong TFY_CustomThreePage* strongSelf = weakSelf;
-        [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:newPonit.y/(300-PageVCNavBarHeight)]}];
+        [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:offsetPonit.y/(300-PageVCNavBarHeight)]}];
     });
     self.param = param;
     
-    self.tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.upSctableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         __strong TFY_CustomThreePage *strongSelf = weakSelf;
         //模拟更新数据
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -67,7 +67,7 @@
                 });
                 //模拟更新菜单数据
                 [strongSelf updateMenuData];
-                [strongSelf.tableView.mj_header endRefreshing];
+                [strongSelf.upSctableView.mj_header endRefreshing];
             });
         }];
 }

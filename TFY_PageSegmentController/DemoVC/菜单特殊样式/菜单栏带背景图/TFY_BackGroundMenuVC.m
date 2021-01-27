@@ -66,11 +66,11 @@
     });
     
     __weak TFY_BackGroundMenuVC* weakSelf = self;
-    self.tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.upSctableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
           __strong TFY_BackGroundMenuVC *strongSelf = weakSelf;
           //模拟更新数据
           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                  [strongSelf.tableView.mj_header endRefreshing];
+                  [strongSelf.upSctableView.mj_header endRefreshing];
               });
           }];
 }

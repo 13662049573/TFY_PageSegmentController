@@ -44,6 +44,7 @@
 @implementation TFY_PageBaseController
 
 - (void)viewDidLoad{
+    self.topheightsuction = 0;
     self.view.backgroundColor = [UIColor whiteColor];
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -235,23 +236,23 @@
 
     //全屏
     if (self.navigationController) {
-        for (UIGestureRecognizer *gestureRecognizer in self.tableView.gestureRecognizers) {
+        for (UIGestureRecognizer *gestureRecognizer in self.upSctableView.gestureRecognizers) {
              [gestureRecognizer requireGestureRecognizerToFail:self.navigationController.interactivePopGestureRecognizer];
         }
     }
     
-    self.tableView.delegate = self;
-    self.tableView.bounces = self.param.bounces;
-    self.tableView.frame = CGRectMake(0, headY, self.view.frame.size.width, self.view.frame.size.height-headY-tabbarHeight);
-    self.tableView.canScroll = [self canTopSuspension];
-    self.tableView.scrollEnabled = [self canTopSuspension];
-    self.tableView.fromNavi = self.param.fromNavi;
-    [self.view addSubview:self.tableView];
+    self.upSctableView.delegate = self;
+    self.upSctableView.bounces = self.param.bounces;
+    self.upSctableView.frame = CGRectMake(0, headY, self.view.frame.size.width, self.view.frame.size.height-headY-tabbarHeight);
+    self.upSctableView.canScroll = [self canTopSuspension];
+    self.upSctableView.scrollEnabled = [self canTopSuspension];
+    self.upSctableView.fromNavi = self.param.fromNavi;
+    [self.view addSubview:self.upSctableView];
     
    //滚动和菜单视图
     self.upScHerder = [[TFY_PageLoopView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) param:self.param];
     self.upScHerder.loopDelegate = self;
-    self.tableView.tableFooterView = self.upScHerder;
+    self.upSctableView.tableFooterView = self.upScHerder;
     if (nest) {
         TFY_PageBaseController *superVC = (TFY_PageBaseController*)self.parentViewController;
         self.upScHerder.dataView.level = superVC.upScHerder.dataView.level - 1;
@@ -266,8 +267,8 @@
     self.canScroll = YES;
     self.scrolToBottom = YES;
     
-    [self.tableView reloadData];
-    [self.tableView layoutIfNeeded];
+    [self.upSctableView reloadData];
+    [self.upSctableView layoutIfNeeded];
     
     [self selectMenuWithIndex:self.param.menuDefaultIndex];
     
@@ -279,17 +280,17 @@
     CGFloat titleMenuhHeight = self.upScHerder.mainView.frame.size.height + self.param.menuCellMarginY;
     if (self.param.menuPosition == PageMenuPositionNavi) {
         sonChildVCY = 0;
-        sonChildVCHeight = self.tableView.frame.size.height;
+        sonChildVCHeight = self.upSctableView.frame.size.height;
     }else if (self.param.menuPosition == PageMenuPositionBottom) {
         sonChildVCY = 0;
         if (self.param.menuSpecifial == PageSpecialTypeOne) {
-            sonChildVCHeight = self.tableView.frame.size.height;
+            sonChildVCHeight = self.upSctableView.frame.size.height;
         }else{
-            sonChildVCHeight = self.tableView.frame.size.height - titleMenuhHeight;
+            sonChildVCHeight = self.upSctableView.frame.size.height - titleMenuhHeight;
         }
     }else{
         sonChildVCY = 0;
-        sonChildVCHeight = self.tableView.frame.size.height - titleMenuhHeight;
+        sonChildVCHeight = self.upSctableView.frame.size.height - titleMenuhHeight;
     }
 
     CGFloat height = [self canTopSuspension]?sonChildVCHeight :(sonChildVCHeight-self.headHeight);
@@ -342,7 +343,7 @@
         [self.upScHerder page_height:CGRectGetMaxY(self.upScHerder.dataView.frame)];
     }
     self.param.titleHeight = self.upScHerder.mainView.frame.size.height + self.param.menuCellMarginY + self.param.menuBottomMarginY;
-    self.tableView.menuTitleHeight = self.param.titleHeight;
+    self.upSctableView.menuTitleHeight = self.param.titleHeight;
     pageDataFrame = self.upScHerder.dataView.frame;
     pageUpScFrame = self.upScHerder.frame;
 }
@@ -354,9 +355,9 @@
        self.param.menuPosition != PageMenuPositionBottom) {
        self.headView = self.param.menuHeadView();
        self.headView.frame = CGRectMake(self.headView.frame.origin.x,  0, self.headView.frame.size.width, self.headView.frame.size.height);
-        self.tableView.tableHeaderView = self.headView;
+        self.upSctableView.tableHeaderView = self.headView;
     }else{
-        self.tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake( 0, 0,self.view.frame.size.width, 0.01)];
+        self.upSctableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake( 0, 0,self.view.frame.size.width, 0.01)];
     }
     if (self.param.insertHeadAndMenuBg) {
         self.head_MenuView = [UIView new];
@@ -365,8 +366,8 @@
     //全景
     if (self.head_MenuView) {
         self.head_MenuView.frame = CGRectMake(0, self.headView?CGRectGetMinX(self.headView.frame):CGRectGetMinX(self.upScHerder.frame), self.upScHerder.frame.size.width, CGRectGetMaxY(self.upScHerder.frame)-self.upScHerder.dataView.frame.size.height);
-        [self.tableView addSubview:self.head_MenuView];
-        [self.tableView sendSubviewToBack:self.head_MenuView];
+        [self.upSctableView addSubview:self.head_MenuView];
+        [self.upSctableView sendSubviewToBack:self.head_MenuView];
         self.upScHerder.backgroundColor = [UIColor clearColor];
         self.upScHerder.mainView.backgroundColor = [UIColor clearColor];
         for (TFY_PageNavBtn *btn in self.upScHerder.btnArr) {
@@ -381,17 +382,17 @@
 //底部滚动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    if (scrollView!=self.tableView) return;
+    if (scrollView!=self.upSctableView) return;
     if (![self canTopSuspension]) return;
     //偏移量
     float yOffset  = scrollView.contentOffset.y;
     //顶点
-    int topOffset = scrollView.contentSize.height - scrollView.frame.size.height;
+    int topOffset = scrollView.contentSize.height - scrollView.frame.size.height - self.topheightsuction;
     if (yOffset<=0) {
           self.scrolToBottom = YES;
     }else{
           if (yOffset >= topOffset) {
-              scrollView.contentOffset = CGPointMake(self.tableView.contentOffset.x, topOffset);
+              scrollView.contentOffset = CGPointMake(self.upSctableView.contentOffset.x, topOffset);
               self.scrolTotop = YES;
           }else{
               self.scrolTotop = NO;
@@ -413,7 +414,7 @@
         }
     }
     if (![self currentNotSuspennsion]) {
-        [self.tableView setContentOffset:CGPointMake(0, topOffset) animated:NO];
+        [self.upSctableView setContentOffset:CGPointMake(0, topOffset) animated:NO];
     }
     CGFloat delta = scrollView.contentOffset.y/topOffset;
     if (delta>1) {
@@ -434,7 +435,7 @@
         }
     }
     if (self.param.eventChildVCDidSroll) {
-        self.param.eventChildVCDidSroll(self,self.tableView.contentOffset, self.tableView.contentOffset, self.tableView);
+        self.param.eventChildVCDidSroll(self,topOffset, self.upSctableView.contentOffset, self.upSctableView);
     }
     //防止第一次加载不成功
     if (self.currentFootView&&
@@ -513,8 +514,8 @@
             }
         }
         if (![self currentNotSuspennsion]) {
-            int topOffset = self.tableView.contentSize.height - self.tableView.frame.size.height;
-            [self.tableView setContentOffset:CGPointMake(0, topOffset) animated:YES];
+            int topOffset = self.upSctableView.contentSize.height - self.upSctableView.frame.size.height - self.topheightsuction;
+            [self.upSctableView setContentOffset:CGPointMake(0, topOffset) animated:YES];
         }
     }else{
         self.currentScroll = nil;
@@ -598,10 +599,10 @@
         if (newH.y==newOld.y)  return;
         if (!self.sonCanScroll&&!self.scrolToBottom) {
             self.currentScroll.contentOffset = CGPointZero;
-            self.tableView.showsVerticalScrollIndicator = NO;
+            self.upSctableView.showsVerticalScrollIndicator = NO;
             self.currentScroll.showsVerticalScrollIndicator = NO;
         }else{
-            self.tableView.showsVerticalScrollIndicator = NO;
+            self.upSctableView.showsVerticalScrollIndicator = NO;
             self.currentScroll.showsVerticalScrollIndicator = NO;
         }
         [self changeMenuFrame];
@@ -644,8 +645,8 @@
 - (void)updatePageController{
     [self removeKVO];
     [self.upScHerder removeFromSuperview];
-    [self.tableView removeFromSuperview];
-    self.tableView = nil;
+    [self.upSctableView removeFromSuperview];
+    self.upSctableView = nil;
     [self.sonChildScrollerViewDic removeAllObjects];
     [self.sonChildFooterViewDic removeAllObjects];
     self.sonChildScrollerViewDic = [NSMutableDictionary new];
@@ -683,11 +684,11 @@
 - (void)downScrollViewSetOffset:(CGPoint)point animated:(BOOL)animat;{
     if (CGPointEqualToPoint(point, CGPointZero)) {
         //顶点
-        int topOffset = self.tableView.contentSize.height - self.tableView.frame.size.height;
-        point = CGPointMake(self.tableView.contentOffset.x, topOffset);
+        int topOffset = self.upSctableView.contentSize.height - self.upSctableView.frame.size.height - self.topheightsuction;
+        point = CGPointMake(self.upSctableView.contentOffset.x, topOffset);
         self.scrolTotop = YES;
     }
-    [self.tableView setContentOffset:point animated:animat];
+    [self.upSctableView setContentOffset:point animated:animat];
 }
 
 //动态插入菜单数组
@@ -903,15 +904,15 @@
     }
     return _sonChildFooterViewDic;
 }
-- (TFY_PageTableView *)tableView{
-    if (!_tableView) {
-        _tableView = [[TFY_PageTableView alloc]initWithFrame:CGRectMake(0, 0, PageVCWidth, PageVCHeight) style:UITableViewStyleGrouped];
+- (TFY_PageTableView *)upSctableView{
+    if (!_upSctableView) {
+        _upSctableView = [[TFY_PageTableView alloc]initWithFrame:CGRectMake(0, 0, PageVCWidth, PageVCHeight) style:UITableViewStyleGrouped];
     }
-    return _tableView;
+    return _upSctableView;
 }
 - (CGFloat)footViewOrginY{
     if (!_footViewOrginY) {
-        _footViewOrginY = CGRectGetMaxY(self.tableView.frame)-self.currentFootView.frame.size.height;
+        _footViewOrginY = CGRectGetMaxY(self.upSctableView.frame)-self.currentFootView.frame.size.height;
     }
     return _footViewOrginY;
 }

@@ -188,7 +188,7 @@ typedef void (^PageVCChangeBlock)(UIViewController* oldVC,UIViewController *newV
 /*
  * 子控制器滚动
  */
-typedef void (^PageChildVCScroll)(UIViewController* pageVC,CGPoint oldPoint,CGPoint newPonit,UIScrollView *currentScrollView);
+typedef void (^PageChildVCScroll)(UIViewController* pageVC,CGFloat totalH,CGPoint offsetPonit,id currentTabelView);
 
 /*
  * 头视图

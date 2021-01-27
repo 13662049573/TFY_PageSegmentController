@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 //头部标题滚动视图
 @property(nonatomic,strong)TFY_PageLoopView *_Nullable upScHerder;
 //底部全屏滚动视图
-@property(nonatomic,strong,nullable)TFY_PageTableView *tableView;
+@property(nonatomic,strong,nullable)TFY_PageTableView * upSctableView;
 //缓存
 @property(nonatomic,strong)NSMutableDictionary *_Nonnull cache;
 //子控制器中可以滚动的视图
@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)CGFloat footViewSizeWidth;
 //子控制器固定底部y值 default 最底部-height
 @property(nonatomic,assign)CGFloat footViewOrginY;
+//这里独立设置吸顶
+@property(nonatomic, assign)CGFloat topheightsuction;
 //透明视图
 @property (nonatomic, strong) UIView *_Nullable naviBarBackGround;
 /**
