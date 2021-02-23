@@ -250,9 +250,12 @@
     [self.view addSubview:self.upSctableView];
     
    //滚动和菜单视图
-    self.upScHerder = [[TFY_PageLoopView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) param:self.param];
-    self.upScHerder.loopDelegate = self;
-    self.upSctableView.tableFooterView = self.upScHerder;
+    if (self.param.titleArr.count>0) {
+        self.upScHerder = [[TFY_PageLoopView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) param:self.param];
+        self.upScHerder.loopDelegate = self;
+        self.upSctableView.tableFooterView = self.upScHerder;
+    }
+    
     if (nest) {
         TFY_PageBaseController *superVC = (TFY_PageBaseController*)self.parentViewController;
         self.upScHerder.dataView.level = superVC.upScHerder.dataView.level - 1;
@@ -262,7 +265,10 @@
         self.param.customMenuTitle(self.upScHerder.btnArr);
     }
     //底部
-    [self setUpMenuAndDataViewFrame];
+    
+    if (self.param.titleArr.count>0) {
+        [self setUpMenuAndDataViewFrame];
+    }
     [self setUpHead];
     self.canScroll = YES;
     self.scrolToBottom = YES;
@@ -381,7 +387,8 @@
 
 //底部滚动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+    if (self.param.titleArr.count > 0) {
+        
     if (scrollView!=self.upSctableView) return;
     if (![self canTopSuspension]) return;
     //偏移量
@@ -442,6 +449,7 @@
         self.currentFootView.frame.origin.y!=
         self.footViewOrginY) {
         [self.currentFootView page_y:self.footViewOrginY];
+    }
     }
 }
 
@@ -875,9 +883,9 @@
        ||self.param.menuPosition == PageMenuPositionNavi){
           return NO;
     }
-    if (!self.param.titleArr.count) {
-        return NO;
-    }
+//    if (!self.param.titleArr.count) {
+//        return NO;
+//    }
     return YES;
 }
 //某个子控制不悬浮
