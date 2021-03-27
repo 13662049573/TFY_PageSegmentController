@@ -243,7 +243,7 @@
     
     self.upSctableView.delegate = self;
     self.upSctableView.bounces = self.param.bounces;
-    self.upSctableView.frame = CGRectMake(0, headY, self.view.frame.size.width, self.view.frame.size.height-headY-tabbarHeight);
+    self.upSctableView.frame = CGRectMake(0, headY, PageVCWidth, PageVCHeight - headY - tabbarHeight);
     self.upSctableView.canScroll = [self canTopSuspension];
     self.upSctableView.scrollEnabled = [self canTopSuspension];
     self.upSctableView.fromNavi = self.param.fromNavi;
@@ -251,7 +251,7 @@
     
    //滚动和菜单视图
     if (self.param.titleArr.count>0) {
-        self.upScHerder = [[TFY_PageLoopView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) param:self.param];
+        self.upScHerder = [[TFY_PageLoopView alloc]initWithFrame:CGRectMake(0, 0, PageVCWidth,PageVCHeight) param:self.param];
         self.upScHerder.loopDelegate = self;
         self.upSctableView.tableFooterView = self.upScHerder;
     }
@@ -283,20 +283,20 @@
 - (void)setUpMenuAndDataViewFrame{
     sonChildVCY = 0;
     sonChildVCHeight = 0;
-    CGFloat titleMenuhHeight = self.upScHerder.mainView.frame.size.height + self.param.menuCellMarginY;
+    CGFloat titleMenuhHeight = CGRectGetHeight(self.upScHerder.mainView.frame) + self.param.menuCellMarginY;
     if (self.param.menuPosition == PageMenuPositionNavi) {
         sonChildVCY = 0;
-        sonChildVCHeight = self.upSctableView.frame.size.height;
+        sonChildVCHeight = CGRectGetHeight(self.upSctableView.frame);
     }else if (self.param.menuPosition == PageMenuPositionBottom) {
         sonChildVCY = 0;
         if (self.param.menuSpecifial == PageSpecialTypeOne) {
-            sonChildVCHeight = self.upSctableView.frame.size.height;
+            sonChildVCHeight = CGRectGetHeight(self.upSctableView.frame);
         }else{
-            sonChildVCHeight = self.upSctableView.frame.size.height - titleMenuhHeight;
+            sonChildVCHeight = CGRectGetHeight(self.upSctableView.frame) - titleMenuhHeight;
         }
     }else{
         sonChildVCY = 0;
-        sonChildVCHeight = self.upSctableView.frame.size.height - titleMenuhHeight;
+        sonChildVCHeight = CGRectGetHeight(self.upSctableView.frame) - titleMenuhHeight;
     }
 
     CGFloat height = [self canTopSuspension]?sonChildVCHeight :(sonChildVCHeight-self.headHeight);
@@ -348,7 +348,7 @@
         [self.upScHerder.dataView page_height:sonChildVCHeight];
         [self.upScHerder page_height:CGRectGetMaxY(self.upScHerder.dataView.frame)];
     }
-    self.param.titleHeight = self.upScHerder.mainView.frame.size.height + self.param.menuCellMarginY + self.param.menuBottomMarginY;
+    self.param.titleHeight = CGRectGetHeight(self.upScHerder.mainView.frame) + self.param.menuCellMarginY + self.param.menuBottomMarginY;
     self.upSctableView.menuTitleHeight = self.param.titleHeight;
     pageDataFrame = self.upScHerder.dataView.frame;
     pageUpScFrame = self.upScHerder.frame;
@@ -360,10 +360,10 @@
        self.param.menuPosition != PageMenuPositionNavi&&
        self.param.menuPosition != PageMenuPositionBottom) {
        self.headView = self.param.menuHeadView();
-       self.headView.frame = CGRectMake(self.headView.frame.origin.x,  0, self.headView.frame.size.width, self.headView.frame.size.height);
+       self.headView.frame = CGRectMake(CGRectGetMaxX(self.headView.frame),  0, CGRectGetWidth(self.headView.frame), CGRectGetHeight(self.headView.frame));
         self.upSctableView.tableHeaderView = self.headView;
     }else{
-        self.upSctableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake( 0, 0,self.view.frame.size.width, 0.01)];
+        self.upSctableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,PageVCWidth, 0.01)];
     }
     if (self.param.insertHeadAndMenuBg) {
         self.head_MenuView = [UIView new];
@@ -371,7 +371,7 @@
     }
     //全景
     if (self.head_MenuView) {
-        self.head_MenuView.frame = CGRectMake(0, self.headView?CGRectGetMinX(self.headView.frame):CGRectGetMinX(self.upScHerder.frame), self.upScHerder.frame.size.width, CGRectGetMaxY(self.upScHerder.frame)-self.upScHerder.dataView.frame.size.height);
+        self.head_MenuView.frame = CGRectMake(0, self.headView?CGRectGetMinX(self.headView.frame):CGRectGetMinX(self.upScHerder.frame), CGRectGetWidth(self.upScHerder.frame), CGRectGetMaxY(self.upScHerder.frame) - CGRectGetHeight(self.upScHerder.dataView.frame));
         [self.upSctableView addSubview:self.head_MenuView];
         [self.upSctableView sendSubviewToBack:self.head_MenuView];
         self.upScHerder.backgroundColor = [UIColor clearColor];
@@ -394,7 +394,7 @@
     //偏移量
     float yOffset  = scrollView.contentOffset.y;
     //顶点
-    int topOffset = scrollView.contentSize.height - scrollView.frame.size.height - self.topheightsuction;
+    int topOffset = scrollView.contentSize.height - CGRectGetHeight(scrollView.frame) - self.topheightsuction;
     if (yOffset<=0) {
           self.scrolToBottom = YES;
     }else{
@@ -408,7 +408,7 @@
       }
     if (self.scrolTotop) {
         self.sonCanScroll = YES;
-        if (self.currentScroll.contentSize.height<=self.currentScroll.frame.size.height) {
+        if (self.currentScroll.contentSize.height <= CGRectGetHeight(self.currentScroll.frame)) {
             self.canScroll = YES;
         }else{
             self.canScroll = NO;
@@ -458,12 +458,12 @@
 //改变菜单栏高度
 - (void)changeMenuFrame{
     if (!self.param.topChangeHeight) return;
-    if (self.upScHerder.mainView.frame.size.height == self.param.titleHeight&&!self.sonCanScroll)return;
-    CGFloat offsetHeight = self.param.topChangeHeight>0?MIN(self.currentScroll.contentOffset.y, self.param.topChangeHeight):MAX (-self.currentScroll.contentOffset.y, self.param.topChangeHeight);
-    if (self.upScHerder.mainView.frame.size.height == (self.param.titleHeight-self.param.topChangeHeight)&&self.sonCanScroll&&offsetHeight == self.param.topChangeHeight)  return;
-    [self.upScHerder.mainView page_height:self.param.titleHeight-offsetHeight];
+    if (CGRectGetHeight(self.upScHerder.mainView.frame) == self.param.titleHeight&&!self.sonCanScroll)return;
+    CGFloat offsetHeight = self.param.topChangeHeight > 0?MIN(self.currentScroll.contentOffset.y, self.param.topChangeHeight):MAX (-self.currentScroll.contentOffset.y, self.param.topChangeHeight);
+    if (CGRectGetHeight(self.upScHerder.mainView.frame) == (self.param.titleHeight-self.param.topChangeHeight)&&self.sonCanScroll&&offsetHeight == self.param.topChangeHeight)  return;
+    [self.upScHerder.mainView page_height:self.param.titleHeight - offsetHeight];
     [self.upScHerder.dataView page_y:CGRectGetMaxY(self.upScHerder.mainView.frame)];
-    [self.upScHerder.dataView page_height:pageDataFrame.size.height+offsetHeight];
+    [self.upScHerder.dataView page_height:pageDataFrame.size.height + offsetHeight];
     if (offsetHeight == 0) {
         if (self.param.eventMenuNormalHeight) {
             self.param.eventMenuNormalHeight(self.upScHerder.btnArr);
@@ -475,8 +475,8 @@
     }
      if (self.param.menuAnimal == PageTitleMenuAiQY||self.param.menuAnimal == PageTitleMenuPDD){
         CGRect rect = self.upScHerder.lineView.frame;
-        if (rect.origin.y != ([self.upScHerder.mainView getMainHeight]-self.param.menuIndicatorY-rect.size.height/2)) {
-            rect.origin.y = [self.upScHerder.mainView getMainHeight]-self.param.menuIndicatorY-rect.size.height/2;
+        if (rect.origin.y != ([self.upScHerder.mainView getMainHeight]-self.param.menuIndicatorY - rect.size.height/2)) {
+            rect.origin.y = [self.upScHerder.mainView getMainHeight]-self.param.menuIndicatorY - rect.size.height/2;
         }
         self.upScHerder.lineView.frame = rect;
     }
@@ -524,7 +524,7 @@
             }
         }
         if (![self currentNotSuspennsion]) {
-            int topOffset = self.upSctableView.contentSize.height - self.upSctableView.frame.size.height - self.topheightsuction;
+            int topOffset = self.upSctableView.contentSize.height - CGRectGetHeight(self.upSctableView.frame) - self.topheightsuction;
             [self.upSctableView setContentOffset:CGPointMake(0, topOffset) animated:YES];
         }
     }else{
@@ -555,24 +555,24 @@
 
 //底部左滑滚动
 - (void)pageWithScrollView:(UIScrollView*)scrollView left:(BOOL)left{
-    int offset = (int)scrollView.contentOffset.x%(int)self.upScHerder.frame.size.width;
-    NSInteger index = floor(scrollView.contentOffset.x/self.upScHerder.frame.size.width);
+    int offset = (int)scrollView.contentOffset.x%(int)CGRectGetWidth(self.upScHerder.frame);
+    NSInteger index = floor(scrollView.contentOffset.x/CGRectGetWidth(self.upScHerder.frame));
     if (self.currentFootView) {
         int x = 0;
         CGFloat width = self.footViewSizeWidth;
         if (left) {
-            if (scrollView.contentOffset.x>(self.upScHerder.frame.size.width*footerViewIndex)) {
+            if (scrollView.contentOffset.x > (CGRectGetWidth(self.upScHerder.frame) * footerViewIndex)) {
                 x = 0;
                 width -= offset;
             }else{
-                x = (int)self.upScHerder.frame.size.width - offset;
+                x = (int)CGRectGetWidth(self.upScHerder.frame) - offset;
             }
         }else{
-            if (scrollView.contentOffset.x>(self.upScHerder.frame.size.width*footerViewIndex)) {
+            if (scrollView.contentOffset.x>(CGRectGetWidth(self.upScHerder.frame) * footerViewIndex)) {
                x = 0;
                width -= offset;
             }else{
-               x = (int)self.upScHerder.frame.size.width - offset;
+               x = (int)CGRectGetWidth(self.upScHerder.frame) - offset;
             }
         }
         if (offset == 0 && [self.sonChildFooterViewDic objectForKey:@(index)]) {
@@ -694,7 +694,7 @@
 - (void)downScrollViewSetOffset:(CGPoint)point animated:(BOOL)animat;{
     if (CGPointEqualToPoint(point, CGPointZero)) {
         //顶点
-        int topOffset = self.upSctableView.contentSize.height - self.upSctableView.frame.size.height - self.topheightsuction;
+        int topOffset = self.upSctableView.contentSize.height - CGRectGetHeight(self.upSctableView.frame) - self.topheightsuction;
         point = CGPointMake(self.upSctableView.contentOffset.x, topOffset);
         self.scrolTotop = YES;
     }
@@ -751,9 +751,9 @@
     [self.upScHerder.mainView setPropertiesWithBtn:btn withIndex:index withTemp:temp];
     for (int i = 0; i<self.upScHerder.dataView.subviews.count; i++) {
         UIView *view = self.upScHerder.dataView.subviews[i];
-        CGFloat x = index*self.upScHerder.dataView.frame.size.width;
-        if (view.frame.origin.x>=x) {
-            [view page_x:view.frame.origin.x + self.upScHerder.dataView.frame.size.width];
+        CGFloat x = index * CGRectGetWidth(self.upScHerder.dataView.frame);
+        if (view.frame.origin.x >= x) {
+            [view page_x:view.frame.origin.x + CGRectGetWidth(self.upScHerder.dataView.frame)];
         }
     }
     TFY_PageNavBtn *currentBtn = nil;
@@ -778,7 +778,7 @@
     }];
     self.cache = [NSMutableDictionary dictionaryWithDictionary:mdic];
     if (self.upScHerder.currentTitleIndex >= index) {
-        self.upScHerder.dataView.contentOffset = CGPointMake(self.upScHerder.dataView.contentOffset.x + self.upScHerder.dataView.frame.size.width, 0);
+        self.upScHerder.dataView.contentOffset = CGPointMake(self.upScHerder.dataView.contentOffset.x + CGRectGetWidth(self.upScHerder.dataView.frame), 0);
         self.upScHerder.currentTitleIndex+=1;
     }
     
@@ -838,9 +838,9 @@
     }
     for (int i = 0; i<self.upScHerder.dataView.subviews.count; i++) {
         UIView *view = self.upScHerder.dataView.subviews[i];
-        CGFloat x = index*self.upScHerder.dataView.frame.size.width;
+        CGFloat x = index * CGRectGetWidth(self.upScHerder.dataView.frame);
         if (view.frame.origin.x>x) {
-            [view page_x:view.frame.origin.x - self.upScHerder.dataView.frame.size.width];
+            [view page_x:view.frame.origin.x - CGRectGetWidth(self.upScHerder.dataView.frame)];
         }
     }
     TFY_PageNavBtn *temp = nil;
@@ -870,7 +870,7 @@
             }
         }];
         self.cache = [NSMutableDictionary dictionaryWithDictionary:mdic];
-        self.upScHerder.dataView.contentOffset = CGPointMake(MAX(0, self.upScHerder.dataView.contentOffset.x - self.upScHerder.dataView.frame.size.width) , 0);
+        self.upScHerder.dataView.contentOffset = CGPointMake(MAX(0, self.upScHerder.dataView.contentOffset.x - CGRectGetWidth( self.upScHerder.dataView.frame)) , 0);
     }
     return YES;
 }

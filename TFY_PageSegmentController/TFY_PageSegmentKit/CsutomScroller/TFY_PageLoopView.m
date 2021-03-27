@@ -55,7 +55,7 @@
     //视图层
     [self addSubview:self.dataView];
     self.dataView.scrollEnabled = self.param.scrollCanTransfer;
-    self.dataView.contentSize = CGSizeMake(self.param.titleArr.count*PageVCWidth,0);
+    self.dataView.contentSize = CGSizeMake(self.param.titleArr.count * PageVCWidth,0);
     self.dataView.delegate = self;
     self.dataView.totalCount = self.param.titleArr.count;
 
@@ -63,14 +63,14 @@
     if (self.param.insertMenuLine) {
         self.bottomView = [UIView new];
         self.bottomView.backgroundColor = PageColor(0x999999);
-        self.bottomView.frame = CGRectMake(0, self.mainView.frame.size.height-PageK1px, self.mainView.frame.size.width, PageK1px);
+        self.bottomView.frame = CGRectMake(0, CGRectGetHeight(self.mainView.frame) - PageK1px, CGRectGetWidth(self.mainView.frame), PageK1px);
         self.param.insertMenuLine(self.bottomView);
     }
     if (self.bottomView) {
         CGRect lineRect = self.bottomView.frame;
-        lineRect.origin.y = self.mainView.frame.size.height- lineRect.size.height;
+        lineRect.origin.y = CGRectGetHeight(self.mainView.frame) - lineRect.size.height;
         if (!lineRect.size.width) {
-            lineRect.size.width = self.mainView.frame.size.width;
+            lineRect.size.width = CGRectGetWidth(self.mainView.frame);
         }
         self.bottomView.frame = lineRect;
         [self addSubview:self.bottomView];
@@ -78,14 +78,13 @@
     //布局frame
     if (self.param.menuPosition == PageMenuPositionBottom) {
         CGRect rect = self.frame;
-        rect.origin.y -= self.frame.size.height;
+        rect.origin.y -= CGRectGetHeight(self.frame);
         if (PageIsIphoneX) {
-            rect.size.height+=15;
-            rect.origin.y-=15;
+            rect.size.height += 15;
+            rect.origin.y -= 15;
         }
         self.frame = rect;
     }
-    
     
     if (!self.param.menuIndicatorY) {
         self.param.menuIndicatorY = 5;
@@ -164,7 +163,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView != self.dataView) return;
     if (![scrollView isDecelerating]&&![scrollView isDragging]) return;
-    if (scrollView.contentOffset.x>0 &&scrollView.contentOffset.x<=self.param.titleArr.count*PageVCWidth ) {
+    if (scrollView.contentOffset.x>0 &&scrollView.contentOffset.x <= self.param.titleArr.count * PageVCWidth) {
          [self lifeCycleManage:scrollView];
          [self animalAction:scrollView lastContrnOffset:lastContentOffset];
     }
@@ -307,15 +306,15 @@
     if (!newVC) return;
     if (![[self findBelongViewControllerForView:self].childViewControllers containsObject:newVC]) {
         [[self findBelongViewControllerForView:self] addChildViewController:newVC];
-        CGRect frame = CGRectMake(index * self.dataView.frame.size.width,0,self.dataView.frame.size.width,
-                                  self.dataView.frame.size.height);
+        CGRect frame = CGRectMake(index * CGRectGetWidth(self.dataView.frame),0,CGRectGetWidth(self.dataView.frame),
+                                  CGRectGetHeight(self.dataView.frame));
         newVC.view.frame = frame;
         [self.dataView addSubview:newVC.view];
         [newVC didMoveToParentViewController:[self findBelongViewControllerForView:self]];
         [[self findBelongViewControllerForView:self].cache setObject:newVC forKey:@(index)];
     }
 }
-- (void)endAppearanceTransitionWithIndex:(NSInteger)index withOldIndex:(NSInteger)old  isFlag:(BOOL)flag{
+- (void)endAppearanceTransitionWithIndex:(NSInteger)index withOldIndex:(NSInteger)old isFlag:(BOOL)flag{
     UIViewController *newVC = [self getVCWithIndex:index];
     UIViewController *oldVC = [self getVCWithIndex:old];
     
@@ -466,7 +465,7 @@
         }
     return nil;
 }
-- (TFY_PageMunuView *)mainView{
+- (TFY_PageMunuView *)mainView {
     if (!_mainView) {
         _mainView = [TFY_PageMunuView new];
     }
@@ -474,7 +473,7 @@
 }
 - (TFY_PageScrollerView *)dataView{
     if (!_dataView) {
-        _dataView = [[TFY_PageScrollerView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.mainView.frame),self.bounds.size.width, 0)];
+        _dataView = [[TFY_PageScrollerView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.mainView.frame),CGRectGetWidth(self.frame), 0)];
     }
     return _dataView;
 }
