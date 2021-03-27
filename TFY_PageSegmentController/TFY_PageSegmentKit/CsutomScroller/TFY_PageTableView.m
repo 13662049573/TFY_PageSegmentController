@@ -40,6 +40,16 @@
     CGRect containRect = CGRectMake(0, self.contentSize.height - segmentViewContentScrollViewHeight, PageVCWidth, segmentViewContentScrollViewHeight);
     if (CGRectContainsPoint(containRect, currentPoint) ) {
         return YES;
+    } else {
+        if ([otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]
+            && [otherGestureRecognizer.view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView *scrollView = (UIScrollView *)otherGestureRecognizer.view;
+            // 解决scrollView横向滚动不能与其他scrollView纵向滚动互斥的问题
+            if (fabs(scrollView.contentOffset.x) > 0 && fabs(scrollView.contentOffset.y) == 0) { // 横向滚动
+                return NO;
+            }
+            return YES;
+        }
     }
     return NO;
 }

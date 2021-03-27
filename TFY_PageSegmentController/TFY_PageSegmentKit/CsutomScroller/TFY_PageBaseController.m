@@ -453,6 +453,8 @@
     }
 }
 
+
+
 //改变菜单栏高度
 - (void)changeMenuFrame{
     if (!self.param.topChangeHeight) return;
@@ -883,9 +885,9 @@
        ||self.param.menuPosition == PageMenuPositionNavi){
           return NO;
     }
-//    if (!self.param.titleArr.count) {
-//        return NO;
-//    }
+    if (!self.param.titleArr.count) {
+        return NO;
+    }
     return YES;
 }
 //某个子控制不悬浮

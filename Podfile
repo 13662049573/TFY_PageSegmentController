@@ -6,7 +6,8 @@ target 'TFY_PageSegmentController' do
   pod 'TFY_BannerscrollKit'
   pod 'SDWebImage'
   pod 'MJRefresh'
-
+  pod 'Masonry'
+  
   target 'TFY_PageSegmentControllerTests' do
     inherit! :search_paths
     # Pods for testing

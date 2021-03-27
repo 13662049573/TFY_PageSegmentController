@@ -6,7 +6,7 @@
 //
 
 #import "TFY_TopSuspensionVC.h"
-
+#import <Masonry/Masonry.h>
 @interface TFY_TopSuspensionVC ()<UITableViewDelegate,UITableViewDataSource,TFY_PageProtocol>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray *bannerData;
@@ -22,7 +22,13 @@
     UITableView *ta = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     [self.view addSubview:ta];
     
-    ta.estimatedRowHeight = 100;
+    [ta mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self.view).offset(0);
+        make.bottom.equalTo(self.view).offset(-PageVCTabBarHeight);
+    }];
+    
+    
+//    ta.estimatedRowHeight = 100;
     if (@available(iOS 11.0, *)) {
        ta.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
@@ -79,7 +85,7 @@
     return 0.01;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 15;
+    return 5;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];

@@ -28,6 +28,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.customView];
+    
+    self.topheightsuction =  (2*PageVCStatusBarHeight-(PageIsIphoneX?44:0));
      //标题数组
     NSArray *data = @[@"热门",@{@"name":@"男装",@"onlyClick":@(YES)},
                       @"美妆",@"手机",@"食品",@"电器",@"鞋包",@"百货",@"女装",@"汽车",@"电脑"];
@@ -42,29 +45,27 @@
     .titleArrSet(data)
     .menuAnimalSet(PageTitleMenuPDD)
     .menuDefaultIndexSet(3)
-    //调整顶部悬浮的位置 可调到悬浮至状态栏的位置
-    .customNaviBarYSet(^CGFloat(CGFloat nowY) {
-       return PageVCNavBarHeight;
-     })
-    //调整距离底部的位置
-     .customTabbarYSet(^CGFloat(CGFloat nowY) {
-         return nowY;
-     })
-    // 正常的话是会悬浮到状态栏那里，改变这里减掉一部分就会自动悬浮到自定义导航栏那里)
-    .customDataViewHeightSet(^CGFloat(CGFloat nowY) {
-        return nowY + PageVCStatusBarHeight;
-    })
     //悬浮开启
     .topSuspensionSet(YES)
+    //顶部可下拉
     .bouncesSet(YES)
-    //No为从自定义导航栏顶部开始 yes为从自定义导航栏底部开始
-    .fromNaviSet(YES);
+    //头视图y坐标从导航栏开始
+    .fromNaviSet(NO)
+    .menuHeadViewSet(^UIView *{ //头部容器
+        UIView *nav = [[UIView alloc] initWithFrame:CGRectMake(0, 0, PageVCWidth, PageVCNavBarHeight)];
+        nav.backgroundColor = UIColor.orangeColor;
+        return nav;
+    })
+    .eventChildVCDidSrollSet(^(UIViewController* pageVC,CGFloat totalH,CGPoint offsetPonit,id currentTabelView) { //导航栏标题透明度变化
+        if (offsetPonit.y > 0) {
+            self.customView.hidden = NO;
+            [self.view bringSubviewToFront:self.customView];
+        } else {
+            self.customView.hidden = YES;
+        }
+    });;
     self.param = param;
-    
-    //对于视图的操作需要延时0.1秒
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.view addSubview:self.customView];
-    });
+
     self.upSctableView.dataSource = self;
     [self.upSctableView reloadData];
     
@@ -74,13 +75,6 @@
 - (void)onBtnAction:(id)sender{
     [self downScrollViewSetOffset:CGPointZero animated:YES];
 
-}
-
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view = [UIView new];
-    view.backgroundColor = [UIColor redColor];
-    view.frame = CGRectMake(0, 0, PageVCWidth, 40);
-    return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -97,16 +91,12 @@
     return cell;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 10;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
