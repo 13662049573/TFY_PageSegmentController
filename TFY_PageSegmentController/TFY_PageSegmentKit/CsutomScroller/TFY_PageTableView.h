@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TFY_PageMunuView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)CGFloat menuTitleHeight;
 @property(nonatomic,assign)BOOL canScroll;
 @property(nonatomic,assign)BOOL fromNavi;
+//菜单视图
+@property(nonatomic,strong)TFY_PageMunuView * _Nullable mainView;
+
 @end
 
 NS_ASSUME_NONNULL_END

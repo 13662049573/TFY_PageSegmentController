@@ -53,7 +53,7 @@
 
 //重置contensize
 - (void)resetMainViewContenSize:(TFY_PageNavBtn*)btn{
-    if (CGRectGetMaxX(btn.frame) <= self.frame.size.width) {
+    if (CGRectGetMaxX(btn.frame) <= CGRectGetWidth(self.frame)) {
         self.scrollEnabled = NO;
     }else{
         self.scrollEnabled = YES;
@@ -350,14 +350,14 @@
     }];
     
     //滚动到中间
-    CGFloat centerX = self.frame.size.width/2 ;
+    CGFloat centerX = CGRectGetWidth(self.frame)/2;
     CGRect indexFrame = btn.frame;
     CGFloat contenSize = self.contentSize.width;
     CGPoint point = CGPointZero;
     if (indexFrame.origin.x<= centerX) {
         point = CGPointMake(0, 0);
     }else if (CGRectGetMaxX(indexFrame) > (contenSize-centerX)) {
-        point = CGPointMake(self.contentSize.width-self.frame.size.width , 0);
+        point = CGPointMake(self.contentSize.width-CGRectGetWidth(self.frame) , 0);
     }else{
         point = CGPointMake(CGRectGetMaxX(indexFrame) -  centerX-  indexFrame.size.width/2, 0);
     }
@@ -412,11 +412,11 @@
 
 - (CGFloat)getMainHeight{
     if ((PageIsIphoneX&&self.param.menuPosition == PageMenuPositionBottom)) {
-        return (self.frame.size.height - 15);
+        return (CGRectGetHeight(self.frame) - 15);
     }else if (self.param.menuPosition == PageMenuPositionNavi) {
         return 44;
     }
-    return self.frame.size.height;
+    return CGRectGetHeight(self.frame);
 }
 
 - (NSMutableArray<TFY_PageNavBtn *> *)btnArr{

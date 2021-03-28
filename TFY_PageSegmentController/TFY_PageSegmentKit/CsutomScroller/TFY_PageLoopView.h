@@ -39,8 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>* _Nullable btnArr;
 //固定按钮
 @property(nonatomic,strong)NSMutableArray <TFY_PageNavBtn*>* _Nullable fixBtnArr;
-
-
 //菜单视图
 @property(nonatomic,strong)TFY_PageMunuView * _Nullable mainView;
 //底部视图

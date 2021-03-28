@@ -194,7 +194,7 @@
             headY = (!self.param.fromNavi&&
             self.param.menuPosition != PageMenuPositionBottom)?0:
             (!naPar.navigationBar.translucent?0:(naPar.isNavigationBarHidden?PageVCStatusBarHeight:PageVCNavBarHeight));
-            //davidli- Update 2020.11.27 适配隐藏导航栏时距离顶部的高度
+            // 适配隐藏导航栏时距离顶部的高度
             if (self.parentViewController.tabBarController) {
                 if (!self.parentViewController.tabBarController.tabBar.translucent) {
                     tabbarHeight = 0;
@@ -254,6 +254,7 @@
         self.upScHerder = [[TFY_PageLoopView alloc]initWithFrame:CGRectMake(0, 0, PageVCWidth,PageVCHeight) param:self.param];
         self.upScHerder.loopDelegate = self;
         self.upSctableView.tableFooterView = self.upScHerder;
+        self.upSctableView.mainView = self.upScHerder.mainView;
     }
     
     if (nest) {
@@ -309,7 +310,6 @@
                 if (self.navigationController&&![self.navigationController isNavigationBarHidden]) {
                     if (!self.param.fromNavi) {
                         height -= (self.navigationController.navigationBar.translucent?PageVCNavBarHeight:0);
-                        
                     }
                 }else{
                     height -= PageVCStatusBarHeight;
@@ -317,7 +317,6 @@
             }
         }
     }
-
     sonChildVCHeight = height;
     
     if (self.param.customDataViewHeight) {
@@ -386,7 +385,7 @@
 }
 
 //底部滚动
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.param.titleArr.count > 0) {
         
     if (scrollView!=self.upSctableView) return;
@@ -459,7 +458,7 @@
 - (void)changeMenuFrame{
     if (!self.param.topChangeHeight) return;
     if (CGRectGetHeight(self.upScHerder.mainView.frame) == self.param.titleHeight&&!self.sonCanScroll)return;
-    CGFloat offsetHeight = self.param.topChangeHeight > 0?MIN(self.currentScroll.contentOffset.y, self.param.topChangeHeight):MAX (-self.currentScroll.contentOffset.y, self.param.topChangeHeight);
+    CGFloat offsetHeight = self.param.topChangeHeight > 0?MIN(self.currentScroll.contentOffset.y, self.param.topChangeHeight):MAX(-self.currentScroll.contentOffset.y, self.param.topChangeHeight);
     if (CGRectGetHeight(self.upScHerder.mainView.frame) == (self.param.titleHeight-self.param.topChangeHeight)&&self.sonCanScroll&&offsetHeight == self.param.topChangeHeight)  return;
     [self.upScHerder.mainView page_height:self.param.titleHeight - offsetHeight];
     [self.upScHerder.dataView page_y:CGRectGetMaxY(self.upScHerder.mainView.frame)];
@@ -870,7 +869,7 @@
             }
         }];
         self.cache = [NSMutableDictionary dictionaryWithDictionary:mdic];
-        self.upScHerder.dataView.contentOffset = CGPointMake(MAX(0, self.upScHerder.dataView.contentOffset.x - CGRectGetWidth( self.upScHerder.dataView.frame)) , 0);
+        self.upScHerder.dataView.contentOffset = CGPointMake(MAX(0, self.upScHerder.dataView.contentOffset.x - CGRectGetWidth(self.upScHerder.dataView.frame)) , 0);
     }
     return YES;
 }
@@ -916,23 +915,23 @@
 }
 - (TFY_PageTableView *)upSctableView{
     if (!_upSctableView) {
-        _upSctableView = [[TFY_PageTableView alloc]initWithFrame:CGRectMake(0, 0, PageVCWidth, PageVCHeight) style:UITableViewStyleGrouped];
+        _upSctableView = [[TFY_PageTableView alloc]initWithFrame:CGRectMake(0, 0, PageVCWidth, PageVCHeight) style:UITableViewStylePlain];
     }
     return _upSctableView;
 }
 - (CGFloat)footViewOrginY{
     if (!_footViewOrginY) {
-        _footViewOrginY = CGRectGetMaxY(self.upSctableView.frame)-self.currentFootView.frame.size.height;
+        _footViewOrginY = CGRectGetMaxY(self.upSctableView.frame) - CGRectGetHeight(self.currentFootView.frame);
     }
     return _footViewOrginY;
 }
 - (CGFloat)headHeight{
-    _headHeight = self.headView.frame.size.height;
+    _headHeight = CGRectGetHeight(self.headView.frame);
     return _headHeight;
 }
 - (CGFloat)footViewSizeWidth{
     if (!_footViewSizeWidth) {
-        _footViewSizeWidth = self.upScHerder.frame.size.width;
+        _footViewSizeWidth = CGRectGetWidth(self.upScHerder.frame);
     }
     return _footViewSizeWidth;
 }

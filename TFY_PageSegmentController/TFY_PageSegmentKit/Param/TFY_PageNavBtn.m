@@ -31,8 +31,6 @@
     return _maxSize;
 }
 
-
-
 /*
     txt:label或button的title
     font:字体大小

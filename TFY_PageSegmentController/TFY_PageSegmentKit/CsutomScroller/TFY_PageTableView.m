@@ -69,5 +69,19 @@
 }
 
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    // 判断自己能否接收事件
+    if(self.userInteractionEnabled == NO || self.hidden == YES || self.alpha <= 0.01)return nil;
+    // 触摸点在不在自己身上
+    if ([self pointInside:point withEvent:event] == NO)return nil;
+    CGPoint btnPointInA = [self.mainView convertPoint:point fromView:self];
+    if ([self.mainView pointInside:btnPointInA withEvent:event]) {
+        self.scrollEnabled = NO;
+        return [super hitTest:point withEvent:event];
+    } else {
+        self.scrollEnabled = YES;
+    }
+    return [super hitTest:point withEvent:event];
+}
 @end
 

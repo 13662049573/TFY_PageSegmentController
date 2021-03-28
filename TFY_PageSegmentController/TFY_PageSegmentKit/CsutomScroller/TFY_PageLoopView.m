@@ -202,7 +202,6 @@
     }
 }
 
-
 //管理生命周期
 - (void)lifeCycleManage:(UIScrollView*)scrollView{
     CGFloat diffX = scrollView.contentOffset.x - lastContentOffset;
@@ -253,8 +252,6 @@
             [self beginAppearanceTransitionWithIndex:self.nextPageIndex withOldIndex:self.currentTitleIndex];
         }
     }
-    
-    
 }
 
 - (UIViewController*)getVCWithIndex:(NSInteger)index{
