@@ -143,6 +143,8 @@
     if (index == 7) {
         self.upScHerder.backgroundColor = [UIColor whiteColor];
     }
+    
+    
 }
 
 //普通标题

@@ -83,7 +83,7 @@
                for (NSInteger i = arr.count - 1; i >= 0; i--) {
                    UIView *view = arr[i];
                    [loop addObject:view.subviews];
-                   if ([[UIDevice currentDevice].systemVersion intValue]>=12&&[[UIDevice currentDevice].systemVersion intValue]<13){
+                   if ([[UIDevice currentDevice].systemVersion intValue]>=12 && [[UIDevice currentDevice].systemVersion intValue]<13){
                        if ([NSStringFromClass([view class]) isEqualToString:@"UIVisualEffectView"]) {
                            self.naviBarBackGround = view;
                            self.enterAlpah = @(self.naviBarBackGround.alpha);
