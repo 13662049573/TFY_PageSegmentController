@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TFY_PageSegmentKit"
 
-  spec.version      = "2.1.8"
+  spec.version      = "2.2.0"
 
   spec.summary      = "全能分段选择器"
 
