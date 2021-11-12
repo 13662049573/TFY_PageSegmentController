@@ -27,6 +27,9 @@
         if (@available(iOS 13.0, *)) {
             self.automaticallyAdjustsScrollIndicatorInsets = NO;
         }
+        if (@available(iOS 15.0, *)) {
+            self.sectionHeaderTopPadding = 0;
+        }
     }
     return self;
 }
