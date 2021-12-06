@@ -279,7 +279,10 @@
     
     [self selectMenuWithIndex:self.param.menuDefaultIndex];
     
+    [self lauoutUI];
 }
+
+- (void)lauoutUI {}
 
 - (void)setUpMenuAndDataViewFrame{
     sonChildVCY = 0;

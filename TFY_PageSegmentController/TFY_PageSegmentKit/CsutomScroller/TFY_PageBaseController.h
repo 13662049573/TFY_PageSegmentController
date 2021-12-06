@@ -47,6 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 */
 - (void)updateMenuData;
 
+- (void)lauoutUI;
 /**
  标题数量内容不变情况下只更新内容
 */
