@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TFY_PageSegmentKit"
 
-  spec.version      = "2.2.2"
+  spec.version      = "2.2.4"
 
   spec.summary      = "全能分段选择器"
 
@@ -27,12 +27,7 @@ Pod::Spec.new do |spec|
     ss.source_files  = "TFY_PageSegmentController/TFY_PageSegmentKit/CsutomScroller/**/*.{h,m}"
   end
 
-  spec.subspec 'ITools' do |ss|
-    ss.source_files  = "TFY_PageSegmentController/TFY_PageSegmentKit/ITools/**/*.{h,m}"
-  end
-
   spec.subspec 'Param' do |ss|
-    ss.dependency "TFY_PageSegmentKit/ITools"
     ss.source_files  = "TFY_PageSegmentController/TFY_PageSegmentKit/Param/**/*.{h,m}"
   end
 
