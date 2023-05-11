@@ -63,7 +63,7 @@
 
 - (NSUInteger)sd_imageLoopCount {
     NSUInteger imageLoopCount = 0;
-    NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
+    NSRect imageRect = NSMakeRect(0, 0, self.sizeidth, self.size.height);
     NSImageRep *imageRep = [self bestRepresentationForRect:imageRect context:nil hints:nil];
     NSBitmapImageRep *bitmapImageRep;
     if ([imageRep isKindOfClass:[NSBitmapImageRep class]]) {
@@ -76,7 +76,7 @@
 }
 
 - (void)setSd_imageLoopCount:(NSUInteger)sd_imageLoopCount {
-    NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
+    NSRect imageRect = NSMakeRect(0, 0, self.sizeidth, self.size.height);
     NSImageRep *imageRep = [self bestRepresentationForRect:imageRect context:nil hints:nil];
     NSBitmapImageRep *bitmapImageRep;
     if ([imageRep isKindOfClass:[NSBitmapImageRep class]]) {
@@ -89,7 +89,7 @@
 
 - (BOOL)sd_isAnimated {
     BOOL isAnimated = NO;
-    NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
+    NSRect imageRect = NSMakeRect(0, 0, self.sizeidth, self.size.height);
     NSImageRep *imageRep = [self bestRepresentationForRect:imageRect context:nil hints:nil];
     NSBitmapImageRep *bitmapImageRep;
     if ([imageRep isKindOfClass:[NSBitmapImageRep class]]) {
@@ -103,7 +103,7 @@
 }
 
 - (BOOL)sd_isVector {
-    NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
+    NSRect imageRect = NSMakeRect(0, 0, self.sizeidth, self.size.height);
     NSImageRep *imageRep = [self bestRepresentationForRect:imageRect context:nil hints:nil];
     if ([imageRep isKindOfClass:[NSPDFImageRep class]]) {
         return YES;

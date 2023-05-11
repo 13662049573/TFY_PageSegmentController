@@ -5,79 +5,112 @@
 //  Created by 田风有 on 2021/1/16.
 //
 
-#import "TFY_ConfigProtocol.h"
+#import "TFY_PageConfig.h"
 #import "TFY_PageParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface TFY_PageLabel:UILabel
+/// 内边距
+@property (nonatomic, assign) UIEdgeInsets pageEdgeInsets;
+
+@end
+
 @interface TFY_PageNavBtn : UIButton
+/// 角标
+@property (nonatomic, strong) TFY_PageLabel *badge;
+/// jdLayer
+@property (nonatomic, strong) UIView *jdLayer;
+/// 参数
+@property (nonatomic, strong) TFY_PageParam *param;
+/// 配置参数
+@property (nonatomic, strong) id config;
+/// 最大size
+@property (nonatomic, assign) CGSize maxSize;
+/// 仅点击不加载页面 保持原页面
+@property (nonatomic, assign) PageBTNTapType tapType;
+/// 初始文本内容
+@property (nonatomic,   copy) NSString *normalText;
+/// 选中文本
+@property (nonatomic,   copy) NSString *selectText;
+/// RGB值
+@property (nonatomic, assign, readonly) CGFloat selectedColorR;
 
-@property(nonatomic,strong)TFY_PageParam *_Nonnull param;
-//最大size
-@property(nonatomic,assign)CGSize maxSize;
-//处于动画状态
-@property(nonatomic,assign)BOOL animal;
-//仅点击不加载页面 保持原页面
-@property(nonatomic,assign)BOOL onlyClick;
-//有红点提示
-@property(nonatomic,assign)NSInteger hasBadge;
-//初始文本内容
-@property(nonatomic,copy)NSString* _Nonnull normalText;
-//选中文本
-@property(nonatomic,copy)NSString* _Nonnull selectText;
-//RGB值
-@property (nonatomic, assign) CGFloat selectedColorR;
-@property (nonatomic, assign) CGFloat selectedColorG;
-@property (nonatomic, assign) CGFloat selectedColorB;
-@property (nonatomic, assign) CGFloat unSelectedColorR;
-@property (nonatomic, assign) CGFloat unSelectedColorG;
-@property (nonatomic, assign) CGFloat unSelectedColorB;
-//富文本图片
-@property(nonatomic,strong)NSAttributedString* _Nonnull attributedImage;
-//富文本选中图片
-@property(nonatomic,strong)NSAttributedString* _Nonnull attributedSelectImage;
+@property (nonatomic, assign, readonly) CGFloat selectedColorG;
 
-- (NSAttributedString*_Nonnull)setImageWithStr:(NSString*_Nonnull)str
-                                  font:(UIFont*_Nonnull)font
+@property (nonatomic, assign, readonly) CGFloat selectedColorB;
+
+@property (nonatomic, assign, readonly) CGFloat unSelectedColorR;
+
+@property (nonatomic, assign, readonly) CGFloat unSelectedColorG;
+
+@property (nonatomic, assign, readonly) CGFloat unSelectedColorB;
+
+@property (nonatomic, assign ,readonly) CGFloat selectAlpah;
+
+@property (nonatomic, assign ,readonly) CGFloat unSelectAlpah;
+/// 富文本图片
+@property (nonatomic, strong)NSAttributedString* attributedImage;
+/// 富文本选中图片
+@property (nonatomic, strong)NSAttributedString* attributedSelectImage;
+/// 显示小红点
+/// @param info info
+- (void)showBadgeWithTopMagin:(NSDictionary*)info;
+/// 隐藏小红点
+- (void)hidenBadge;
+/// 富文本
+- (NSAttributedString*)setImageWithStr:(NSString*)str
+                                  font:(UIFont*)font
                          textAlignment:(NSTextAlignment)textAlignment
                              textColor:(nullable UIColor*)textColor
                                 height:(CGFloat)height
                        backgroundColor:(nullable UIColor*)backgroundColor
                           cornerRadius:(CGFloat)cornerRadius;
-//设置图文位置
-- (void)TagSetImagePosition:(PageBtnPosition)postion spacing:(CGFloat)spacing;
-//设置单边阴影
-- (void)viewShadowPathWithColor:(UIColor *_Nonnull)shadowColor shadowOpacity:(CGFloat)shadowOpacity shadowRadius:(CGFloat)shadowRadius shadowPathType:(PageShadowPathType)shadowPathType shadowPathWidth:(CGFloat)shadowPathWidth;
-//设置圆角
+/// 设置图文位置
+- (void)tagSetImagePosition:(PageBtnPosition)postion spacing:(CGFloat)spacing;
+/// 设置单边阴影
+- (void)viewShadowPathWithColor:(UIColor *)shadowColor
+                  shadowOpacity:(CGFloat)shadowOpacity
+                   shadowRadius:(CGFloat)shadowRadius
+                 shadowPathType:(PageShadowPathType)shadowPathType
+                shadowPathWidth:(CGFloat)shadowPathWidth;
+/// 设置圆角
 -(void)setRadii:(CGSize)size RoundingCorners:(UIRectCorner)rectCorner;
+/// jdAddLayer
+- (void)jdAddLayer;
+/// jdRemoveLayer
+- (void)jdRemoveLayer;
 
-@end
-
-@interface TFY_PageNavBtn (Badge)
-
-@property (nonatomic, strong) UILabel *_Nonnull badge;
-/**
- *  显示小红点
- *  @magin 小红点距离控件上方距离
- */
-- (void)showBadgeWithTopMagin:(NSDictionary*_Nonnull)info;
-
-/**
- *  隐藏小红点
- */
-- (void)hidenBadge;
 @end
 
 @interface UIColor (GradientColor)
-+ (instancetype _Nonnull )bm_colorGradientChangeWithSize:(CGSize)size
+///  设置渐变色
++ (instancetype)bm_colorGradientChangeWithSize:(CGSize)size
                 direction:(PageGradientChangeDirection)direction
-                startColor:(UIColor*_Nonnull)startcolor
-                endColor:(UIColor*_Nonnull)endColor;
+                startColor:(UIColor*)startcolor
+                endColor:(UIColor*)endColor;
 @end
 
-@interface UIView (PageBorder)
-//设置单边框
-- (void)viewPathWithColor:(UIColor *_Nonnull)shadowColor  PathType:(PageShadowPathType)shadowPathType PathWidth:(CGFloat)shadowPathWidth heightScale:(CGFloat)sacle;
+@interface UIView (PageRect)
+///  设置单边框
+- (void)viewPathWithColor:(UIColor *)shadowColor
+                 pathType:(PageShadowPathType)shadowPathType
+                pathWidth:(CGFloat)shadowPathWidth
+              heightScale:(CGFloat)sacle;
+- (void)page_y:(CGFloat)y;
+- (void)page_x:(CGFloat)y;
+- (void)page_width:(CGFloat)width;
+- (void)page_height:(CGFloat)height;
+
 @end
+
+@interface NSObject (SafeKVO)
+/// 安全增加观察者
+- (void)pageAddObserver:(nonnull NSObject *)observer forKeyPath:(nonnull NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context;
+///  安全删除观察者
+- (void)pageRemoveObserver:(nonnull NSObject *)observer forKeyPath:(nonnull NSString *)keyPath context:(nullable void *)context;
+
+@end
+
 
 NS_ASSUME_NONNULL_END

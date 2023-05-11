@@ -13,7 +13,7 @@
 #import <UIKit/UIKit.h>
 #import "TFY_BannerPageControl.h"
 
-#define BannerWitdh  [UIScreen mainScreen].bounds.size.width
+#define BannerWitdh  [UIScreen mainScreen].bounds.sizeidth
 #define BannerHeight [UIScreen mainScreen].bounds.size.height
 
 #define BannerWSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;

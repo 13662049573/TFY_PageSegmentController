@@ -15,13 +15,13 @@
 @implementation NSImage (Compatibility)
 
 - (nullable CGImageRef)CGImage {
-    NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
+    NSRect imageRect = NSMakeRect(0, 0, self.sizeidth, self.size.height);
     CGImageRef cgImage = [self CGImageForProposedRect:&imageRect context:nil hints:nil];
     return cgImage;
 }
 
 - (nullable CIImage *)CIImage {
-    NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
+    NSRect imageRect = NSMakeRect(0, 0, self.sizeidth, self.size.height);
     NSImageRep *imageRep = [self bestRepresentationForRect:imageRect context:nil hints:nil];
     if (![imageRep isKindOfClass:NSCIImageRep.class]) {
         return nil;
@@ -31,9 +31,9 @@
 
 - (CGFloat)scale {
     CGFloat scale = 1;
-    NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
+    NSRect imageRect = NSMakeRect(0, 0, self.sizeidth, self.size.height);
     NSImageRep *imageRep = [self bestRepresentationForRect:imageRect context:nil hints:nil];
-    CGFloat width = imageRep.size.width;
+    CGFloat width = imageRep.sizeidth;
     CGFloat height = imageRep.size.height;
     NSUInteger pixelWidth = imageRep.pixelsWide;
     NSUInteger pixelHeight = imageRep.pixelsHigh;

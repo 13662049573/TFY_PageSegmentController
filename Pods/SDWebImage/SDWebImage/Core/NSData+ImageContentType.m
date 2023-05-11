@@ -39,7 +39,7 @@
             return SDImageFormatTIFF;
         case 0x52: {
             if (data.length >= 12) {
-                //RIFF....WEBP
+                //RIFF...EBP
                 NSString *testString = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(0, 12)] encoding:NSASCIIStringEncoding];
                 if ([testString hasPrefix:@"RIFF"] && [testString hasSuffix:@"WEBP"]) {
                     return SDImageFormatWebP;

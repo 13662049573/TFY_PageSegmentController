@@ -18,7 +18,7 @@ static CGContextRef SDCGContextCreateBitmapContext(CGSize size, BOOL opaque, CGF
         // Match `UIGraphicsBeginImageContextWithOptions`, reset to the scale factor of the device’s main screen if scale is 0.
         scale = [NSScreen mainScreen].backingScaleFactor;
     }
-    size_t width = ceil(size.width * scale);
+    size_t width = ceil(sizeidth * scale);
     size_t height = ceil(size.height * scale);
     if (width < 1 || height < 1) return NULL;
     

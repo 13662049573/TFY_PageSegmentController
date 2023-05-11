@@ -90,14 +90,14 @@ inline UIImage * _Nullable SDScaledImageForScaleFactor(CGFloat scale, UIImage * 
         animatedImage.sd_imageLoopCount = image.sd_imageLoopCount;
 #else
         // Animated GIF for `NSImage` need to grab `NSBitmapImageRep`;
-        NSRect imageRect = NSMakeRect(0, 0, image.size.width, image.size.height);
+        NSRect imageRect = NSMakeRect(0, 0, image.sizeidth, image.size.height);
         NSImageRep *imageRep = [image bestRepresentationForRect:imageRect context:nil hints:nil];
         NSBitmapImageRep *bitmapImageRep;
         if ([imageRep isKindOfClass:[NSBitmapImageRep class]]) {
             bitmapImageRep = (NSBitmapImageRep *)imageRep;
         }
         if (bitmapImageRep) {
-            NSSize size = NSMakeSize(image.size.width / scale, image.size.height / scale);
+            NSSize size = NSMakeSize(image.sizeidth / scale, image.size.height / scale);
             animatedImage = [[NSImage alloc] initWithSize:size];
             bitmapImageRep.size = size;
             [animatedImage addRepresentation:bitmapImageRep];

@@ -15,7 +15,7 @@
 // HEIC Sequence (Animated Image)
 #define kSDUTTypeHEICS ((__bridge CFStringRef)@"public.heics")
 // kUTTypeWebP seems not defined in public UTI framework, Apple use the hardcode string, we define them :)
-#define kSDUTTypeWebP ((__bridge CFStringRef)@"org.webmproject.webp")
+#define kSDUTTypeWebP ((__bridge CFStringRef)@"orgebmprojectebp")
 
 @interface SDImageIOAnimatedCoder ()
 

@@ -7,6 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		364AE1A62A0C8BF9005E3051 /* TFY_PageDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1A52A0C8BF9005E3051 /* TFY_PageDataView.m */; };
+		364AE1A92A0C9460005E3051 /* TFY_PageBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1A82A0C9460005E3051 /* TFY_PageBaseView.m */; };
+		364AE1AC2A0C94FC005E3051 /* TFY_PageScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1AB2A0C94FC005E3051 /* TFY_PageScroller.m */; };
+		364AE2322A0C9AC5005E3051 /* WMZDynamicOperatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1B12A0C9AC5005E3051 /* WMZDynamicOperatVC.m */; };
+		364AE2332A0C9AC5005E3051 /* UseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1B32A0C9AC5005E3051 /* UseVC.m */; };
+		364AE2342A0C9AC5005E3051 /* GuestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1B62A0C9AC5005E3051 /* GuestureViewController.m */; };
+		364AE2352A0C9AC5005E3051 /* WMZCustomTitleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1BB2A0C9AC5005E3051 /* WMZCustomTitleVC.m */; };
+		364AE2362A0C9AC5005E3051 /* WMZAttVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1BE2A0C9AC5005E3051 /* WMZAttVC.m */; };
+		364AE2372A0C9AC5005E3051 /* WMZPageUseViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1C22A0C9AC5005E3051 /* WMZPageUseViewVC.m */; };
+		364AE2382A0C9AC5005E3051 /* TopSuspensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1C32A0C9AC5005E3051 /* TopSuspensionView.m */; };
+		364AE2392A0C9AC5005E3051 /* AllPropertiesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1C52A0C9AC5005E3051 /* AllPropertiesVC.m */; };
+		364AE23A2A0C9AC5005E3051 /* WMZPageFixAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1C92A0C9AC5005E3051 /* WMZPageFixAllVC.m */; };
+		364AE23B2A0C9AC5005E3051 /* WMZCustomThreePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1CD2A0C9AC5005E3051 /* WMZCustomThreePage.m */; };
+		364AE23C2A0C9AC5005E3051 /* WMZUsePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1D02A0C9AC5005E3051 /* WMZUsePageVC.m */; };
+		364AE23D2A0C9AC5005E3051 /* WMZCustomNormalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1D32A0C9AC5005E3051 /* WMZCustomNormalVC.m */; };
+		364AE23E2A0C9AC5005E3051 /* WMZFixVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1D62A0C9AC5005E3051 /* WMZFixVC.m */; };
+		364AE23F2A0C9AC5005E3051 /* WMZCustomTwoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1D82A0C9AC5005E3051 /* WMZCustomTwoPage.m */; };
+		364AE2402A0C9AC5005E3051 /* WMZHeadScalingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1DC2A0C9AC5005E3051 /* WMZHeadScalingVC.m */; };
+		364AE2412A0C9AC5005E3051 /* WMZPageCustomNaviVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1DE2A0C9AC5005E3051 /* WMZPageCustomNaviVC.m */; };
+		364AE2422A0C9AC5005E3051 /* WMZCustomOnePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1E22A0C9AC5005E3051 /* WMZCustomOnePage.m */; };
+		364AE2432A0C9AC5005E3051 /* WeiBoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1E72A0C9AC5005E3051 /* WeiBoController.m */; };
+		364AE2442A0C9AC5005E3051 /* WeiBoSonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1E82A0C9AC5005E3051 /* WeiBoSonController.m */; };
+		364AE2452A0C9AC5005E3051 /* ReplaceParentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1EB2A0C9AC5005E3051 /* ReplaceParentVC.m */; };
+		364AE2462A0C9AC5005E3051 /* ReplaceParentSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1EC2A0C9AC5005E3051 /* ReplaceParentSonVC.m */; };
+		364AE2472A0C9AC5005E3051 /* WangZheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1EF2A0C9AC5005E3051 /* WangZheController.m */; };
+		364AE2482A0C9AC5005E3051 /* WZSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1F32A0C9AC5005E3051 /* WZSecondController.m */; };
+		364AE2492A0C9AC5005E3051 /* WZThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1F42A0C9AC5005E3051 /* WZThirdController.m */; };
+		364AE24A2A0C9AC5005E3051 /* SecondNestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1F82A0C9AC5005E3051 /* SecondNestVC.m */; };
+		364AE24B2A0C9AC5005E3051 /* SecondNextSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1F92A0C9AC5005E3051 /* SecondNextSonVC.m */; };
+		364AE24C2A0C9AC5005E3051 /* WMZMeiTuanSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1FD2A0C9AC5005E3051 /* WMZMeiTuanSonVC.m */; };
+		364AE24D2A0C9AC5005E3051 /* WMZMeiTuanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE1FF2A0C9AC5005E3051 /* WMZMeiTuanVC.m */; };
+		364AE24E2A0C9AC5005E3051 /* WMZTaoBaoDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE2022A0C9AC5005E3051 /* WMZTaoBaoDemo.m */; };
+		364AE24F2A0C9AC5005E3051 /* WMZCustomAddMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE2052A0C9AC5005E3051 /* WMZCustomAddMenuVC.m */; };
+		364AE2502A0C9AC5005E3051 /* WMZPageTitleRightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE2082A0C9AC5005E3051 /* WMZPageTitleRightVC.m */; };
+		364AE2512A0C9AC5005E3051 /* WMZDemoOneSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE20B2A0C9AC5005E3051 /* WMZDemoOneSonVC.m */; };
+		364AE2522A0C9AC5005E3051 /* WMZDemoOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE20E2A0C9AC5005E3051 /* WMZDemoOne.m */; };
+		364AE2532A0C9AC5005E3051 /* WMZPageRadiosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE2112A0C9AC5005E3051 /* WMZPageRadiosVC.m */; };
+		364AE2542A0C9AC5005E3051 /* WMZBackGroundMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE2142A0C9AC5005E3051 /* WMZBackGroundMenuVC.m */; };
+		364AE2552A0C9AC5005E3051 /* WMZDemoTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE2162A0C9AC5005E3051 /* WMZDemoTwo.m */; };
+		364AE2572A0C9AC6005E3051 /* TitleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE21C2A0C9AC5005E3051 /* TitleVC.m */; };
+		364AE2582A0C9AC6005E3051 /* UsePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE21F2A0C9AC5005E3051 /* UsePageViewController.m */; };
+		364AE25B2A0C9AC6005E3051 /* CollectionViewPopDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE2292A0C9AC5005E3051 /* CollectionViewPopDemo.m */; };
+		364AE25C2A0C9AC6005E3051 /* FixSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE22B2A0C9AC5005E3051 /* FixSonVC.m */; };
+		364AE25D2A0C9AC6005E3051 /* TopSuspensionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE22C2A0C9AC5005E3051 /* TopSuspensionVC.m */; };
+		364AE25E2A0C9AC6005E3051 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE22D2A0C9AC5005E3051 /* TestVC.m */; };
+		364AE25F2A0C9AC6005E3051 /* WKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364AE22F2A0C9AC5005E3051 /* WKViewController.m */; };
 		36B7C74925B3DC44005D81DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C74825B3DC44005D81DF /* Assets.xcassets */; };
 		36B7C74C25B3DC44005D81DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C74A25B3DC44005D81DF /* LaunchScreen.storyboard */; };
 		36B7C74F25B3DC44005D81DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C74E25B3DC44005D81DF /* main.m */; };
@@ -15,43 +61,12 @@
 		36B7C77F25B3DCAF005D81DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C77825B3DCAF005D81DF /* ViewController.m */; };
 		36B7C78025B3DCAF005D81DF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C77C25B3DCAF005D81DF /* SceneDelegate.m */; };
 		36B7C78125B3DCAF005D81DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C77D25B3DCAF005D81DF /* AppDelegate.m */; };
-		36B7C7A425B3DED7005D81DF /* NSObject+ListenKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C78F25B3DED7005D81DF /* NSObject+ListenKVO.m */; };
 		36B7C7A525B3DED7005D81DF /* TFY_PageTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C79025B3DED7005D81DF /* TFY_PageTitleModel.m */; };
 		36B7C7A625B3DED7005D81DF /* TFY_PageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C79325B3DED7005D81DF /* TFY_PageParam.m */; };
 		36B7C7A725B3DED7005D81DF /* TFY_PageMunuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C79425B3DED7005D81DF /* TFY_PageMunuView.m */; };
 		36B7C7A825B3DED7005D81DF /* TFY_PageNavBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C79925B3DED7005D81DF /* TFY_PageNavBtn.m */; };
 		36B7C7A925B3DED7005D81DF /* TFY_PageLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C79B25B3DED7005D81DF /* TFY_PageLoopView.m */; };
-		36B7C7AA25B3DED7005D81DF /* TFY_PageScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C79E25B3DED7005D81DF /* TFY_PageScrollerView.m */; };
 		36B7C7AB25B3DED7005D81DF /* TFY_PageBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7A025B3DED7005D81DF /* TFY_PageBaseController.m */; };
-		36B7C7AC25B3DED7005D81DF /* TFY_PageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7A225B3DED7005D81DF /* TFY_PageTableView.m */; };
-		36B7C80A25B3F304005D81DF /* TFY_UsePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7BB25B3F303005D81DF /* TFY_UsePageVC.m */; };
-		36B7C80B25B3F304005D81DF /* TFY_WeiBoSonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7BE25B3F303005D81DF /* TFY_WeiBoSonController.m */; };
-		36B7C80C25B3F304005D81DF /* TFY_WeiBoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7BF25B3F304005D81DF /* TFY_WeiBoController.m */; };
-		36B7C80D25B3F304005D81DF /* TFY_WZThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7C325B3F304005D81DF /* TFY_WZThirdController.m */; };
-		36B7C80E25B3F304005D81DF /* TFY_WZSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7C525B3F304005D81DF /* TFY_WZSecondController.m */; };
-		36B7C80F25B3F304005D81DF /* TFY_WangZheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7C825B3F304005D81DF /* TFY_WangZheController.m */; };
-		36B7C81025B3F304005D81DF /* TFY_TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7CA25B3F304005D81DF /* TFY_TestVC.m */; };
-		36B7C81125B3F304005D81DF /* TFY_CollectionViewPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7CF25B3F304005D81DF /* TFY_CollectionViewPop.m */; };
-		36B7C81225B3F304005D81DF /* TFY_FixSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D025B3F304005D81DF /* TFY_FixSonVC.m */; };
-		36B7C81325B3F304005D81DF /* TFY_TopSuspensionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D125B3F304005D81DF /* TFY_TopSuspensionVC.m */; };
-		36B7C81425B3F304005D81DF /* TFY_MeiTuanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D625B3F304005D81DF /* TFY_MeiTuanVC.m */; };
-		36B7C81525B3F304005D81DF /* TFY_MeiTuanSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7D725B3F304005D81DF /* TFY_MeiTuanSonVC.m */; };
-		36B7C81625B3F304005D81DF /* TFY_TaoBaoDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7DA25B3F304005D81DF /* TFY_TaoBaoDemo.m */; };
-		36B7C81725B3F304005D81DF /* TFY_UseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7DD25B3F304005D81DF /* TFY_UseVC.m */; };
-		36B7C81825B3F304005D81DF /* TFY_TitleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */; };
-		36B7C81925B3F304005D81DF /* TFY_DemoTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7E425B3F304005D81DF /* TFY_DemoTwo.m */; };
-		36B7C81A25B3F304005D81DF /* TFY_DemoOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7E725B3F304005D81DF /* TFY_DemoOne.m */; };
-		36B7C81B25B3F304005D81DF /* TFY_DemoOneSonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7E825B3F304005D81DF /* TFY_DemoOneSonVC.m */; };
-		36B7C81C25B3F304005D81DF /* TFY_DynamicOperatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7EB25B3F304005D81DF /* TFY_DynamicOperatVC.m */; };
-		36B7C81D25B3F304005D81DF /* TFY_PageRadiosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7EF25B3F304005D81DF /* TFY_PageRadiosVC.m */; };
-		36B7C81E25B3F304005D81DF /* TFY_BackGroundMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7F225B3F304005D81DF /* TFY_BackGroundMenuVC.m */; };
-		36B7C81F25B3F304005D81DF /* TFY_CustomThreePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7F625B3F304005D81DF /* TFY_CustomThreePage.m */; };
-		36B7C82025B3F304005D81DF /* TFY_ZFixVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7F925B3F304005D81DF /* TFY_ZFixVC.m */; };
-		36B7C82125B3F304005D81DF /* TFY_CustomOnePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7FD25B3F304005D81DF /* TFY_CustomOnePage.m */; };
-		36B7C82225B3F304005D81DF /* TFY_CustomTwoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C7FF25B3F304005D81DF /* TFY_CustomTwoPage.m */; };
-		36B7C82325B3F304005D81DF /* TFY_PageCustomNaviVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C80325B3F304005D81DF /* TFY_PageCustomNaviVC.m */; };
-		36B7C82425B3F304005D81DF /* TFY_IndicatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C80525B3F304005D81DF /* TFY_IndicatorVC.m */; };
-		36B7C82525B3F304005D81DF /* TFY_AllPropertiesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C80925B3F304005D81DF /* TFY_AllPropertiesVC.m */; };
 		51D8496B7D90FAADFF332E28 /* Pods_TFY_PageSegmentController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BAF9D8C975BE6EF7E84D8 /* Pods_TFY_PageSegmentController.framework */; };
 		546199BD670677B00FB03DFC /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2516ABBB864B53C0AEE3FB88 /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework */; };
 		89281E45A1074C891853486F /* Pods_TFY_PageSegmentControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0103ED034E8FA621FE00AA4 /* Pods_TFY_PageSegmentControllerTests.framework */; };
@@ -78,6 +93,101 @@
 		228E7B02EF52CD09E47AE9BC /* Pods-TFY_PageSegmentController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentController.release.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController.release.xcconfig"; sourceTree = "<group>"; };
 		239D48CDD5B05914FF3E2A00 /* Pods-TFY_PageSegmentController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentController.debug.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentController/Pods-TFY_PageSegmentController.debug.xcconfig"; sourceTree = "<group>"; };
 		2516ABBB864B53C0AEE3FB88 /* Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_PageSegmentController_TFY_PageSegmentControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		364AE1A12A0C863C005E3051 /* TFY_PageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageProtocol.h; sourceTree = "<group>"; };
+		364AE1A22A0C86E9005E3051 /* TFY_PageConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageConfig.h; sourceTree = "<group>"; };
+		364AE1A32A0C8B59005E3051 /* TFY_PageScrollProcotol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageScrollProcotol.h; sourceTree = "<group>"; };
+		364AE1A42A0C8BF9005E3051 /* TFY_PageDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageDataView.h; sourceTree = "<group>"; };
+		364AE1A52A0C8BF9005E3051 /* TFY_PageDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageDataView.m; sourceTree = "<group>"; };
+		364AE1A72A0C9460005E3051 /* TFY_PageBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageBaseView.h; sourceTree = "<group>"; };
+		364AE1A82A0C9460005E3051 /* TFY_PageBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageBaseView.m; sourceTree = "<group>"; };
+		364AE1AA2A0C94FC005E3051 /* TFY_PageScroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageScroller.h; sourceTree = "<group>"; };
+		364AE1AB2A0C94FC005E3051 /* TFY_PageScroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageScroller.m; sourceTree = "<group>"; };
+		364AE1B02A0C9AC5005E3051 /* WMZDynamicOperatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDynamicOperatVC.h; sourceTree = "<group>"; };
+		364AE1B12A0C9AC5005E3051 /* WMZDynamicOperatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDynamicOperatVC.m; sourceTree = "<group>"; };
+		364AE1B32A0C9AC5005E3051 /* UseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseVC.m; sourceTree = "<group>"; };
+		364AE1B42A0C9AC5005E3051 /* UseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseVC.h; sourceTree = "<group>"; };
+		364AE1B62A0C9AC5005E3051 /* GuestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestureViewController.m; sourceTree = "<group>"; };
+		364AE1B72A0C9AC5005E3051 /* GuestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestureViewController.h; sourceTree = "<group>"; };
+		364AE1BA2A0C9AC5005E3051 /* WMZCustomTitleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZCustomTitleVC.h; sourceTree = "<group>"; };
+		364AE1BB2A0C9AC5005E3051 /* WMZCustomTitleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZCustomTitleVC.m; sourceTree = "<group>"; };
+		364AE1BD2A0C9AC5005E3051 /* WMZAttVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZAttVC.h; sourceTree = "<group>"; };
+		364AE1BE2A0C9AC5005E3051 /* WMZAttVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZAttVC.m; sourceTree = "<group>"; };
+		364AE1C02A0C9AC5005E3051 /* TopSuspensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopSuspensionView.h; sourceTree = "<group>"; };
+		364AE1C12A0C9AC5005E3051 /* WMZPageUseViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageUseViewVC.h; sourceTree = "<group>"; };
+		364AE1C22A0C9AC5005E3051 /* WMZPageUseViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageUseViewVC.m; sourceTree = "<group>"; };
+		364AE1C32A0C9AC5005E3051 /* TopSuspensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopSuspensionView.m; sourceTree = "<group>"; };
+		364AE1C52A0C9AC5005E3051 /* AllPropertiesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllPropertiesVC.m; sourceTree = "<group>"; };
+		364AE1C62A0C9AC5005E3051 /* AllPropertiesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllPropertiesVC.h; sourceTree = "<group>"; };
+		364AE1C92A0C9AC5005E3051 /* WMZPageFixAllVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageFixAllVC.m; sourceTree = "<group>"; };
+		364AE1CA2A0C9AC5005E3051 /* WMZPageFixAllVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageFixAllVC.h; sourceTree = "<group>"; };
+		364AE1CC2A0C9AC5005E3051 /* WMZCustomThreePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZCustomThreePage.h; sourceTree = "<group>"; };
+		364AE1CD2A0C9AC5005E3051 /* WMZCustomThreePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZCustomThreePage.m; sourceTree = "<group>"; };
+		364AE1CF2A0C9AC5005E3051 /* WMZUsePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZUsePageVC.h; sourceTree = "<group>"; };
+		364AE1D02A0C9AC5005E3051 /* WMZUsePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZUsePageVC.m; sourceTree = "<group>"; };
+		364AE1D22A0C9AC5005E3051 /* WMZCustomNormalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZCustomNormalVC.h; sourceTree = "<group>"; };
+		364AE1D32A0C9AC5005E3051 /* WMZCustomNormalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZCustomNormalVC.m; sourceTree = "<group>"; };
+		364AE1D52A0C9AC5005E3051 /* WMZFixVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZFixVC.h; sourceTree = "<group>"; };
+		364AE1D62A0C9AC5005E3051 /* WMZFixVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZFixVC.m; sourceTree = "<group>"; };
+		364AE1D82A0C9AC5005E3051 /* WMZCustomTwoPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZCustomTwoPage.m; sourceTree = "<group>"; };
+		364AE1D92A0C9AC5005E3051 /* WMZCustomTwoPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZCustomTwoPage.h; sourceTree = "<group>"; };
+		364AE1DB2A0C9AC5005E3051 /* WMZHeadScalingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZHeadScalingVC.h; sourceTree = "<group>"; };
+		364AE1DC2A0C9AC5005E3051 /* WMZHeadScalingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZHeadScalingVC.m; sourceTree = "<group>"; };
+		364AE1DE2A0C9AC5005E3051 /* WMZPageCustomNaviVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageCustomNaviVC.m; sourceTree = "<group>"; };
+		364AE1DF2A0C9AC5005E3051 /* WMZPageCustomNaviVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageCustomNaviVC.h; sourceTree = "<group>"; };
+		364AE1E12A0C9AC5005E3051 /* WMZCustomOnePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZCustomOnePage.h; sourceTree = "<group>"; };
+		364AE1E22A0C9AC5005E3051 /* WMZCustomOnePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZCustomOnePage.m; sourceTree = "<group>"; };
+		364AE1E52A0C9AC5005E3051 /* WeiBoSonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoSonController.h; sourceTree = "<group>"; };
+		364AE1E62A0C9AC5005E3051 /* WeiBoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoController.h; sourceTree = "<group>"; };
+		364AE1E72A0C9AC5005E3051 /* WeiBoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoController.m; sourceTree = "<group>"; };
+		364AE1E82A0C9AC5005E3051 /* WeiBoSonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoSonController.m; sourceTree = "<group>"; };
+		364AE1EA2A0C9AC5005E3051 /* ReplaceParentSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplaceParentSonVC.h; sourceTree = "<group>"; };
+		364AE1EB2A0C9AC5005E3051 /* ReplaceParentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceParentVC.m; sourceTree = "<group>"; };
+		364AE1EC2A0C9AC5005E3051 /* ReplaceParentSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceParentSonVC.m; sourceTree = "<group>"; };
+		364AE1ED2A0C9AC5005E3051 /* ReplaceParentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplaceParentVC.h; sourceTree = "<group>"; };
+		364AE1EF2A0C9AC5005E3051 /* WangZheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WangZheController.m; sourceTree = "<group>"; };
+		364AE1F02A0C9AC5005E3051 /* WZThirdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZThirdController.h; sourceTree = "<group>"; };
+		364AE1F12A0C9AC5005E3051 /* WZSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZSecondController.h; sourceTree = "<group>"; };
+		364AE1F22A0C9AC5005E3051 /* WangZheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WangZheController.h; sourceTree = "<group>"; };
+		364AE1F32A0C9AC5005E3051 /* WZSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZSecondController.m; sourceTree = "<group>"; };
+		364AE1F42A0C9AC5005E3051 /* WZThirdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZThirdController.m; sourceTree = "<group>"; };
+		364AE1F62A0C9AC5005E3051 /* SecondNestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondNestVC.h; sourceTree = "<group>"; };
+		364AE1F72A0C9AC5005E3051 /* SecondNextSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondNextSonVC.h; sourceTree = "<group>"; };
+		364AE1F82A0C9AC5005E3051 /* SecondNestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondNestVC.m; sourceTree = "<group>"; };
+		364AE1F92A0C9AC5005E3051 /* SecondNextSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondNextSonVC.m; sourceTree = "<group>"; };
+		364AE1FC2A0C9AC5005E3051 /* WMZMeiTuanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZMeiTuanVC.h; sourceTree = "<group>"; };
+		364AE1FD2A0C9AC5005E3051 /* WMZMeiTuanSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZMeiTuanSonVC.m; sourceTree = "<group>"; };
+		364AE1FE2A0C9AC5005E3051 /* WMZMeiTuanSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZMeiTuanSonVC.h; sourceTree = "<group>"; };
+		364AE1FF2A0C9AC5005E3051 /* WMZMeiTuanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZMeiTuanVC.m; sourceTree = "<group>"; };
+		364AE2012A0C9AC5005E3051 /* WMZTaoBaoDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZTaoBaoDemo.h; sourceTree = "<group>"; };
+		364AE2022A0C9AC5005E3051 /* WMZTaoBaoDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZTaoBaoDemo.m; sourceTree = "<group>"; };
+		364AE2042A0C9AC5005E3051 /* WMZCustomAddMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZCustomAddMenuVC.h; sourceTree = "<group>"; };
+		364AE2052A0C9AC5005E3051 /* WMZCustomAddMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZCustomAddMenuVC.m; sourceTree = "<group>"; };
+		364AE2072A0C9AC5005E3051 /* WMZPageTitleRightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageTitleRightVC.h; sourceTree = "<group>"; };
+		364AE2082A0C9AC5005E3051 /* WMZPageTitleRightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageTitleRightVC.m; sourceTree = "<group>"; };
+		364AE20B2A0C9AC5005E3051 /* WMZDemoOneSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDemoOneSonVC.m; sourceTree = "<group>"; };
+		364AE20C2A0C9AC5005E3051 /* WMZDemoOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDemoOne.h; sourceTree = "<group>"; };
+		364AE20D2A0C9AC5005E3051 /* WMZDemoOneSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDemoOneSonVC.h; sourceTree = "<group>"; };
+		364AE20E2A0C9AC5005E3051 /* WMZDemoOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDemoOne.m; sourceTree = "<group>"; };
+		364AE2102A0C9AC5005E3051 /* WMZPageRadiosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageRadiosVC.h; sourceTree = "<group>"; };
+		364AE2112A0C9AC5005E3051 /* WMZPageRadiosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageRadiosVC.m; sourceTree = "<group>"; };
+		364AE2132A0C9AC5005E3051 /* WMZBackGroundMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBackGroundMenuVC.h; sourceTree = "<group>"; };
+		364AE2142A0C9AC5005E3051 /* WMZBackGroundMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBackGroundMenuVC.m; sourceTree = "<group>"; };
+		364AE2162A0C9AC5005E3051 /* WMZDemoTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZDemoTwo.m; sourceTree = "<group>"; };
+		364AE2172A0C9AC5005E3051 /* WMZDemoTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZDemoTwo.h; sourceTree = "<group>"; };
+		364AE21C2A0C9AC5005E3051 /* TitleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleVC.m; sourceTree = "<group>"; };
+		364AE21D2A0C9AC5005E3051 /* TitleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleVC.h; sourceTree = "<group>"; };
+		364AE21F2A0C9AC5005E3051 /* UsePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsePageViewController.m; sourceTree = "<group>"; };
+		364AE2202A0C9AC5005E3051 /* UsePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsePageViewController.h; sourceTree = "<group>"; };
+		364AE2282A0C9AC5005E3051 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		364AE2292A0C9AC5005E3051 /* CollectionViewPopDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewPopDemo.m; sourceTree = "<group>"; };
+		364AE22A2A0C9AC5005E3051 /* WKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKViewController.h; sourceTree = "<group>"; };
+		364AE22B2A0C9AC5005E3051 /* FixSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixSonVC.m; sourceTree = "<group>"; };
+		364AE22C2A0C9AC5005E3051 /* TopSuspensionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopSuspensionVC.m; sourceTree = "<group>"; };
+		364AE22D2A0C9AC5005E3051 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		364AE22E2A0C9AC5005E3051 /* CollectionViewPopDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewPopDemo.h; sourceTree = "<group>"; };
+		364AE22F2A0C9AC5005E3051 /* WKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKViewController.m; sourceTree = "<group>"; };
+		364AE2302A0C9AC5005E3051 /* TopSuspensionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopSuspensionVC.h; sourceTree = "<group>"; };
+		364AE2312A0C9AC5005E3051 /* FixSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixSonVC.h; sourceTree = "<group>"; };
 		36B7C73925B3DC43005D81DF /* TFY_PageSegmentController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFY_PageSegmentController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C74825B3DC44005D81DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B7C74B25B3DC44005D81DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,81 +207,18 @@
 		36B7C77E25B3DCAF005D81DF /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		36B7C78825B3DD1D005D81DF /* TFY_PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PrefixHeader.pch; sourceTree = "<group>"; };
 		36B7C78E25B3DED7005D81DF /* TFY_PageTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageTitleModel.h; sourceTree = "<group>"; };
-		36B7C78F25B3DED7005D81DF /* NSObject+ListenKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ListenKVO.m"; sourceTree = "<group>"; };
 		36B7C79025B3DED7005D81DF /* TFY_PageTitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageTitleModel.m; sourceTree = "<group>"; };
-		36B7C79125B3DED7005D81DF /* NSObject+ListenKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ListenKVO.h"; sourceTree = "<group>"; };
 		36B7C79325B3DED7005D81DF /* TFY_PageParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageParam.m; sourceTree = "<group>"; };
 		36B7C79425B3DED7005D81DF /* TFY_PageMunuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageMunuView.m; sourceTree = "<group>"; };
 		36B7C79525B3DED7005D81DF /* TFY_PageNavBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageNavBtn.h; sourceTree = "<group>"; };
 		36B7C79625B3DED7005D81DF /* TFY_PageParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageParam.h; sourceTree = "<group>"; };
 		36B7C79725B3DED7005D81DF /* TFY_PageMunuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageMunuView.h; sourceTree = "<group>"; };
-		36B7C79825B3DED7005D81DF /* TFY_ConfigProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_ConfigProtocol.h; sourceTree = "<group>"; };
 		36B7C79925B3DED7005D81DF /* TFY_PageNavBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageNavBtn.m; sourceTree = "<group>"; };
 		36B7C79B25B3DED7005D81DF /* TFY_PageLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageLoopView.m; sourceTree = "<group>"; };
 		36B7C79C25B3DED7005D81DF /* TFY_PageBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageBaseController.h; sourceTree = "<group>"; };
-		36B7C79D25B3DED7005D81DF /* TFY_PageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageTableView.h; sourceTree = "<group>"; };
-		36B7C79E25B3DED7005D81DF /* TFY_PageScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageScrollerView.m; sourceTree = "<group>"; };
 		36B7C79F25B3DED7005D81DF /* TFY_PageLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageLoopView.h; sourceTree = "<group>"; };
 		36B7C7A025B3DED7005D81DF /* TFY_PageBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageBaseController.m; sourceTree = "<group>"; };
-		36B7C7A125B3DED7005D81DF /* TFY_PageScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageScrollerView.h; sourceTree = "<group>"; };
-		36B7C7A225B3DED7005D81DF /* TFY_PageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageTableView.m; sourceTree = "<group>"; };
 		36B7C7A325B3DED7005D81DF /* TFY_PageSegmentKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageSegmentKit.h; sourceTree = "<group>"; };
-		36B7C7BA25B3F303005D81DF /* TFY_UsePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_UsePageVC.h; sourceTree = "<group>"; };
-		36B7C7BB25B3F303005D81DF /* TFY_UsePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_UsePageVC.m; sourceTree = "<group>"; };
-		36B7C7BE25B3F303005D81DF /* TFY_WeiBoSonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WeiBoSonController.m; sourceTree = "<group>"; };
-		36B7C7BF25B3F304005D81DF /* TFY_WeiBoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WeiBoController.m; sourceTree = "<group>"; };
-		36B7C7C025B3F304005D81DF /* TFY_WeiBoSonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WeiBoSonController.h; sourceTree = "<group>"; };
-		36B7C7C125B3F304005D81DF /* TFY_WeiBoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WeiBoController.h; sourceTree = "<group>"; };
-		36B7C7C325B3F304005D81DF /* TFY_WZThirdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WZThirdController.m; sourceTree = "<group>"; };
-		36B7C7C425B3F304005D81DF /* TFY_WangZheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WangZheController.h; sourceTree = "<group>"; };
-		36B7C7C525B3F304005D81DF /* TFY_WZSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WZSecondController.m; sourceTree = "<group>"; };
-		36B7C7C625B3F304005D81DF /* TFY_WZThirdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WZThirdController.h; sourceTree = "<group>"; };
-		36B7C7C725B3F304005D81DF /* TFY_WZSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_WZSecondController.h; sourceTree = "<group>"; };
-		36B7C7C825B3F304005D81DF /* TFY_WangZheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_WangZheController.m; sourceTree = "<group>"; };
-		36B7C7CA25B3F304005D81DF /* TFY_TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TestVC.m; sourceTree = "<group>"; };
-		36B7C7CB25B3F304005D81DF /* TFY_CollectionViewPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CollectionViewPop.h; sourceTree = "<group>"; };
-		36B7C7CC25B3F304005D81DF /* TFY_TopSuspensionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TopSuspensionVC.h; sourceTree = "<group>"; };
-		36B7C7CD25B3F304005D81DF /* TFY_FixSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_FixSonVC.h; sourceTree = "<group>"; };
-		36B7C7CE25B3F304005D81DF /* TFY_TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TestVC.h; sourceTree = "<group>"; };
-		36B7C7CF25B3F304005D81DF /* TFY_CollectionViewPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CollectionViewPop.m; sourceTree = "<group>"; };
-		36B7C7D025B3F304005D81DF /* TFY_FixSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_FixSonVC.m; sourceTree = "<group>"; };
-		36B7C7D125B3F304005D81DF /* TFY_TopSuspensionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TopSuspensionVC.m; sourceTree = "<group>"; };
-		36B7C7D425B3F304005D81DF /* TFY_MeiTuanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_MeiTuanVC.h; sourceTree = "<group>"; };
-		36B7C7D525B3F304005D81DF /* TFY_MeiTuanSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_MeiTuanSonVC.h; sourceTree = "<group>"; };
-		36B7C7D625B3F304005D81DF /* TFY_MeiTuanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_MeiTuanVC.m; sourceTree = "<group>"; };
-		36B7C7D725B3F304005D81DF /* TFY_MeiTuanSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_MeiTuanSonVC.m; sourceTree = "<group>"; };
-		36B7C7D925B3F304005D81DF /* TFY_TaoBaoDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TaoBaoDemo.h; sourceTree = "<group>"; };
-		36B7C7DA25B3F304005D81DF /* TFY_TaoBaoDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TaoBaoDemo.m; sourceTree = "<group>"; };
-		36B7C7DC25B3F304005D81DF /* TFY_UseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_UseVC.h; sourceTree = "<group>"; };
-		36B7C7DD25B3F304005D81DF /* TFY_UseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_UseVC.m; sourceTree = "<group>"; };
-		36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TitleVC.m; sourceTree = "<group>"; };
-		36B7C7E025B3F304005D81DF /* TFY_TitleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TitleVC.h; sourceTree = "<group>"; };
-		36B7C7E325B3F304005D81DF /* TFY_DemoTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DemoTwo.h; sourceTree = "<group>"; };
-		36B7C7E425B3F304005D81DF /* TFY_DemoTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DemoTwo.m; sourceTree = "<group>"; };
-		36B7C7E625B3F304005D81DF /* TFY_DemoOneSonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DemoOneSonVC.h; sourceTree = "<group>"; };
-		36B7C7E725B3F304005D81DF /* TFY_DemoOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DemoOne.m; sourceTree = "<group>"; };
-		36B7C7E825B3F304005D81DF /* TFY_DemoOneSonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DemoOneSonVC.m; sourceTree = "<group>"; };
-		36B7C7E925B3F304005D81DF /* TFY_DemoOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DemoOne.h; sourceTree = "<group>"; };
-		36B7C7EB25B3F304005D81DF /* TFY_DynamicOperatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DynamicOperatVC.m; sourceTree = "<group>"; };
-		36B7C7EC25B3F304005D81DF /* TFY_DynamicOperatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_DynamicOperatVC.h; sourceTree = "<group>"; };
-		36B7C7EF25B3F304005D81DF /* TFY_PageRadiosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageRadiosVC.m; sourceTree = "<group>"; };
-		36B7C7F025B3F304005D81DF /* TFY_PageRadiosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageRadiosVC.h; sourceTree = "<group>"; };
-		36B7C7F225B3F304005D81DF /* TFY_BackGroundMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_BackGroundMenuVC.m; sourceTree = "<group>"; };
-		36B7C7F325B3F304005D81DF /* TFY_BackGroundMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_BackGroundMenuVC.h; sourceTree = "<group>"; };
-		36B7C7F625B3F304005D81DF /* TFY_CustomThreePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CustomThreePage.m; sourceTree = "<group>"; };
-		36B7C7F725B3F304005D81DF /* TFY_CustomThreePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CustomThreePage.h; sourceTree = "<group>"; };
-		36B7C7F925B3F304005D81DF /* TFY_ZFixVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_ZFixVC.m; sourceTree = "<group>"; };
-		36B7C7FA25B3F304005D81DF /* TFY_ZFixVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_ZFixVC.h; sourceTree = "<group>"; };
-		36B7C7FC25B3F304005D81DF /* TFY_CustomOnePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CustomOnePage.h; sourceTree = "<group>"; };
-		36B7C7FD25B3F304005D81DF /* TFY_CustomOnePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CustomOnePage.m; sourceTree = "<group>"; };
-		36B7C7FF25B3F304005D81DF /* TFY_CustomTwoPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_CustomTwoPage.m; sourceTree = "<group>"; };
-		36B7C80025B3F304005D81DF /* TFY_CustomTwoPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_CustomTwoPage.h; sourceTree = "<group>"; };
-		36B7C80225B3F304005D81DF /* TFY_PageCustomNaviVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_PageCustomNaviVC.h; sourceTree = "<group>"; };
-		36B7C80325B3F304005D81DF /* TFY_PageCustomNaviVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PageCustomNaviVC.m; sourceTree = "<group>"; };
-		36B7C80525B3F304005D81DF /* TFY_IndicatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_IndicatorVC.m; sourceTree = "<group>"; };
-		36B7C80625B3F304005D81DF /* TFY_IndicatorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_IndicatorVC.h; sourceTree = "<group>"; };
-		36B7C80825B3F304005D81DF /* TFY_AllPropertiesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_AllPropertiesVC.h; sourceTree = "<group>"; };
-		36B7C80925B3F304005D81DF /* TFY_AllPropertiesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_AllPropertiesVC.m; sourceTree = "<group>"; };
 		3A562279C53CB0881F6A8BD4 /* Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests/Pods-TFY_PageSegmentController-TFY_PageSegmentControllerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5A9B62B594E83D55F31799D4 /* Pods-TFY_PageSegmentControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentControllerTests.release.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentControllerTests/Pods-TFY_PageSegmentControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 		70AA2D33212117BD59357003 /* Pods-TFY_PageSegmentControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_PageSegmentControllerTests.debug.xcconfig"; path = "Target Support Files/Pods-TFY_PageSegmentControllerTests/Pods-TFY_PageSegmentControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +255,403 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		364AE1AD2A0C9AC5005E3051 /* DemoVC */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1AE2A0C9AC5005E3051 /* UseDemo */,
+				364AE2212A0C9AC5005E3051 /* About */,
+			);
+			path = DemoVC;
+			sourceTree = "<group>";
+		};
+		364AE1AE2A0C9AC5005E3051 /* UseDemo */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1AF2A0C9AC5005E3051 /* 动态增删菜单标题 */,
+				364AE1B22A0C9AC5005E3051 /* app使用 */,
+				364AE1B52A0C9AC5005E3051 /* 响应侧滑:全屏手势 */,
+				364AE1B82A0C9AC5005E3051 /* 自定义标题 */,
+				364AE1BF2A0C9AC5005E3051 /* 使用UIView作为底部视图 */,
+				364AE1C42A0C9AC5005E3051 /* 全部属性 */,
+				364AE1C72A0C9AC5005E3051 /* 悬浮相关 */,
+				364AE1E32A0C9AC5005E3051 /* 嵌套使用 */,
+				364AE1FA2A0C9AC5005E3051 /* 复杂使用 */,
+				364AE2032A0C9AC5005E3051 /* 菜单栏带自定义视图 */,
+				364AE2062A0C9AC5005E3051 /* 菜单栏单独使用 */,
+				364AE2092A0C9AC5005E3051 /* 菜单特殊样式 */,
+				364AE21B2A0C9AC5005E3051 /* 标题样式 */,
+				364AE21E2A0C9AC5005E3051 /* 使用WMZPageView无需继承 */,
+			);
+			path = UseDemo;
+			sourceTree = "<group>";
+		};
+		364AE1AF2A0C9AC5005E3051 /* 动态增删菜单标题 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1B02A0C9AC5005E3051 /* WMZDynamicOperatVC.h */,
+				364AE1B12A0C9AC5005E3051 /* WMZDynamicOperatVC.m */,
+			);
+			path = "动态增删菜单标题";
+			sourceTree = "<group>";
+		};
+		364AE1B22A0C9AC5005E3051 /* app使用 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1B32A0C9AC5005E3051 /* UseVC.m */,
+				364AE1B42A0C9AC5005E3051 /* UseVC.h */,
+			);
+			path = "app使用";
+			sourceTree = "<group>";
+		};
+		364AE1B52A0C9AC5005E3051 /* 响应侧滑:全屏手势 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1B62A0C9AC5005E3051 /* GuestureViewController.m */,
+				364AE1B72A0C9AC5005E3051 /* GuestureViewController.h */,
+			);
+			path = "响应侧滑:全屏手势";
+			sourceTree = "<group>";
+		};
+		364AE1B82A0C9AC5005E3051 /* 自定义标题 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1B92A0C9AC5005E3051 /* 自定义 */,
+				364AE1BC2A0C9AC5005E3051 /* 富文本 */,
+			);
+			path = "自定义标题";
+			sourceTree = "<group>";
+		};
+		364AE1B92A0C9AC5005E3051 /* 自定义 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1BA2A0C9AC5005E3051 /* WMZCustomTitleVC.h */,
+				364AE1BB2A0C9AC5005E3051 /* WMZCustomTitleVC.m */,
+			);
+			path = "自定义";
+			sourceTree = "<group>";
+		};
+		364AE1BC2A0C9AC5005E3051 /* 富文本 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1BD2A0C9AC5005E3051 /* WMZAttVC.h */,
+				364AE1BE2A0C9AC5005E3051 /* WMZAttVC.m */,
+			);
+			path = "富文本";
+			sourceTree = "<group>";
+		};
+		364AE1BF2A0C9AC5005E3051 /* 使用UIView作为底部视图 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1C02A0C9AC5005E3051 /* TopSuspensionView.h */,
+				364AE1C12A0C9AC5005E3051 /* WMZPageUseViewVC.h */,
+				364AE1C22A0C9AC5005E3051 /* WMZPageUseViewVC.m */,
+				364AE1C32A0C9AC5005E3051 /* TopSuspensionView.m */,
+			);
+			path = "使用UIView作为底部视图";
+			sourceTree = "<group>";
+		};
+		364AE1C42A0C9AC5005E3051 /* 全部属性 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1C52A0C9AC5005E3051 /* AllPropertiesVC.m */,
+				364AE1C62A0C9AC5005E3051 /* AllPropertiesVC.h */,
+			);
+			path = "全部属性";
+			sourceTree = "<group>";
+		};
+		364AE1C72A0C9AC5005E3051 /* 悬浮相关 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1C82A0C9AC5005E3051 /* 固定全局底部视图 */,
+				364AE1CB2A0C9AC5005E3051 /* 导航栏透明度变化+头部刷新 */,
+				364AE1CE2A0C9AC5005E3051 /* 实现tableviewDataSource协议写复杂UI */,
+				364AE1D12A0C9AC5005E3051 /* 悬浮不带滚动视图 */,
+				364AE1D42A0C9AC5005E3051 /* 某个子控制器固定底部 */,
+				364AE1D72A0C9AC5005E3051 /* 全局背景色 */,
+				364AE1DA2A0C9AC5005E3051 /* 头部放大效果 */,
+				364AE1DD2A0C9AC5005E3051 /* 自定义导航栏 */,
+				364AE1E02A0C9AC5005E3051 /* 显示导航栏+中间刷新(带WKWebView滚动) */,
+			);
+			path = "悬浮相关";
+			sourceTree = "<group>";
+		};
+		364AE1C82A0C9AC5005E3051 /* 固定全局底部视图 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1C92A0C9AC5005E3051 /* WMZPageFixAllVC.m */,
+				364AE1CA2A0C9AC5005E3051 /* WMZPageFixAllVC.h */,
+			);
+			path = "固定全局底部视图";
+			sourceTree = "<group>";
+		};
+		364AE1CB2A0C9AC5005E3051 /* 导航栏透明度变化+头部刷新 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1CC2A0C9AC5005E3051 /* WMZCustomThreePage.h */,
+				364AE1CD2A0C9AC5005E3051 /* WMZCustomThreePage.m */,
+			);
+			path = "导航栏透明度变化+头部刷新";
+			sourceTree = "<group>";
+		};
+		364AE1CE2A0C9AC5005E3051 /* 实现tableviewDataSource协议写复杂UI */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1CF2A0C9AC5005E3051 /* WMZUsePageVC.h */,
+				364AE1D02A0C9AC5005E3051 /* WMZUsePageVC.m */,
+			);
+			path = "实现tableviewDataSource协议写复杂UI";
+			sourceTree = "<group>";
+		};
+		364AE1D12A0C9AC5005E3051 /* 悬浮不带滚动视图 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1D22A0C9AC5005E3051 /* WMZCustomNormalVC.h */,
+				364AE1D32A0C9AC5005E3051 /* WMZCustomNormalVC.m */,
+			);
+			path = "悬浮不带滚动视图";
+			sourceTree = "<group>";
+		};
+		364AE1D42A0C9AC5005E3051 /* 某个子控制器固定底部 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1D52A0C9AC5005E3051 /* WMZFixVC.h */,
+				364AE1D62A0C9AC5005E3051 /* WMZFixVC.m */,
+			);
+			path = "某个子控制器固定底部";
+			sourceTree = "<group>";
+		};
+		364AE1D72A0C9AC5005E3051 /* 全局背景色 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1D82A0C9AC5005E3051 /* WMZCustomTwoPage.m */,
+				364AE1D92A0C9AC5005E3051 /* WMZCustomTwoPage.h */,
+			);
+			path = "全局背景色";
+			sourceTree = "<group>";
+		};
+		364AE1DA2A0C9AC5005E3051 /* 头部放大效果 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1DB2A0C9AC5005E3051 /* WMZHeadScalingVC.h */,
+				364AE1DC2A0C9AC5005E3051 /* WMZHeadScalingVC.m */,
+			);
+			path = "头部放大效果";
+			sourceTree = "<group>";
+		};
+		364AE1DD2A0C9AC5005E3051 /* 自定义导航栏 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1DE2A0C9AC5005E3051 /* WMZPageCustomNaviVC.m */,
+				364AE1DF2A0C9AC5005E3051 /* WMZPageCustomNaviVC.h */,
+			);
+			path = "自定义导航栏";
+			sourceTree = "<group>";
+		};
+		364AE1E02A0C9AC5005E3051 /* 显示导航栏+中间刷新(带WKWebView滚动) */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1E12A0C9AC5005E3051 /* WMZCustomOnePage.h */,
+				364AE1E22A0C9AC5005E3051 /* WMZCustomOnePage.m */,
+			);
+			path = "显示导航栏+中间刷新(带WKWebView滚动)";
+			sourceTree = "<group>";
+		};
+		364AE1E32A0C9AC5005E3051 /* 嵌套使用 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1E42A0C9AC5005E3051 /* 微博嵌套(导航栏+二级) */,
+				364AE1E92A0C9AC5005E3051 /* 悬浮顶掉父级菜单 */,
+				364AE1EE2A0C9AC5005E3051 /* 王者营地(三层嵌套) */,
+				364AE1F52A0C9AC5005E3051 /* 双重二层嵌套 */,
+			);
+			path = "嵌套使用";
+			sourceTree = "<group>";
+		};
+		364AE1E42A0C9AC5005E3051 /* 微博嵌套(导航栏+二级) */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1E52A0C9AC5005E3051 /* WeiBoSonController.h */,
+				364AE1E62A0C9AC5005E3051 /* WeiBoController.h */,
+				364AE1E72A0C9AC5005E3051 /* WeiBoController.m */,
+				364AE1E82A0C9AC5005E3051 /* WeiBoSonController.m */,
+			);
+			path = "微博嵌套(导航栏+二级)";
+			sourceTree = "<group>";
+		};
+		364AE1E92A0C9AC5005E3051 /* 悬浮顶掉父级菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1EA2A0C9AC5005E3051 /* ReplaceParentSonVC.h */,
+				364AE1EB2A0C9AC5005E3051 /* ReplaceParentVC.m */,
+				364AE1EC2A0C9AC5005E3051 /* ReplaceParentSonVC.m */,
+				364AE1ED2A0C9AC5005E3051 /* ReplaceParentVC.h */,
+			);
+			path = "悬浮顶掉父级菜单";
+			sourceTree = "<group>";
+		};
+		364AE1EE2A0C9AC5005E3051 /* 王者营地(三层嵌套) */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1EF2A0C9AC5005E3051 /* WangZheController.m */,
+				364AE1F02A0C9AC5005E3051 /* WZThirdController.h */,
+				364AE1F12A0C9AC5005E3051 /* WZSecondController.h */,
+				364AE1F22A0C9AC5005E3051 /* WangZheController.h */,
+				364AE1F32A0C9AC5005E3051 /* WZSecondController.m */,
+				364AE1F42A0C9AC5005E3051 /* WZThirdController.m */,
+			);
+			path = "王者营地(三层嵌套)";
+			sourceTree = "<group>";
+		};
+		364AE1F52A0C9AC5005E3051 /* 双重二层嵌套 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1F62A0C9AC5005E3051 /* SecondNestVC.h */,
+				364AE1F72A0C9AC5005E3051 /* SecondNextSonVC.h */,
+				364AE1F82A0C9AC5005E3051 /* SecondNestVC.m */,
+				364AE1F92A0C9AC5005E3051 /* SecondNextSonVC.m */,
+			);
+			path = "双重二层嵌套";
+			sourceTree = "<group>";
+		};
+		364AE1FA2A0C9AC5005E3051 /* 复杂使用 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1FB2A0C9AC5005E3051 /* 美团 */,
+				364AE2002A0C9AC5005E3051 /* 淘宝 */,
+			);
+			path = "复杂使用";
+			sourceTree = "<group>";
+		};
+		364AE1FB2A0C9AC5005E3051 /* 美团 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE1FC2A0C9AC5005E3051 /* WMZMeiTuanVC.h */,
+				364AE1FD2A0C9AC5005E3051 /* WMZMeiTuanSonVC.m */,
+				364AE1FE2A0C9AC5005E3051 /* WMZMeiTuanSonVC.h */,
+				364AE1FF2A0C9AC5005E3051 /* WMZMeiTuanVC.m */,
+			);
+			path = "美团";
+			sourceTree = "<group>";
+		};
+		364AE2002A0C9AC5005E3051 /* 淘宝 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2012A0C9AC5005E3051 /* WMZTaoBaoDemo.h */,
+				364AE2022A0C9AC5005E3051 /* WMZTaoBaoDemo.m */,
+			);
+			path = "淘宝";
+			sourceTree = "<group>";
+		};
+		364AE2032A0C9AC5005E3051 /* 菜单栏带自定义视图 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2042A0C9AC5005E3051 /* WMZCustomAddMenuVC.h */,
+				364AE2052A0C9AC5005E3051 /* WMZCustomAddMenuVC.m */,
+			);
+			path = "菜单栏带自定义视图";
+			sourceTree = "<group>";
+		};
+		364AE2062A0C9AC5005E3051 /* 菜单栏单独使用 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2072A0C9AC5005E3051 /* WMZPageTitleRightVC.h */,
+				364AE2082A0C9AC5005E3051 /* WMZPageTitleRightVC.m */,
+			);
+			path = "菜单栏单独使用";
+			sourceTree = "<group>";
+		};
+		364AE2092A0C9AC5005E3051 /* 菜单特殊样式 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE20A2A0C9AC5005E3051 /* 作为tabbar */,
+				364AE20F2A0C9AC5005E3051 /* 菜单背景圆角 */,
+				364AE2122A0C9AC5005E3051 /* 菜单栏带背景图 */,
+				364AE2152A0C9AC5005E3051 /* 动态富文本(更新标题) */,
+			);
+			path = "菜单特殊样式";
+			sourceTree = "<group>";
+		};
+		364AE20A2A0C9AC5005E3051 /* 作为tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				364AE20B2A0C9AC5005E3051 /* WMZDemoOneSonVC.m */,
+				364AE20C2A0C9AC5005E3051 /* WMZDemoOne.h */,
+				364AE20D2A0C9AC5005E3051 /* WMZDemoOneSonVC.h */,
+				364AE20E2A0C9AC5005E3051 /* WMZDemoOne.m */,
+			);
+			path = "作为tabbar";
+			sourceTree = "<group>";
+		};
+		364AE20F2A0C9AC5005E3051 /* 菜单背景圆角 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2102A0C9AC5005E3051 /* WMZPageRadiosVC.h */,
+				364AE2112A0C9AC5005E3051 /* WMZPageRadiosVC.m */,
+			);
+			path = "菜单背景圆角";
+			sourceTree = "<group>";
+		};
+		364AE2122A0C9AC5005E3051 /* 菜单栏带背景图 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2132A0C9AC5005E3051 /* WMZBackGroundMenuVC.h */,
+				364AE2142A0C9AC5005E3051 /* WMZBackGroundMenuVC.m */,
+			);
+			path = "菜单栏带背景图";
+			sourceTree = "<group>";
+		};
+		364AE2152A0C9AC5005E3051 /* 动态富文本(更新标题) */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2162A0C9AC5005E3051 /* WMZDemoTwo.m */,
+				364AE2172A0C9AC5005E3051 /* WMZDemoTwo.h */,
+			);
+			path = "动态富文本(更新标题)";
+			sourceTree = "<group>";
+		};
+		364AE21B2A0C9AC5005E3051 /* 标题样式 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE21C2A0C9AC5005E3051 /* TitleVC.m */,
+				364AE21D2A0C9AC5005E3051 /* TitleVC.h */,
+			);
+			path = "标题样式";
+			sourceTree = "<group>";
+		};
+		364AE21E2A0C9AC5005E3051 /* 使用WMZPageView无需继承 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE21F2A0C9AC5005E3051 /* UsePageViewController.m */,
+				364AE2202A0C9AC5005E3051 /* UsePageViewController.h */,
+			);
+			path = "使用WMZPageView无需继承";
+			sourceTree = "<group>";
+		};
+		364AE2212A0C9AC5005E3051 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2272A0C9AC5005E3051 /* 子控制器 */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		364AE2272A0C9AC5005E3051 /* 子控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				364AE2282A0C9AC5005E3051 /* TestVC.h */,
+				364AE2292A0C9AC5005E3051 /* CollectionViewPopDemo.m */,
+				364AE22A2A0C9AC5005E3051 /* WKViewController.h */,
+				364AE22B2A0C9AC5005E3051 /* FixSonVC.m */,
+				364AE22C2A0C9AC5005E3051 /* TopSuspensionVC.m */,
+				364AE22D2A0C9AC5005E3051 /* TestVC.m */,
+				364AE22E2A0C9AC5005E3051 /* CollectionViewPopDemo.h */,
+				364AE22F2A0C9AC5005E3051 /* WKViewController.m */,
+				364AE2302A0C9AC5005E3051 /* TopSuspensionVC.h */,
+				364AE2312A0C9AC5005E3051 /* FixSonVC.h */,
+			);
+			path = "子控制器";
+			sourceTree = "<group>";
+		};
 		36B7C73025B3DC43005D81DF = {
 			isa = PBXGroup;
 			children = (
@@ -235,8 +679,8 @@
 			children = (
 				36B7C78C25B3DED7005D81DF /* TFY_PageSegmentKit */,
 				36B7C77725B3DCAF005D81DF /* RootCoroller */,
+				364AE1AD2A0C9AC5005E3051 /* DemoVC */,
 				36B7C77A25B3DCAF005D81DF /* TFY_AppDelegate */,
-				36B7C78625B3DD0A005D81DF /* DemoVC */,
 				36B7C78525B3DD0A005D81DF /* PCH */,
 				36B7C74825B3DC44005D81DF /* Assets.xcassets */,
 				36B7C74A25B3DC44005D81DF /* LaunchScreen.storyboard */,
@@ -292,29 +736,9 @@
 			path = PCH;
 			sourceTree = "<group>";
 		};
-		36B7C78625B3DD0A005D81DF /* DemoVC */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7DE25B3F304005D81DF /* 标题样式 */,
-				36B7C7ED25B3F304005D81DF /* 菜单特殊样式 */,
-				36B7C7EA25B3F304005D81DF /* 动态增删菜单标题 */,
-				36B7C7D225B3F304005D81DF /* 复杂使用 */,
-				36B7C7B925B3F303005D81DF /* 配合内容使用 */,
-				36B7C7BC25B3F303005D81DF /* 嵌套使用 */,
-				36B7C80725B3F304005D81DF /* 全部属性 */,
-				36B7C7E125B3F304005D81DF /* 实际app使用实例 */,
-				36B7C7F425B3F304005D81DF /* 悬浮相关(+继承使用示范) */,
-				36B7C80425B3F304005D81DF /* 指示器样式 */,
-				36B7C7C925B3F304005D81DF /* 子控制器 */,
-				36B7C7DB25B3F304005D81DF /* app使用 */,
-			);
-			path = DemoVC;
-			sourceTree = "<group>";
-		};
 		36B7C78C25B3DED7005D81DF /* TFY_PageSegmentKit */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C78D25B3DED7005D81DF /* ITools */,
 				36B7C79225B3DED7005D81DF /* Param */,
 				36B7C79A25B3DED7005D81DF /* CsutomScroller */,
 				36B7C7A325B3DED7005D81DF /* TFY_PageSegmentKit.h */,
@@ -322,21 +746,13 @@
 			path = TFY_PageSegmentKit;
 			sourceTree = "<group>";
 		};
-		36B7C78D25B3DED7005D81DF /* ITools */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C79125B3DED7005D81DF /* NSObject+ListenKVO.h */,
-				36B7C78F25B3DED7005D81DF /* NSObject+ListenKVO.m */,
-				36B7C78E25B3DED7005D81DF /* TFY_PageTitleModel.h */,
-				36B7C79025B3DED7005D81DF /* TFY_PageTitleModel.m */,
-			);
-			path = ITools;
-			sourceTree = "<group>";
-		};
 		36B7C79225B3DED7005D81DF /* Param */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C79825B3DED7005D81DF /* TFY_ConfigProtocol.h */,
+				36B7C78E25B3DED7005D81DF /* TFY_PageTitleModel.h */,
+				36B7C79025B3DED7005D81DF /* TFY_PageTitleModel.m */,
+				364AE1A12A0C863C005E3051 /* TFY_PageProtocol.h */,
+				364AE1A22A0C86E9005E3051 /* TFY_PageConfig.h */,
 				36B7C79625B3DED7005D81DF /* TFY_PageParam.h */,
 				36B7C79325B3DED7005D81DF /* TFY_PageParam.m */,
 				36B7C79525B3DED7005D81DF /* TFY_PageNavBtn.h */,
@@ -350,260 +766,19 @@
 		36B7C79A25B3DED7005D81DF /* CsutomScroller */ = {
 			isa = PBXGroup;
 			children = (
+				364AE1A32A0C8B59005E3051 /* TFY_PageScrollProcotol.h */,
 				36B7C79F25B3DED7005D81DF /* TFY_PageLoopView.h */,
 				36B7C79B25B3DED7005D81DF /* TFY_PageLoopView.m */,
 				36B7C79C25B3DED7005D81DF /* TFY_PageBaseController.h */,
 				36B7C7A025B3DED7005D81DF /* TFY_PageBaseController.m */,
-				36B7C79D25B3DED7005D81DF /* TFY_PageTableView.h */,
-				36B7C7A225B3DED7005D81DF /* TFY_PageTableView.m */,
-				36B7C7A125B3DED7005D81DF /* TFY_PageScrollerView.h */,
-				36B7C79E25B3DED7005D81DF /* TFY_PageScrollerView.m */,
+				364AE1A42A0C8BF9005E3051 /* TFY_PageDataView.h */,
+				364AE1A52A0C8BF9005E3051 /* TFY_PageDataView.m */,
+				364AE1AA2A0C94FC005E3051 /* TFY_PageScroller.h */,
+				364AE1AB2A0C94FC005E3051 /* TFY_PageScroller.m */,
+				364AE1A72A0C9460005E3051 /* TFY_PageBaseView.h */,
+				364AE1A82A0C9460005E3051 /* TFY_PageBaseView.m */,
 			);
 			path = CsutomScroller;
-			sourceTree = "<group>";
-		};
-		36B7C7B925B3F303005D81DF /* 配合内容使用 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7BA25B3F303005D81DF /* TFY_UsePageVC.h */,
-				36B7C7BB25B3F303005D81DF /* TFY_UsePageVC.m */,
-			);
-			path = "配合内容使用";
-			sourceTree = "<group>";
-		};
-		36B7C7BC25B3F303005D81DF /* 嵌套使用 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7BD25B3F303005D81DF /* 微博嵌套(导航栏+二级) */,
-				36B7C7C225B3F304005D81DF /* 王者营地(三层嵌套) */,
-			);
-			path = "嵌套使用";
-			sourceTree = "<group>";
-		};
-		36B7C7BD25B3F303005D81DF /* 微博嵌套(导航栏+二级) */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7BE25B3F303005D81DF /* TFY_WeiBoSonController.m */,
-				36B7C7BF25B3F304005D81DF /* TFY_WeiBoController.m */,
-				36B7C7C025B3F304005D81DF /* TFY_WeiBoSonController.h */,
-				36B7C7C125B3F304005D81DF /* TFY_WeiBoController.h */,
-			);
-			path = "微博嵌套(导航栏+二级)";
-			sourceTree = "<group>";
-		};
-		36B7C7C225B3F304005D81DF /* 王者营地(三层嵌套) */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7C325B3F304005D81DF /* TFY_WZThirdController.m */,
-				36B7C7C425B3F304005D81DF /* TFY_WangZheController.h */,
-				36B7C7C525B3F304005D81DF /* TFY_WZSecondController.m */,
-				36B7C7C625B3F304005D81DF /* TFY_WZThirdController.h */,
-				36B7C7C725B3F304005D81DF /* TFY_WZSecondController.h */,
-				36B7C7C825B3F304005D81DF /* TFY_WangZheController.m */,
-			);
-			path = "王者营地(三层嵌套)";
-			sourceTree = "<group>";
-		};
-		36B7C7C925B3F304005D81DF /* 子控制器 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7CA25B3F304005D81DF /* TFY_TestVC.m */,
-				36B7C7CB25B3F304005D81DF /* TFY_CollectionViewPop.h */,
-				36B7C7CC25B3F304005D81DF /* TFY_TopSuspensionVC.h */,
-				36B7C7CD25B3F304005D81DF /* TFY_FixSonVC.h */,
-				36B7C7CE25B3F304005D81DF /* TFY_TestVC.h */,
-				36B7C7CF25B3F304005D81DF /* TFY_CollectionViewPop.m */,
-				36B7C7D025B3F304005D81DF /* TFY_FixSonVC.m */,
-				36B7C7D125B3F304005D81DF /* TFY_TopSuspensionVC.m */,
-			);
-			path = "子控制器";
-			sourceTree = "<group>";
-		};
-		36B7C7D225B3F304005D81DF /* 复杂使用 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7D325B3F304005D81DF /* 美团 */,
-				36B7C7D825B3F304005D81DF /* 淘宝 */,
-			);
-			path = "复杂使用";
-			sourceTree = "<group>";
-		};
-		36B7C7D325B3F304005D81DF /* 美团 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7D425B3F304005D81DF /* TFY_MeiTuanVC.h */,
-				36B7C7D525B3F304005D81DF /* TFY_MeiTuanSonVC.h */,
-				36B7C7D625B3F304005D81DF /* TFY_MeiTuanVC.m */,
-				36B7C7D725B3F304005D81DF /* TFY_MeiTuanSonVC.m */,
-			);
-			path = "美团";
-			sourceTree = "<group>";
-		};
-		36B7C7D825B3F304005D81DF /* 淘宝 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7D925B3F304005D81DF /* TFY_TaoBaoDemo.h */,
-				36B7C7DA25B3F304005D81DF /* TFY_TaoBaoDemo.m */,
-			);
-			path = "淘宝";
-			sourceTree = "<group>";
-		};
-		36B7C7DB25B3F304005D81DF /* app使用 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7DC25B3F304005D81DF /* TFY_UseVC.h */,
-				36B7C7DD25B3F304005D81DF /* TFY_UseVC.m */,
-			);
-			path = "app使用";
-			sourceTree = "<group>";
-		};
-		36B7C7DE25B3F304005D81DF /* 标题样式 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7E025B3F304005D81DF /* TFY_TitleVC.h */,
-				36B7C7DF25B3F304005D81DF /* TFY_TitleVC.m */,
-			);
-			path = "标题样式";
-			sourceTree = "<group>";
-		};
-		36B7C7E125B3F304005D81DF /* 实际app使用实例 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7E225B3F304005D81DF /* 示例2 */,
-				36B7C7E525B3F304005D81DF /* 示例1 */,
-			);
-			path = "实际app使用实例";
-			sourceTree = "<group>";
-		};
-		36B7C7E225B3F304005D81DF /* 示例2 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7E325B3F304005D81DF /* TFY_DemoTwo.h */,
-				36B7C7E425B3F304005D81DF /* TFY_DemoTwo.m */,
-			);
-			path = "示例2";
-			sourceTree = "<group>";
-		};
-		36B7C7E525B3F304005D81DF /* 示例1 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7E625B3F304005D81DF /* TFY_DemoOneSonVC.h */,
-				36B7C7E725B3F304005D81DF /* TFY_DemoOne.m */,
-				36B7C7E825B3F304005D81DF /* TFY_DemoOneSonVC.m */,
-				36B7C7E925B3F304005D81DF /* TFY_DemoOne.h */,
-			);
-			path = "示例1";
-			sourceTree = "<group>";
-		};
-		36B7C7EA25B3F304005D81DF /* 动态增删菜单标题 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7EB25B3F304005D81DF /* TFY_DynamicOperatVC.m */,
-				36B7C7EC25B3F304005D81DF /* TFY_DynamicOperatVC.h */,
-			);
-			path = "动态增删菜单标题";
-			sourceTree = "<group>";
-		};
-		36B7C7ED25B3F304005D81DF /* 菜单特殊样式 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7EE25B3F304005D81DF /* 菜单背景圆角 */,
-				36B7C7F125B3F304005D81DF /* 菜单栏带背景图 */,
-			);
-			path = "菜单特殊样式";
-			sourceTree = "<group>";
-		};
-		36B7C7EE25B3F304005D81DF /* 菜单背景圆角 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7EF25B3F304005D81DF /* TFY_PageRadiosVC.m */,
-				36B7C7F025B3F304005D81DF /* TFY_PageRadiosVC.h */,
-			);
-			path = "菜单背景圆角";
-			sourceTree = "<group>";
-		};
-		36B7C7F125B3F304005D81DF /* 菜单栏带背景图 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7F225B3F304005D81DF /* TFY_BackGroundMenuVC.m */,
-				36B7C7F325B3F304005D81DF /* TFY_BackGroundMenuVC.h */,
-			);
-			path = "菜单栏带背景图";
-			sourceTree = "<group>";
-		};
-		36B7C7F425B3F304005D81DF /* 悬浮相关(+继承使用示范) */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7F525B3F304005D81DF /* 导航栏透明度变化+头部刷新 */,
-				36B7C7F825B3F304005D81DF /* 某个子控制器固定底部 */,
-				36B7C7FB25B3F304005D81DF /* 显示导航栏+中间刷新 */,
-				36B7C7FE25B3F304005D81DF /* 全局背景色 */,
-				36B7C80125B3F304005D81DF /* 自定义导航栏 */,
-			);
-			path = "悬浮相关(+继承使用示范)";
-			sourceTree = "<group>";
-		};
-		36B7C7F525B3F304005D81DF /* 导航栏透明度变化+头部刷新 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7F625B3F304005D81DF /* TFY_CustomThreePage.m */,
-				36B7C7F725B3F304005D81DF /* TFY_CustomThreePage.h */,
-			);
-			path = "导航栏透明度变化+头部刷新";
-			sourceTree = "<group>";
-		};
-		36B7C7F825B3F304005D81DF /* 某个子控制器固定底部 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7F925B3F304005D81DF /* TFY_ZFixVC.m */,
-				36B7C7FA25B3F304005D81DF /* TFY_ZFixVC.h */,
-			);
-			path = "某个子控制器固定底部";
-			sourceTree = "<group>";
-		};
-		36B7C7FB25B3F304005D81DF /* 显示导航栏+中间刷新 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7FC25B3F304005D81DF /* TFY_CustomOnePage.h */,
-				36B7C7FD25B3F304005D81DF /* TFY_CustomOnePage.m */,
-			);
-			path = "显示导航栏+中间刷新";
-			sourceTree = "<group>";
-		};
-		36B7C7FE25B3F304005D81DF /* 全局背景色 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C7FF25B3F304005D81DF /* TFY_CustomTwoPage.m */,
-				36B7C80025B3F304005D81DF /* TFY_CustomTwoPage.h */,
-			);
-			path = "全局背景色";
-			sourceTree = "<group>";
-		};
-		36B7C80125B3F304005D81DF /* 自定义导航栏 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C80225B3F304005D81DF /* TFY_PageCustomNaviVC.h */,
-				36B7C80325B3F304005D81DF /* TFY_PageCustomNaviVC.m */,
-			);
-			path = "自定义导航栏";
-			sourceTree = "<group>";
-		};
-		36B7C80425B3F304005D81DF /* 指示器样式 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C80525B3F304005D81DF /* TFY_IndicatorVC.m */,
-				36B7C80625B3F304005D81DF /* TFY_IndicatorVC.h */,
-			);
-			path = "指示器样式";
-			sourceTree = "<group>";
-		};
-		36B7C80725B3F304005D81DF /* 全部属性 */ = {
-			isa = PBXGroup;
-			children = (
-				36B7C80825B3F304005D81DF /* TFY_AllPropertiesVC.h */,
-				36B7C80925B3F304005D81DF /* TFY_AllPropertiesVC.m */,
-			);
-			path = "全部属性";
 			sourceTree = "<group>";
 		};
 		6C77229338793DFEB48FAE42 /* Frameworks */ = {
@@ -865,47 +1040,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364AE2392A0C9AC5005E3051 /* AllPropertiesVC.m in Sources */,
+				364AE2322A0C9AC5005E3051 /* WMZDynamicOperatVC.m in Sources */,
 				36B7C78125B3DCAF005D81DF /* AppDelegate.m in Sources */,
-				36B7C7AA25B3DED7005D81DF /* TFY_PageScrollerView.m in Sources */,
-				36B7C81325B3F304005D81DF /* TFY_TopSuspensionVC.m in Sources */,
-				36B7C7AC25B3DED7005D81DF /* TFY_PageTableView.m in Sources */,
-				36B7C82525B3F304005D81DF /* TFY_AllPropertiesVC.m in Sources */,
-				36B7C81125B3F304005D81DF /* TFY_CollectionViewPop.m in Sources */,
 				36B7C7A925B3DED7005D81DF /* TFY_PageLoopView.m in Sources */,
+				364AE2412A0C9AC5005E3051 /* WMZPageCustomNaviVC.m in Sources */,
+				364AE2572A0C9AC6005E3051 /* TitleVC.m in Sources */,
 				36B7C77F25B3DCAF005D81DF /* ViewController.m in Sources */,
-				36B7C81D25B3F304005D81DF /* TFY_PageRadiosVC.m in Sources */,
 				36B7C7A625B3DED7005D81DF /* TFY_PageParam.m in Sources */,
-				36B7C81425B3F304005D81DF /* TFY_MeiTuanVC.m in Sources */,
-				36B7C81925B3F304005D81DF /* TFY_DemoTwo.m in Sources */,
-				36B7C81025B3F304005D81DF /* TFY_TestVC.m in Sources */,
-				36B7C81C25B3F304005D81DF /* TFY_DynamicOperatVC.m in Sources */,
-				36B7C81A25B3F304005D81DF /* TFY_DemoOne.m in Sources */,
-				36B7C81625B3F304005D81DF /* TFY_TaoBaoDemo.m in Sources */,
-				36B7C82025B3F304005D81DF /* TFY_ZFixVC.m in Sources */,
-				36B7C81B25B3F304005D81DF /* TFY_DemoOneSonVC.m in Sources */,
-				36B7C81725B3F304005D81DF /* TFY_UseVC.m in Sources */,
+				364AE23F2A0C9AC5005E3051 /* WMZCustomTwoPage.m in Sources */,
+				364AE2462A0C9AC5005E3051 /* ReplaceParentSonVC.m in Sources */,
+				364AE2512A0C9AC5005E3051 /* WMZDemoOneSonVC.m in Sources */,
 				36B7C7A825B3DED7005D81DF /* TFY_PageNavBtn.m in Sources */,
-				36B7C80B25B3F304005D81DF /* TFY_WeiBoSonController.m in Sources */,
-				36B7C81525B3F304005D81DF /* TFY_MeiTuanSonVC.m in Sources */,
-				36B7C7A425B3DED7005D81DF /* NSObject+ListenKVO.m in Sources */,
-				36B7C80F25B3F304005D81DF /* TFY_WangZheController.m in Sources */,
+				364AE2342A0C9AC5005E3051 /* GuestureViewController.m in Sources */,
+				364AE2542A0C9AC5005E3051 /* WMZBackGroundMenuVC.m in Sources */,
+				364AE1A62A0C8BF9005E3051 /* TFY_PageDataView.m in Sources */,
+				364AE23E2A0C9AC5005E3051 /* WMZFixVC.m in Sources */,
+				364AE25B2A0C9AC6005E3051 /* CollectionViewPopDemo.m in Sources */,
+				364AE2372A0C9AC5005E3051 /* WMZPageUseViewVC.m in Sources */,
+				364AE23A2A0C9AC5005E3051 /* WMZPageFixAllVC.m in Sources */,
+				364AE25D2A0C9AC6005E3051 /* TopSuspensionVC.m in Sources */,
+				364AE25E2A0C9AC6005E3051 /* TestVC.m in Sources */,
 				36B7C7A725B3DED7005D81DF /* TFY_PageMunuView.m in Sources */,
-				36B7C81F25B3F304005D81DF /* TFY_CustomThreePage.m in Sources */,
+				364AE2362A0C9AC5005E3051 /* WMZAttVC.m in Sources */,
+				364AE2492A0C9AC5005E3051 /* WZThirdController.m in Sources */,
+				364AE24F2A0C9AC5005E3051 /* WMZCustomAddMenuVC.m in Sources */,
+				364AE2402A0C9AC5005E3051 /* WMZHeadScalingVC.m in Sources */,
+				364AE2382A0C9AC5005E3051 /* TopSuspensionView.m in Sources */,
+				364AE2472A0C9AC5005E3051 /* WangZheController.m in Sources */,
+				364AE2532A0C9AC5005E3051 /* WMZPageRadiosVC.m in Sources */,
+				364AE23D2A0C9AC5005E3051 /* WMZCustomNormalVC.m in Sources */,
 				36B7C78025B3DCAF005D81DF /* SceneDelegate.m in Sources */,
-				36B7C82225B3F304005D81DF /* TFY_CustomTwoPage.m in Sources */,
+				364AE25F2A0C9AC6005E3051 /* WKViewController.m in Sources */,
+				364AE2552A0C9AC5005E3051 /* WMZDemoTwo.m in Sources */,
+				364AE2502A0C9AC5005E3051 /* WMZPageTitleRightVC.m in Sources */,
 				36B7C7AB25B3DED7005D81DF /* TFY_PageBaseController.m in Sources */,
-				36B7C80C25B3F304005D81DF /* TFY_WeiBoController.m in Sources */,
 				36B7C74F25B3DC44005D81DF /* main.m in Sources */,
+				364AE2432A0C9AC5005E3051 /* WeiBoController.m in Sources */,
+				364AE1AC2A0C94FC005E3051 /* TFY_PageScroller.m in Sources */,
+				364AE24E2A0C9AC5005E3051 /* WMZTaoBaoDemo.m in Sources */,
+				364AE2422A0C9AC5005E3051 /* WMZCustomOnePage.m in Sources */,
+				364AE24D2A0C9AC5005E3051 /* WMZMeiTuanVC.m in Sources */,
+				364AE2452A0C9AC5005E3051 /* ReplaceParentVC.m in Sources */,
+				364AE2442A0C9AC5005E3051 /* WeiBoSonController.m in Sources */,
+				364AE24C2A0C9AC5005E3051 /* WMZMeiTuanSonVC.m in Sources */,
+				364AE24B2A0C9AC5005E3051 /* SecondNextSonVC.m in Sources */,
+				364AE23C2A0C9AC5005E3051 /* WMZUsePageVC.m in Sources */,
+				364AE2522A0C9AC5005E3051 /* WMZDemoOne.m in Sources */,
+				364AE23B2A0C9AC5005E3051 /* WMZCustomThreePage.m in Sources */,
+				364AE24A2A0C9AC5005E3051 /* SecondNestVC.m in Sources */,
+				364AE2332A0C9AC5005E3051 /* UseVC.m in Sources */,
+				364AE2482A0C9AC5005E3051 /* WZSecondController.m in Sources */,
+				364AE2352A0C9AC5005E3051 /* WMZCustomTitleVC.m in Sources */,
 				36B7C7A525B3DED7005D81DF /* TFY_PageTitleModel.m in Sources */,
-				36B7C80D25B3F304005D81DF /* TFY_WZThirdController.m in Sources */,
-				36B7C80E25B3F304005D81DF /* TFY_WZSecondController.m in Sources */,
-				36B7C82125B3F304005D81DF /* TFY_CustomOnePage.m in Sources */,
-				36B7C81825B3F304005D81DF /* TFY_TitleVC.m in Sources */,
-				36B7C80A25B3F304005D81DF /* TFY_UsePageVC.m in Sources */,
-				36B7C82425B3F304005D81DF /* TFY_IndicatorVC.m in Sources */,
-				36B7C81225B3F304005D81DF /* TFY_FixSonVC.m in Sources */,
-				36B7C82325B3F304005D81DF /* TFY_PageCustomNaviVC.m in Sources */,
-				36B7C81E25B3F304005D81DF /* TFY_BackGroundMenuVC.m in Sources */,
+				364AE25C2A0C9AC6005E3051 /* FixSonVC.m in Sources */,
+				364AE1A92A0C9460005E3051 /* TFY_PageBaseView.m in Sources */,
+				364AE2582A0C9AC6005E3051 /* UsePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
