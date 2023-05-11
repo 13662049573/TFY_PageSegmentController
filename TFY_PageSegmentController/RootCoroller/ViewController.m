@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *ta;
 @property (nonatomic, strong) NSArray *taData;
 @end
@@ -42,14 +42,6 @@
     [self.navigationController interactivePopGestureRecognizer].delegate = nil;
 }
 
-//MARK:-侧滑
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-    if ([[self.navigationController interactivePopGestureRecognizer] isEqual:gestureRecognizer]) {
-        return YES;
-    }
-    return NO;
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.taData.count;

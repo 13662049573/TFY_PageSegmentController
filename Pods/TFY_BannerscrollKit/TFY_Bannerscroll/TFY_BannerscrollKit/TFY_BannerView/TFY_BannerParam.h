@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TFY_ITools.h"
+#import "TFY_BannerConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,10 +17,6 @@ TFY_BannerParam *paramModel(void);
 
 /**布局方式 frame  必传*/
 TFY_BannerSetFuncStatement(TFY_BannerParam,assign,CGRect,tfy_Frame)
-/**选择想要的定时器 默认 BannTimeTypeGCD*/
-TFY_BannerSetFuncStatement(TFY_BannerParam,assign,BannTimeType,tfy_Time)
-/**图片的样式 默认 混合*/
-TFY_BannerSetFuncStatement(TFY_BannerParam,assign,BannerImageURLType,tfy_imageURLType)
 /**图片添加圆角*/
 TFY_BannerSetFuncStatement(TFY_BannerParam,assign,CGFloat,tfy_bannerRadius)
 /**数据源 必传*/
@@ -97,6 +93,8 @@ TFY_BannerSetFuncStatement(TFY_BannerParam,copy,id,tfy_MyCellClassNames)
 TFY_BannerSetFuncStatement(TFY_BannerParam,strong,UIColor*,tfy_MarqueeTextColor)
 /**自定义pageControl设置*/
 TFY_BannerSetFuncStatement(TFY_BannerParam,copy,BannerPageControl,tfy_CustomControl)
+/**自定义pageControl 的高度，默认里 底部的距离 self.frame.size.hieght -tfy_ControlH 默认 30 */
+TFY_BannerSetFuncStatement(TFY_BannerParam,assign,CGFloat,tfy_ControlH)
 /**跑马灯速度  default  0.5*/
 TFY_BannerSetFuncStatement(TFY_BannerParam,assign,CGFloat,tfy_MarqueeRate)
 /**点击方法*/
@@ -107,6 +105,8 @@ TFY_BannerSetFuncStatement(TFY_BannerParam,copy,BannerCenterClickBlock,tfy_Event
 TFY_BannerSetFuncStatement(TFY_BannerParam,copy,BannerScrollEndBlock,tfy_EventScrollEnd)
 //正在滚动
 TFY_BannerSetFuncStatement(TFY_BannerParam,copy,BannerScrollBlock,tfy_EventDidScroll)
+// 开始滚动
+TFY_BannerSetFuncStatement(TFY_BannerParam,copy,BannerscrollViewWillBeginDraggingBlock,tfy_WillBeginDraggingScroll)
 //特殊样式SpecialLine 自定义下划线
 TFY_BannerSetFuncStatement(TFY_BannerParam,copy,BannerSpecialLine,tfy_SpecialCustumLine)
 //特殊样式 default 无

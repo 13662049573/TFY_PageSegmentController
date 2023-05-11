@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TFY_PageProtocol <NSObject>
 
+@optional
 /// 悬浮 可滑动的滚动视图
 - (UIScrollView*)getMyScrollView;
 /// 悬浮 数组 可滚动视图的数组 适用底部多个scrollView的情况

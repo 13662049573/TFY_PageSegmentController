@@ -57,8 +57,6 @@
     ta.estimatedRowHeight = 100;
     if (@available(iOS 11.0, *)) {
        ta.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }else{
-        self.automaticallyAdjustsScrollViewInsets = NO;
     }
     ta.dataSource = self;
     ta.delegate = self;

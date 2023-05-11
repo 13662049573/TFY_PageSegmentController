@@ -1,15 +1,18 @@
 PODS:
   - Masonry (1.1.0)
-  - MJRefresh (3.5.0)
-  - SDWebImage (5.10.4):
-    - SDWebImage/Core (= 5.10.4)
-  - SDWebImage/Core (5.10.4)
-  - TFY_BannerscrollKit (2.4.0):
-    - TFY_BannerscrollKit/TFY_BannerView (= 2.4.0)
-    - TFY_BannerscrollKit/TFY_ITools (= 2.4.0)
-  - TFY_BannerscrollKit/TFY_BannerView (2.4.0):
+  - MJRefresh (3.7.5)
+  - SDWebImage (5.15.7):
+    - SDWebImage/Core (= 5.15.7)
+  - SDWebImage/Core (5.15.7)
+  - TFY_BannerscrollKit (2.6.0):
+    - SDWebImage
+    - TFY_BannerscrollKit/TFY_BannerView (= 2.6.0)
+    - TFY_BannerscrollKit/TFY_ITools (= 2.6.0)
+  - TFY_BannerscrollKit/TFY_BannerView (2.6.0):
+    - SDWebImage
     - TFY_BannerscrollKit/TFY_ITools
-  - TFY_BannerscrollKit/TFY_ITools (2.4.0)
+  - TFY_BannerscrollKit/TFY_ITools (2.6.0):
+    - SDWebImage
 
 DEPENDENCIES:
   - Masonry
@@ -26,10 +29,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
-  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
-  TFY_BannerscrollKit: 1752fd859316de365768292f53253e161035c57b
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  SDWebImage: 25bac438318faf37e35650619ebc288a9061d292
+  TFY_BannerscrollKit: 26e59d08e0951c30124c5cebe6f2efa0ac7ec7b8
 
 PODFILE CHECKSUM: 338282398f7d1879635b13526be15a93b77cac36
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.12.1

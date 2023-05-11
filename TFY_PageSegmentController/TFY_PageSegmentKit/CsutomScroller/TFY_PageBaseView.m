@@ -400,7 +400,6 @@
         pageVC.downSc.canScroll = NO;
     }
     if ([newVC conformsToProtocol:@protocol(TFY_PageProtocol)]) {
-        UIScrollView *view = nil;
         if ([newVC respondsToSelector:@selector(getMyScrollViews)]) {
             NSArray *arr = [newVC performSelector:@selector(getMyScrollViews)];
             [arr enumerateObjectsUsingBlock:^(UIScrollView*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

@@ -10,7 +10,17 @@
 #import "TFY_BannerFlowLayout.h"
 #import "TFY_BannerOverLayout.h"
 #import "TFY_BannerPageControl.h"
+#import <MediaPlayer/MediaPlayer.h>
+
+#define HasPlayerToolsKit (__has_include(<TFY_PlayerToolsKit.h>) || __has_include("TFY_PlayerToolsKit.h"))
+
 #define COUNT 500
+
+#define bannerWeak(o) __weak typeof(o) weak_##o = o;
+
+#if HasPlayerToolsKit
+#import <TFY_PlayerToolsKit.h>
+#endif
 
 @interface TFY_BannerView ()<UICollectionViewDelegate,UICollectionViewDataSource> {
     BOOL beganDragging;
@@ -26,6 +36,15 @@
 @property(weak,nonatomic)UIVisualEffectView *effectView;
 @property(assign,nonatomic)NSInteger lastIndex;
 @property(strong,nonatomic)UIView *line;
+@property (assign, nonatomic) BOOL isPlay;
+@property(nonatomic , strong)NSMutableDictionary *musicPlayers;
+#if HasPlayerToolsKit
+/**播放器*/
+@property (strong, nonatomic) TFY_PlayerController *player;
+/**播放器显示View*/
+@property (strong, nonatomic) TFY_PlayerControlView *controlView;
+
+#endif
 @end
 
 @implementation TFY_BannerView
@@ -33,16 +52,9 @@
 - (instancetype)initConfigureWithModel:(TFY_BannerParam *)param withView:(UIView*)parentView{
     if (self = [super init]) {
         self.param = param;
-        if (parentView) {
-            [parentView addSubview:self];
-        }
-        self.param.tfy_Frame = CGRectMake(self.param.tfy_Frame.origin.x,
-                                       self.param.tfy_Frame.origin.y,
-                                       (int)self.param.tfy_Frame.size.width,
-                                       (int)self.param.tfy_Frame.size.height);
-        [self setFrame:self.param.tfy_Frame];
+        if (parentView) {[parentView addSubview:self];}
         self.data = [NSArray arrayWithArray:self.param.tfy_Data];
-        [self setUp];
+        [self FrameUpdate];
     }
     return self;
 }
@@ -54,15 +66,20 @@
 - (instancetype)initConfigureWithModel:(TFY_BannerParam *)param{
     if (self = [super init]) {
         self.param = param;
-        self.param.tfy_Frame = CGRectMake(self.param.tfy_Frame.origin.x,
-                                       self.param.tfy_Frame.origin.y,
-                                       (int)self.param.tfy_Frame.size.width,
-                                       (int)self.param.tfy_Frame.size.height);
-        [self setFrame:self.param.tfy_Frame];
         self.data = [NSArray arrayWithArray:self.param.tfy_Data];
-        [self setUp];
+        [self FrameUpdate];
     }
     return self;
+}
+
+- (void)FrameUpdate {
+    self.param.tfy_Frame = CGRectMake(self.param.tfy_Frame.origin.x,
+                                      self.param.tfy_Frame.origin.y,
+                                      (int)self.param.tfy_Frame.size.width,
+                                      (int)self.param.tfy_Frame.size.height);
+    [self setFrame:self.param.tfy_Frame];
+    
+    [self setUp];
 }
 
 //横竖屏更新布局。
@@ -76,8 +93,9 @@
     [self layoutIfNeeded];
 }
 
-- (void)updateUI{
+- (void)updateUI {
     self.data = [NSArray arrayWithArray:self.param.tfy_Data];
+    
     [self resetCollection];
 }
 
@@ -165,11 +183,9 @@
     
     if (self.param.tfy_ItemSize.height == 0 || self.param.tfy_ItemSize.width == 0) {
         self.param.tfy_ItemSize = CGSizeMake(CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
-    }
-
-    else if(self.param.tfy_ItemSize.height>CGRectGetHeight(self.frame)){
+    } else if(self.param.tfy_ItemSize.height > CGRectGetHeight(self.frame)){
         self.param.tfy_ItemSize = CGSizeMake(self.param.tfy_ItemSize.width, CGRectGetHeight(self.frame));
-    }else if(self.param.tfy_ItemSize.width>CGRectGetWidth(self.frame)){
+    } else if(self.param.tfy_ItemSize.width > CGRectGetWidth(self.frame)){
         self.param.tfy_ItemSize = CGSizeMake(CGRectGetWidth(self.frame), self.param.tfy_ItemSize.height);
     }
     int width = self.param.tfy_ItemSize.width;
@@ -195,19 +211,18 @@
     
     self.myCollectionV.scrollEnabled = self.param.tfy_CanFingerSliding;
     
-    [self.myCollectionV registerClass:[Collectioncell class] forCellWithReuseIdentifier:NSStringFromClass([Collectioncell class])];
-    [self.myCollectionV registerClass:[CollectionTextCell class] forCellWithReuseIdentifier:NSStringFromClass([CollectionTextCell class])];
-    
+    [self.myCollectionV registerClass:TFY_BannerImageViewCell.class forCellWithReuseIdentifier:@"TFY_BannerImageViewCell"];
+
     if (self.param.tfy_MyCellClassNames) {
         if ([self.param.tfy_MyCellClassNames isKindOfClass:[NSString class]]) {
             
-           [self.myCollectionV registerClass:NSClassFromString(self.param.tfy_MyCellClassNames) forCellWithReuseIdentifier:self.param.tfy_MyCellClassNames];
+            [self.myCollectionV registerClass:NSClassFromString(self.param.tfy_MyCellClassNames) forCellWithReuseIdentifier:self.param.tfy_MyCellClassNames];
             
         } else if ([self.param.tfy_MyCellClassNames isKindOfClass:[NSArray class]]) {
             
             [(NSArray*)self.param.tfy_MyCellClassNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([obj isKindOfClass:[NSString class]]) {
-                     [self.myCollectionV registerClass:NSClassFromString(obj) forCellWithReuseIdentifier:obj];
+                    [self.myCollectionV registerClass:NSClassFromString(obj) forCellWithReuseIdentifier:obj];
                 }
             }];
         }
@@ -216,7 +231,7 @@
     self.myCollectionV.frame = self.bounds;
     self.myCollectionV.pagingEnabled = (self.param.tfy_ItemSize.width == CGRectGetWidth(self.myCollectionV.frame) && self.param.tfy_LineSpacing == 0)||self.param.tfy_Vertical;
     
-    self.bannerControl = [[TFY_BannerPageControl alloc] initWithFrame:CGRectMake(10, CGRectGetHeight(self.frame) - 30, CGRectGetWidth(self.frame)-20, 30)];
+    self.bannerControl = [[TFY_BannerPageControl alloc] initWithFrame:CGRectMake(10, CGRectGetHeight(self.frame) - self.param.tfy_ControlH, CGRectGetWidth(self.frame)-20, self.param.tfy_ControlH)];
     self.bannerControl.pageControlType = PageControlTypeCircle;
     if (self.param.tfy_CustomControl) {
         self.param.tfy_CustomControl(self.bannerControl);
@@ -226,7 +241,8 @@
     }
     
     self.bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)*self.param.tfy_EffectHeight)];
-//    self.bgImgView.contentMode = self.param.tfy_ImageFill?UIViewContentModeScaleAspectFill:UIViewContentModeScaleToFill;
+    self.bgImgView.contentMode = self.param.tfy_ImageFill?UIViewContentModeScaleAspectFill:UIViewContentModeScaleToFill;
+    self.bgImgView.clipsToBounds = YES;
     [self addSubview:self.bgImgView];
     [self sendSubviewToBack:self.bgImgView];
     self.bgImgView.hidden = !self.param.tfy_Effect;
@@ -235,13 +251,13 @@
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     effectView.frame = self.bgImgView.bounds;
     effectView.alpha = self.param.tfy_EffectAlpha;
-//    effectView.contentMode = self.param.tfy_ImageFill?UIViewContentModeScaleAspectFill:UIViewContentModeScaleToFill;
+    effectView.contentMode = self.param.tfy_ImageFill?UIViewContentModeScaleAspectFill:UIViewContentModeScaleToFill;
+    effectView.clipsToBounds = YES;
     [self.bgImgView addSubview:effectView];
     self.effectView = effectView;
     
     [self resetCollection];
 }
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger index = self.param.tfy_Repeat?indexPath.row%self.data.count:indexPath.row;
@@ -251,40 +267,114 @@
         tmpCell = self.param.tfy_MyCell([NSIndexPath indexPathForRow:index inSection:indexPath.section], collectionView, dic,self.bgImgView,self.data);
     } else {
         //默认视图
-        Collectioncell *cell = (Collectioncell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([Collectioncell class]) forIndexPath:indexPath];
-        cell.param = self.param;
+        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TFY_BannerImageViewCell" forIndexPath:indexPath];
+        NSString *url = @"";
         if ([dic isKindOfClass:[NSDictionary class]]) {
-            [self setIconData:cell.bannerImageView withData:dic[self.param.tfy_DataParamIconName]];
-
-        }else{
-            [self setIconData:cell.bannerImageView withData:dic];
+            url = dic[self.param.tfy_DataParamIconName];
+        } else{
+            url = dic;
         }
+#if HasPlayerToolsKit
+        __weak typeof(self) weakSelf = self;
+        ((TFY_BannerImageViewCell *)cell).banner_Block = ^(UIImageView * _Nonnull imageView, NSString *bannerUrl) {
+            [weakSelf privatePlayButton:imageView bannerUrl:bannerUrl];
+        };
+#endif
+        ((TFY_BannerImageViewCell *)cell).param = self.param;
+        ((TFY_BannerImageViewCell *)cell).bannerUrl = url;
+        [self setIconData:((TFY_BannerImageViewCell *)cell).bannerImageView withData:url];
         tmpCell = cell;
     }
     return tmpCell;
 }
 
-- (void)setIconData:(UIImageView*)bannerImageView withData:(id)data{
+- (void)privatePlayButton:(UIImageView *)imageView bannerUrl:(NSString *)bannerUrl {
+#if HasPlayerToolsKit
+    [self.controlView resetControlView];
+    TFY_AVPlayerManager *palyerManager = [[TFY_AVPlayerManager alloc] init];
+    self.player = [TFY_PlayerController playerWithPlayerManager:palyerManager containerView:imageView];
+    self.player.controlView = self.controlView;
+    self.player.playerDisapperaPercent = 0.4;/// 0.4是消失40%时候
+    self.player.playerApperaPercent = 0.6;/// 0.6是出现60%时候
+    self.player.WWANAutoPlay = YES;/// 移动网络依然自动播放
+    self.player.resumePlayRecord = YES;/// 续播
+    self.player.stopWhileNotVisible = YES;
+    self.player.disableGestureTypes = PlayerDisableGestureTypesPan; /// 禁止掉滑动手势
+    self.player.orientationObserver.portraitFullScreenMode = PortraitFullScreenModeScaleAspectFit; /// 全屏的填充模式（全屏填充、按视频大小填充）
+    self.player.orientationObserver.fullScreenMode = FullScreenModeAutomatic;
+    self.player.orientationObserver.disablePortraitGestureTypes = DisablePortraitGestureTypesNone;/// 禁用竖屏全屏的手势（点击、拖动手势）
+    __weak typeof(self) weakSelf = self;
+    self.player.playerDidToEnd = ^(id<TFY_PlayerMediaPlayback>  _Nonnull asset) {
+        [weakSelf.player stop];
+        [weakSelf createTimer];
+    };
+    self.player.playerPrepareToPlay = ^(id<TFY_PlayerMediaPlayback>  _Nonnull asset, NSURL * _Nonnull assetURL) {
+        [weakSelf cancelTimer];
+    };
+    self.player.assetURL = [NSURL URLWithString:bannerUrl];
+#endif
+}
+
+#if HasPlayerToolsKit
+- (TFY_PlayerControlView *)controlView {
+    if (!_controlView) {
+        _controlView = [[TFY_PlayerControlView alloc] init];
+    }
+    return _controlView;
+}
+#endif
+
+- (void)setIconData:(UIImageView*)bannerImageView withData:(id)data {
     if (!data) return;
     if ([data isKindOfClass:[NSString class]]) {
-        UIImage *defaultimage = [UIImage imageNamed:self.param.tfy_PlaceholderImage?self.param.tfy_PlaceholderImage:@""];
-        if (kBannerLocality((NSString*)data)) {
-            NSData *dataimage = kBannerGetLocalityGIFData((NSString*)data);
-            if (dataimage) {
-                bannerImageView.image = [UIImage tfy_bannerGIFImageWithData:dataimage]?:defaultimage;
-            } else {
-                bannerImageView.image = [UIImage imageNamed:(NSString*)data]?:defaultimage;
+        if (kBannerLocality(data)) {
+            UIImage *videoImage = self.musicPlayers[data];
+            if (videoImage == nil) {
+                if ([self isVideoUrlString:data]) {
+                    videoImage =  [self privateGetVideoPreViewImage:[NSURL URLWithString:data]];
+                } else {
+                    videoImage = [UIImage imageNamed:(NSString *)data];
+                }
             }
+            bannerImageView.image = videoImage;
+            self.musicPlayers[data] = videoImage;
         } else {
-            [bannerImageView tfy_setImageWithURL:[NSURL URLWithString:(NSString*)data] handle:^(id<TFY_BannerWebImageHandle>  _Nonnull handle) {
-                handle.placeholder = defaultimage;
-                handle.cropScale = self.param.tfy_BannerScale;
-                handle.completed = ^(BannerImageType imageType, UIImage * _Nullable image, NSData * _Nullable data) {
-                    bannerImageView.image = image;
-                };
-            }];
+            if ([self isVideoUrlString:data]) {
+                UIImage *videoImage = self.musicPlayers[data];
+                if (videoImage == nil) {
+                    videoImage =  [self privateGetVideoPreViewImage:[NSURL URLWithString:data]];
+                }
+                bannerImageView.image = videoImage;
+                self.musicPlayers[data] = videoImage;
+            } else {
+                UIImage *defaultimage = [UIImage imageNamed:self.param.tfy_PlaceholderImage?self.param.tfy_PlaceholderImage:@""];
+                [bannerImageView sd_setImageWithURL:[NSURL URLWithString:(NSString *)data] placeholderImage:defaultimage];
+            }
         }
     }
+}
+
+/* 判断url是否是视频 */
+- (BOOL)isVideoUrlString:(NSString *)urlString
+{
+    // 判断是否含有视频轨道（是否是视频）
+    AVAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:urlString] options:nil];
+    NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+    return [tracks count] > 0;
+}
+
+- (UIImage *)privateGetVideoPreViewImage:(NSURL *)url {
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:url options:nil];
+    AVAssetImageGenerator *assetGen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    
+    assetGen.appliesPreferredTrackTransform = YES;
+    CMTime time = CMTimeMakeWithSeconds(0.0, 600);
+    NSError *error = nil;
+    CMTime actualTime;
+    CGImageRef image = [assetGen copyCGImageAtTime:time actualTime:&actualTime error:&error];
+    UIImage *videoImage = [[UIImage alloc] initWithCGImage:image];
+    CGImageRelease(image);
+    return videoImage;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -415,22 +505,10 @@
 - (void)createTimer {
     SEL sel = NSSelectorFromString(self.param.tfy_Marquee?@"autoMarqueenScrollAction":@"autoScrollAction");
     CGFloat value_time = self.param.tfy_Marquee?marginTime:self.param.tfy_AutoScrollSecond;
-    switch (self.param.tfy_Time) {
-        case BannTimeTypeGCD:{
-            NSString *time = [BannerTime bannerTimerWithTarget:self selector:sel StartTime:1 interval:value_time repeats:YES mainQueue:YES];
-            self.gcd_timer = time;
-        }
-            break;
-        case BannTimeTypeTime:{
-            if (self.timer == nil) {
-                NSTimer *timer = [NSTimer timerWithTimeInterval:value_time target:self selector:sel userInfo:nil repeats:YES];
-                [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-                self.timer = timer;
-            }
-        }
-            break;
-        default:
-            break;
+    if (self.timer == nil) {
+        NSTimer *timer = [NSTimer timerWithTimeInterval:value_time target:self selector:sel userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        self.timer = timer;
     }
 }
 
@@ -480,26 +558,18 @@
 
 //定时器销毁
 - (void)cancelTimer {
-    switch (self.param.tfy_Time) {
-        case BannTimeTypeGCD:{
-            [BannerTime bannerCancel:self.gcd_timer];
-        }
-            break;
-        case BannTimeTypeTime:{
-            if (self.timer!=nil) {
-                [self.timer invalidate];
-                self.timer = nil;
-            }
-        }
-            break;
-        default:
-            break;
+    if (self.timer!=nil) {
+        [self.timer invalidate];
+        self.timer = nil;
     }
 }
 
 //开始拖动
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     beganDragging = YES;
+#if HasPlayerToolsKit
+    [self.player stop];
+#endif
     if (!self.param.tfy_Marquee) {
         if (self.param.tfy_AutoScroll) {
             [self cancelTimer];
@@ -507,6 +577,9 @@
     }else{
         [self cancelTimer];
         [self performSelector:@selector(createTimer) withObject:nil afterDelay:self.param.tfy_AutoScrollSecond];
+    }
+    if (self.param.tfy_WillBeginDraggingScroll) {
+        self.param.tfy_WillBeginDraggingScroll(scrollView);
     }
 }
 
@@ -588,7 +661,7 @@
     }
 }
 
-- (void)scrollEnd:(NSIndexPath*)indexPath{
+- (void)scrollEnd:(NSIndexPath*)indexPath {
     if (!self.data.count) return;
     if (self.param.tfy_Marquee) return;
     NSInteger indexCountPath = 0;
@@ -645,6 +718,7 @@
 - (void)dealloc{
     //单纯调用这里无法消除定时器
     [self cancelTimer];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 //要配合这里调用
@@ -652,20 +726,9 @@
     [super willMoveToSuperview:newSuperview];
     if (!newSuperview) {
         // 销毁定时器
-        switch (self.param.tfy_Time) {
-            case BannTimeTypeGCD:{
-                [BannerTime bannerCancel:self.gcd_timer];
-            }
-                break;
-            case BannTimeTypeTime:{
-                if (self.timer!=nil) {
-                    [self.timer invalidate];
-                    self.timer = nil;
-                }
-            }
-                break;
-            default:
-                break;
+        if (self.timer!=nil) {
+            [self.timer invalidate];
+            self.timer = nil;
         }
     }
 }
@@ -677,131 +740,12 @@
     return _line;
 }
 
-@end
-
-@implementation Collectioncell
-
--(instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self){
-        [self.contentView addSubview:self.bannerImageView];
+-(NSMutableDictionary *)musicPlayers {
+    if(!_musicPlayers){
+        _musicPlayers = [NSMutableDictionary dictionary];
     }
-    return self;
-}
-
-- (void)setParam:(TFY_BannerParam *)param{
-    _param = param;
-    self.bannerImageView.contentMode = param.tfy_ImageFill?UIViewContentModeScaleAspectFill:UIViewContentModeScaleToFill;
-    
-    if (_param.tfy_bannerRadius > 0) {
-        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-        maskLayer.frame = self.bounds;
-        maskLayer.path = ({
-            UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bannerImageView.bounds cornerRadius:_param.tfy_bannerRadius];
-            path.CGPath;
-        });
-        self.bannerImageView.layer.mask = maskLayer;
-    }
-}
-
-- (UIImageView*)bannerImageView{
-    if(!_bannerImageView){
-        _bannerImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    }
-    return _bannerImageView;
-}
-
-
-@end
-
-@implementation CollectionTextCell
-
--(instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self){
-        self.contentView.backgroundColor = [UIColor whiteColor];
-        self.label = [UILabel new];
-        self.label.font = [UIFont systemFontOfSize:17.0];
-        self.label.textColor = [UIColor redColor];
-        [self.contentView addSubview:self.label];
-        self.label.frame = CGRectMake(10, 0, CGRectGetWidth(frame)-20, CGRectGetHeight(frame));
-    }
-    return self;
-}
-
-- (void)setParam:(TFY_BannerParam *)param{
-    _param = param;
-    self.label.textColor = self.param.tfy_MarqueeTextColor;
+    return _musicPlayers;
 }
 
 @end
 
-@implementation BannerTime
-
-static int i = 0;
-// 创建保存timer的容器
-static NSMutableDictionary *timers;
-dispatch_semaphore_t sem;
-
-+ (void)initialize{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        timers = [NSMutableDictionary dictionary];
-        sem = dispatch_semaphore_create(1);
-    });
-}
-
-+ (NSString *)bannerTimerWithTarget:(id)target selector:(SEL)selector StartTime:(NSTimeInterval)start interval:(NSTimeInterval)interval repeats:(BOOL)repeats mainQueue:(BOOL)async{
-    if (!target || !selector) {
-        return nil;
-    }
-    return [self bannerTimerWithStartTime:start interval:interval repeats:repeats mainQueue:async completion:^{
-        if ([target respondsToSelector:selector]) {
-            [target performSelector:selector withObject:nil afterDelay:start];
-        }
-    }];
-}
-
-+ (NSString *)bannerTimerWithStartTime:(NSTimeInterval)start interval:(NSTimeInterval)interval repeats:(BOOL)repeats mainQueue:(BOOL)async completion:(void (^)(void))completion {
-    if (!completion || start < 0 ||  interval <= 0) {
-        return nil;
-    }
-    // 创建定时器
-    dispatch_queue_t queue = !async ? dispatch_queue_create("gcd.timer.queue", NULL) : dispatch_get_main_queue();
-    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue );
-    // 设置时间,从什么时候开始，间隔多少，下面相当于2s后开始，每隔一秒一次
-    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, start * NSEC_PER_SEC), interval * NSEC_PER_SEC, 0);
-    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
-    NSString *timerId = [NSString stringWithFormat:@"%d",i++];
-    timers[timerId]=timer;
-    dispatch_semaphore_signal(sem);
-    // 回调
-    dispatch_source_set_event_handler(timer, ^{
-        if (completion) {
-            completion();
-        }
-        // 不重复执行就取消timer
-        if (!repeats) {
-            [self bannerCancel:timerId];
-        }
-    });
-    dispatch_resume(timer);
-    return timerId;
-}
-
-+ (void)bannerCancel:(NSString *)timerID{
-    if (!timerID || timerID.length <= 0) {
-        return;
-    }
-    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
-    dispatch_source_t timer = timers[timerID];
-    if (timer) {
-        dispatch_source_cancel(timer);
-        [timers removeObjectForKey:timerID];
-    }
-    dispatch_semaphore_signal(sem);
-}
-
-
-
-@end

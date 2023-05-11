@@ -12,8 +12,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TFY_BannerPageControl.h"
+#import <SDWebImage/SDWebImage.h>
 
-#define BannerWitdh  [UIScreen mainScreen].bounds.sizeidth
+#define BannerWitdh  [UIScreen mainScreen].bounds.size.width
 #define BannerHeight [UIScreen mainScreen].bounds.size.height
 
 #define BannerWSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
@@ -53,6 +54,9 @@ typedef void (^BannerScrollEndBlock)(id _Nonnull anyID,NSInteger index,BOOL isCe
 /** 滚动*/
 typedef void (^BannerScrollBlock)(CGPoint point);
 
+/**开始滚动**/
+typedef void (^BannerscrollViewWillBeginDraggingBlock)(UIScrollView *_Nonnull scrollView);
+
 /** 自定义下划线*/
 typedef void (^BannerSpecialLine)(UIView * _Nonnull line);
 
@@ -71,12 +75,6 @@ typedef enum :NSInteger{
     BannerCellPositionBottom = 1,  //置底
     BannerCellPositionTop    = 2,  //顶部
 }BannerCellPosition;
-
-/**定时器选择 -- */
-typedef enum :NSInteger{
-    BannTimeTypeTime = 0, //----  TIME
-    BannTimeTypeGCD = 1,  //----  GCD
-}BannTimeType;
 
 /*
  *特殊样式
@@ -104,26 +102,6 @@ typedef NS_ENUM(NSInteger, BannerImageURLType) {
     BannerImageURLTypeWebp,       /// webp
 };
 
-NS_INLINE void kGCD_banner_async(dispatch_block_t _Nonnull block) {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(queue)) == 0) {
-        block();
-    }else{
-        dispatch_async(queue, block);
-    }
-}
-NS_INLINE void kGCD_banner_main(dispatch_block_t _Nonnull block) {
-    dispatch_queue_t queue = dispatch_get_main_queue();
-    if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(queue)) == 0) {
-        block();
-    }else{
-        if ([[NSThread currentThread] isMainThread]) {
-            dispatch_async(queue, block);
-        }else{
-            dispatch_sync(queue, block);
-        }
-    }
-}
 /// 判断是网络图片还是本地
 NS_INLINE bool kBannerLocality(NSString * _Nonnull urlString){
     return ([urlString hasPrefix:@"http://"] || [urlString hasPrefix:@"https://"]) ? false : true;
@@ -157,51 +135,5 @@ NS_INLINE BannerImageType kBannerContentType(NSData * _Nonnull data){
     }
     return BannerImageTypeUnknown;
 }
-/// 获取动态图资源
-NS_INLINE NSData * _Nullable kBannerGetLocalityGIFData(NSString * _Nonnull name){
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSData *data = [NSData dataWithContentsOfFile:[bundle pathForResource:name ofType:@"gif"]];
-    if (data == nil) {
-        data = [NSData dataWithContentsOfFile:[bundle pathForResource:name ofType:@"GIF"]];
-    }
-    return data;
-}
-
-/// 等比改变图片尺寸
-NS_INLINE UIImage * _Nullable kCropImage(UIImage * _Nonnull image, CGSize size){
-    CGFloat scale = UIScreen.mainScreen.scale;
-    float imgHeight = image.size.height;
-    float imgWidth  = image.size.width;
-    float maxHeight = size.width * scale;
-    float maxWidth = size.height * scale;
-    if (imgHeight <= maxHeight && imgWidth <= maxWidth) return image;
-    float imgRatio = imgWidth/imgHeight;
-    float maxRatio = maxWidth/maxHeight;
-    if (imgHeight > maxHeight || imgWidth > maxWidth) {
-        if (imgRatio < maxRatio) {
-            imgRatio = maxHeight / imgHeight;
-            imgWidth = imgRatio * imgWidth;
-            imgHeight = maxHeight;
-        }else if (imgRatio > maxRatio) {
-            imgRatio = maxWidth / imgWidth;
-            imgWidth = maxWidth;
-            imgHeight = imgRatio * imgHeight;
-        }else {
-            imgWidth = maxWidth;
-            imgHeight = maxHeight;
-        }
-    }
-    CGRect rect = CGRectMake(0.0, 0.0, imgWidth, imgHeight);
-    UIGraphicsBeginImageContext(rect.size);
-    [image drawInRect:rect];
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return img;
-}
-
-/// 图片下载完成回调
-typedef void (^_Nullable WebImageCompleted)(BannerImageType imageType, UIImage * _Nullable image, NSData * _Nullable data);
-
-
 
 #endif /* TFY_BannerConfig_h */

@@ -52,19 +52,14 @@ TFY_BannerParam *paramModel(void){
         self.tfy_EffectStyle = UIBlurEffectStyleLight;
         self.tfy_EffectAlpha = 1;
         self.tfy_DecelerationRate = UIScrollViewDecelerationRateFast;
-        self.tfy_Time = BannTimeTypeTime;
-        self.tfy_imageURLType = BannerImageURLTypeMixture;
         self.tfy_BannerScale = NO;
         self.tfy_Separate = YES;
+        self.tfy_ControlH = 30;
     }
     return self;
 }
 
 TFY_BannerSetFuncImplementation(TFY_BannerParam,CGRect,tfy_Frame)
-/**选择想要的定时器*/
-TFY_BannerSetFuncImplementation(TFY_BannerParam,BannTimeType,tfy_Time)
-/**图片的样式*/
-TFY_BannerSetFuncImplementation(TFY_BannerParam,BannerImageURLType,tfy_imageURLType)
 /**图片添加圆角*/
 TFY_BannerSetFuncImplementation(TFY_BannerParam,CGFloat,tfy_bannerRadius)
 /**数据源 必传*/
@@ -141,6 +136,8 @@ TFY_BannerSetFuncImplementation(TFY_BannerParam,id,tfy_MyCellClassNames)
 TFY_BannerSetFuncImplementation(TFY_BannerParam,UIColor*,tfy_MarqueeTextColor)
 /**自定义pageControl*/
 TFY_BannerSetFuncImplementation(TFY_BannerParam,BannerPageControl,tfy_CustomControl)
+/**自定义pageControl 的高度，默认里 底部的距离 self.frame.size.hieght -tfy_ControlH 默认 30 */
+TFY_BannerSetFuncImplementation(TFY_BannerParam,CGFloat,tfy_ControlH)
 /**跑马灯速度  default  5*/
 TFY_BannerSetFuncImplementation(TFY_BannerParam,CGFloat,tfy_MarqueeRate)
 /**点击方法*/
@@ -151,6 +148,8 @@ TFY_BannerSetFuncImplementation(TFY_BannerParam,BannerCenterClickBlock,tfy_Event
 TFY_BannerSetFuncImplementation(TFY_BannerParam,BannerScrollEndBlock,tfy_EventScrollEnd)
 //正在滚动
 TFY_BannerSetFuncImplementation(TFY_BannerParam,BannerScrollBlock,tfy_EventDidScroll)
+// 开始滚动
+TFY_BannerSetFuncImplementation(TFY_BannerParam,BannerscrollViewWillBeginDraggingBlock,tfy_WillBeginDraggingScroll)
 //特殊样式 default 无
 TFY_BannerSetFuncImplementation(TFY_BannerParam,SpecialStyle,tfy_SpecialStyle)
 
