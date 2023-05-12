@@ -19,31 +19,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
       TFY_PageParam *param = PageParam()
-      .TitleArrSet(@[@"热门",@"分类",@"推荐"])
+      .titleArrSet(@[@"热门",@"分类",@"推荐"])
        //控制器数组
-       .ViewControllerSet(^UIViewController *(NSInteger index) {
+       .viewControllerSet(^UIViewController *(NSInteger index) {
            if (index == 1) return [FixSonVC new] ;
            /// 带滚动视图需实现协议
            return [CollectionViewPopDemo new];
        })
 
       //如果要固定在所有子控制器底部  需要放在第一个控制器里 例如此例子  建议看固定全局底部视图例子 wFixFirst已不推荐
-//       .ViewControllerSet(^UIViewController *(NSInteger index) {
+//       .viewControllerSet(^UIViewController *(NSInteger index) {
 //          if (index == 0) return [FixSonVC new] ;
 //          return [CollectionViewPopDemo new];
 //        })
-//     .FixFirstSet(YES)
+//     .fixFirstSet(YES)
      
       //悬浮开启
-      .TopSuspensionSet(YES)
+      .topSuspensionSet(YES)
       //等分
-      .MenuTitleWidthSet(PageVCWidth/3)
+      .menuTitleWidthSet(PageVCWidth/3)
       //头视图y坐标从0开始
-      .FromNaviSet(NO)
+      .fromNaviSet(NO)
       //导航栏透明度变化
-      .NaviAlphaSet(YES)
+      .naviAlphaSet(YES)
       //头部
-      .MenuHeadViewSet(^UIView *{
+      .menuHeadViewSet(^UIView *{
           UIView *back = [UIView new];
           back.frame = CGRectMake(0, 0, PageVCWidth, 370+PageVCStatusBarHeight);
           UIImageView *image = [UIImageView new];

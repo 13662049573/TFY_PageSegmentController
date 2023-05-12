@@ -8,7 +8,7 @@
 
 #import "WMZHeadScalingVC.h"
 #import "UIImageView+WebCache.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 @interface WMZHeadScalingVC ()
 
 @end
@@ -20,21 +20,21 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:0]}];
     NSArray *data = @[@"热门",@"男装",@"美妆",@"手机",@"食品",@"电器",@"鞋包",@"百货",@"女装",@"汽车",@"电脑"];
     TFY_PageParam *param = TFY_PageParam.new;
-    param.TitleArr = data;
-    param.ViewController = ^UIViewController * _Nullable(NSInteger index) {
+    param.titleArr = data;
+    param.viewController = ^UIViewController * _Nullable(NSInteger index) {
         /// 带滚动视图需实现协议
-        TopSuspensionVC *vc = [TopSuspensionVC new];
+        topSuspensionVC *vc = [topSuspensionVC new];
         vc.page = index;
         return vc;
     };
     ///头部缩放
-    param.HeadScaling = YES;
-    param.TopSuspension = YES;
-    param.Bounces = YES;
-    param.FromNavi = NO;
-    param.NaviAlpha = YES;
+    param.headScaling = YES;
+    param.topSuspension = YES;
+    param.bounces = YES;
+    param.fromNavi = NO;
+    param.naviAlpha = YES;
     ///头部
-    param.MenuHeadView = ^UIView * _Nullable{
+    param.menuHeadView = ^UIView * _Nullable{
         UIImageView *image = [UIImageView new];
         [image sd_setImageWithURL:[NSURL URLWithString:@"https://upload-images.jianshu.io/upload_images/9163368-02e26751674a3bc6.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"]];
         image.frame = CGRectMake(0, 0, PageVCWidth, 300);

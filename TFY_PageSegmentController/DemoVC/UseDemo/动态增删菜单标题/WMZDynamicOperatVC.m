@@ -7,7 +7,7 @@
 //
 
 #import "WMZDynamicOperatVC.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
 @interface WMZDynamicOperatVC ()
@@ -23,16 +23,16 @@
     NSArray *data = @[@"热门",@"男装",@"美妆",@"手机"];
     NSMutableArray *controllerArr = [NSMutableArray new];
     for (int i = 0; i<data.count; i++) {
-        TopSuspensionVC *vc = [TopSuspensionVC new];
+        topSuspensionVC *vc = [topSuspensionVC new];
         vc.page = i;
         [controllerArr addObject:vc];
     }
     TFY_PageParam *param = PageParam()
-    .TitleArrSet(data)
-    .MenuFixRightDataSet(@"+")
-    .MenuAnimalSet(PageTitleMenuPDD)
-    .MenuDefaultIndexSet(3)
-    .ControllersSet(controllerArr);  //必须使用此属性
+    .titleArrSet(data)
+    .menuFixRightDataSet(@"+")
+    .menuAnimalSet(PageTitleMenuPDD)
+    .menuDefaultIndexSet(3)
+    .controllersSet(controllerArr);  //必须使用此属性
     self.param = param;
     
     UIButton *titleDelete = [self getBtnTitle:@"删除"];
@@ -76,20 +76,20 @@
 - (void)addAcction{
     
 
-    TopSuspensionVC *AddVC = [TopSuspensionVC new];
+    topSuspensionVC *AddVC = [topSuspensionVC new];
     AddVC.page = 20;
     //增加文本标题
     BOOL succcess1 =  [self addMenuTitleWithObject:[TFY_PageTitleModel initWithIndex:0 controller:AddVC title:@"增加的标题"]];
     
-//    TopSuspensionVC *AddVC2 = [TopSuspensionVC new];
+//    topSuspensionVC *AddVC2 = [topSuspensionVC new];
 //    AddVC2.page = 30;
 //    //增加字典标题
 //    BOOL succcess2 =  [self addMenuTitleWithObject:[WMZPageTitleDataModel initWithIndex:3 controller:AddVC2 titleInfo:@{WMZPageKeyName:@"字典标题",WMZPageKeyTitleColor:[UIColor orangeColor]}]];
 //    
 //    //增加数组
 //    BOOL succcess3 =  [self addMenuTitleWithObjectArr:@[
-//     [WMZPageTitleDataModel initWithIndex:5 controller:[TopSuspensionVC new] title:@"增加的标题5"],
-//     [WMZPageTitleDataModel initWithIndex:6 controller:[TopSuspensionVC new] title:@"增加的标题6"],
+//     [WMZPageTitleDataModel initWithIndex:5 controller:[topSuspensionVC new] title:@"增加的标题5"],
+//     [WMZPageTitleDataModel initWithIndex:6 controller:[topSuspensionVC new] title:@"增加的标题6"],
 //    ]];
     NSLog(@"%d ",succcess1);
 }

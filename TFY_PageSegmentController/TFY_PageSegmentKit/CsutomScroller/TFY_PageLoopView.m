@@ -26,7 +26,7 @@
         self.parentResponder = parentReponder;
         self.param = param;
         self.currentTitleIndex = NSNotFound;
-        self.backgroundColor = param.BgColor;
+        self.backgroundColor = param.bgColor;
         [self loadUI:frame.size.width clear:YES];
     }
     return self;
@@ -37,7 +37,7 @@
     self.pageWidth = width?:self.frame.size.width;
     [self setUp:clear];
     ///适配横竖屏
-    if (self.param.DeviceChange &&
+    if (self.param.deviceChange &&
         self.dataView.subviews.count &&
         lastPageWidth) {
         for (int i = 0; i < self.dataView.subviews.count; i++) {
@@ -45,7 +45,7 @@
             int num = temp.frame.origin.x / lastPageWidth;
             [temp page_x:num * self.pageWidth];
         }
-        NSInteger current = self.currentTitleIndex != NSNotFound ? self.currentTitleIndex : self.param.MenuDefaultIndex;
+        NSInteger current = self.currentTitleIndex != NSNotFound ? self.currentTitleIndex : self.param.menuDefaultIndex;
         [self.dataView setContentOffset:CGPointMake(current * self.pageWidth, 0) animated:NO];
         [self.mainView scrollToIndex:current animal:NO];
     }
@@ -53,18 +53,18 @@
 
 - (void)setUp:(BOOL)clear{
     CGFloat addh = 0;
-    if (self.param.MenuAddSubView) {
-        UIView *insertView = self.param.MenuAddSubView();
+    if (self.param.menuAddSubView) {
+        UIView *insertView = self.param.menuAddSubView();
         if ([insertView isKindOfClass:UIView.class]) {
             [self.insertView layoutIfNeeded];
             self.insertView = insertView;
-            addh = self.insertView.frame.size.height + self.param.MenuInsets.bottom ;
-            self.param.MenuInsets = UIEdgeInsetsMake(self.param.MenuInsets.top, self.param.MenuInsets.left, self.param.MenuInsets.bottom + CGRectGetMaxY(self.insertView.frame), self.param.MenuInsets.right);
+            addh = self.insertView.frame.size.height + self.param.menuInsets.bottom ;
+            self.param.menuInsets = UIEdgeInsetsMake(self.param.menuInsets.top, self.param.menuInsets.left, self.param.menuInsets.bottom + CGRectGetMaxY(self.insertView.frame), self.param.menuInsets.right);
         }
     }
     /// 菜单栏
     [self addSubview:self.mainView];
-    self.mainView.frame = [self.frameInfo[@(self.param.MenuPosition)] CGRectValue];
+    self.mainView.frame = [self.frameInfo[@(self.param.menuPosition)] CGRectValue];
     self.mainView.menuDelegate = self;
     if (clear) {
         self.mainView.param = self.param;
@@ -84,14 +84,14 @@
     /// 视图层
     [self addSubview:self.dataView];
     [self.dataView page_width:self.pageWidth];
-    self.dataView.scrollEnabled = self.param.ScrollCanTransfer;
-    self.dataView.contentSize = CGSizeMake(self.param.TitleArr.count * self.pageWidth,0);
+    self.dataView.scrollEnabled = self.param.scrollCanTransfer;
+    self.dataView.contentSize = CGSizeMake(self.param.titleArr.count * self.pageWidth,0);
     self.dataView.delegate = self;
-    self.dataView.totalCount = self.param.TitleArr.count;
-    self.dataView.respondGuestureType = self.param.RespondGuestureType;
-    self.dataView.globalTriggerOffset = self.param.GlobalTriggerOffset;
+    self.dataView.totalCount = self.param.titleArr.count;
+    self.dataView.respondGuestureType = self.param.respondGuestureType;
+    self.dataView.globalTriggerOffset = self.param.globalTriggerOffset;
     /// 布局frame
-    if (self.param.MenuPosition == PageMenuPositionBottom) {
+    if (self.param.menuPosition == PageMenuPositionBottom) {
         CGRect rect = self.frame;
         rect.origin.y -= self.frame.size.height;
         if (PageIsIphoneX) {
@@ -100,8 +100,8 @@
         }
         self.frame = rect;
     }
-    if (!self.param.MenuIndicatorY) self.param.MenuIndicatorY = 5;
-    self.mainView.contentInset = UIEdgeInsetsMake(0, self.param.MenuInsets.left, 0, self.param.MenuInsets.right);
+    if (!self.param.menuIndicatorY) self.param.menuIndicatorY = 5;
+    self.mainView.contentInset = UIEdgeInsetsMake(0, self.param.menuInsets.left, 0, self.param.menuInsets.right);
     if (self.insertView) {
         [self addSubview:self.insertView];
         [self.insertView page_y:CGRectGetMaxY(self.mainView.frame) - addh];
@@ -131,7 +131,7 @@
             [self addChildVC:index VC:newVC];
             [self viewProtocolAction:@"da" view:newVC];
             [self.dataView setContentOffset:CGPointMake(index * self.pageWidth, 0) animated:NO];
-            if (self.param.EventEndTransferController)self.param.EventEndTransferController(nil, (id)newVC, 0, index);
+            if (self.param.eventEndTransferController)self.param.eventEndTransferController(nil, (id)newVC, 0, index);
             if (self.loopDelegate &&
                 [self.loopDelegate respondsToSelector:@selector(setUpSuspension:index:end:)])
                 [self.loopDelegate setUpSuspension:newVC index:index end:YES];
@@ -141,12 +141,12 @@
             self.nextPageIndex = index;
             self.currentTitleIndex = index;
             [self endAppearanceTransitionWithIndex:self.nextPageIndex withOldIndex:self.lastPageIndex isFlag:NO];
-            [self.dataView setContentOffset:CGPointMake(index * self.pageWidth, 0) animated:self.param.TapScrollAnimal];
+            [self.dataView setContentOffset:CGPointMake(index * self.pageWidth, 0) animated:self.param.tapScrollAnimal];
         }
     }
     
     if (!self.changeDevice) {
-        if (self.param.EventClick) self.param.EventClick(btn, btn.tag);
+        if (self.param.eventClick) self.param.eventClick(btn, btn.tag);
     }else{
         self.changeDevice = NO;
     }
@@ -161,21 +161,21 @@
 - (void)scrollViewDidScroll:(TFY_PageDataView *)scrollView{
     if (scrollView != self.dataView) return;
     ///矫正
-    if (self.dataView.totalCount != self.param.TitleArr.count)
-        self.dataView.totalCount = self.param.TitleArr.count;
+    if (self.dataView.totalCount != self.param.titleArr.count)
+        self.dataView.totalCount = self.param.titleArr.count;
 
     if (scrollView.contentOffset.x < 0)
         [scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
 
-    if (scrollView.contentOffset.x > self.pageWidth * (self.param.TitleArr.count - 1))
-        [scrollView setContentOffset:CGPointMake(self.pageWidth * (self.param.TitleArr.count - 1), 0) animated:NO];
+    if (scrollView.contentOffset.x > self.pageWidth * (self.param.titleArr.count - 1))
+        [scrollView setContentOffset:CGPointMake(self.pageWidth * (self.param.titleArr.count - 1), 0) animated:NO];
     
-    if (scrollView.popGuestureOffset >= 0 && self.param.RespondGuestureType != PagePopNone){
+    if (scrollView.popGuestureOffset >= 0 && self.param.respondGuestureType != PagePopNone){
         [scrollView setContentOffset:CGPointMake(scrollView.popGuestureOffset, 0) animated:NO]; return;
     }
     
     if (![scrollView isDecelerating]&&![scrollView isDragging]) return;
-    if (scrollView.contentOffset.x>0 &&scrollView.contentOffset.x<=self.param.TitleArr.count * self.pageWidth ) {
+    if (scrollView.contentOffset.x>0 &&scrollView.contentOffset.x<=self.param.titleArr.count * self.pageWidth ) {
          [self lifeCycleManage:scrollView];
          [self.mainView animalAction:scrollView lastContrnOffset:lastContentOffset];
     }
@@ -217,7 +217,7 @@
     CGFloat diffX = scrollView.contentOffset.x - lastContentOffset;
     NSInteger currentIndex = diffX < 0 ? ceil(scrollView.contentOffset.x / self.pageWidth) : (scrollView.contentOffset.x / self.pageWidth);
     if (self.currentTitleIndex != currentIndex &&
-        self.param.MenuFollowSliding) {
+        self.param.menuFollowSliding) {
         [self.mainView scrollToIndex:currentIndex animal:YES];
     }
     self.currentTitleIndex = currentIndex;
@@ -260,15 +260,15 @@
 
 - (UIResponder*)getVCWithIndex:(NSInteger)index{
     UIResponder *controller = nil;
-    if (index < 0 || index >= self.param.TitleArr.count)  return controller;
+    if (index < 0 || index >= self.param.titleArr.count)  return controller;
     controller = [self.cache objectForKey:@(index)];
     if (controller) return controller;
-    if (self.param.Controllers) {
-        controller = self.param.Controllers[index];
+    if (self.param.controllers) {
+        controller = self.param.controllers[index];
         if (controller)  return controller;
     }else{
-        if (self.param.ViewController) {
-            controller = self.param.ViewController(index);
+        if (self.param.viewController) {
+            controller = self.param.viewController(index);
             if (controller) return controller;
         }
     }
@@ -284,7 +284,7 @@
     [self appearanceTransition:NO end:NO controller:oldVC];
     self.currentVC = (id)newVC;
     if (self.loopDelegate&&[self.loopDelegate respondsToSelector:@selector(setUpSuspension:index:end:)]) [self.loopDelegate setUpSuspension:newVC index:index end:NO];
-    if (self.param.EventBeganTransferController) self.param.EventBeganTransferController((id)oldVC, (id)newVC, old, index);
+    if (self.param.eventBeganTransferController) self.param.eventBeganTransferController((id)oldVC, (id)newVC, old, index);
 }
 
 - (void)addChildVC:(NSInteger)index VC:(UIResponder*)newReponder{
@@ -343,7 +343,7 @@
             [self appearanceTransition:NO  end:YES controller:oldResponer];
             self.hasDifferenrDirection = NO;
         }
-        if (self.param.EventEndTransferController) self.param.EventEndTransferController((id)oldResponer, (id)newResponer, old, index);
+        if (self.param.eventEndTransferController) self.param.eventEndTransferController((id)oldResponer, (id)newResponer, old, index);
         self.currentVC = (id)newResponer;
         self.currentTitleIndex = index;
         if (self.loopDelegate &&
@@ -363,7 +363,7 @@
         [self appearanceTransition:YES end:YES controller:oldResponer];
         [self appearanceTransition:NO end:NO controller:newResponer];
         [self appearanceTransition:NO end:YES controller:newResponer];
-        if (self.param.EventEndTransferController) self.param.EventEndTransferController((id)newResponer, (id)oldResponer, index, old);
+        if (self.param.eventEndTransferController) self.param.eventEndTransferController((id)newResponer, (id)oldResponer, index, old);
         self.currentVC = (id)oldResponer;
         self.currentTitleIndex = old;
         if (self.loopDelegate&&[self.loopDelegate respondsToSelector:@selector(setUpSuspension:index:end:)]) [self.loopDelegate setUpSuspension:oldResponer index:old end:YES];
@@ -409,10 +409,10 @@
 
 
 - (BOOL)canTopSuspension{
-    if (!self.param.TopSuspension
-       ||self.param.MenuPosition == PageMenuPositionBottom
-        ||self.param.MenuPosition == PageMenuPositionNavi) return NO;
-    if (!self.param.TitleArr.count) return NO;
+    if (!self.param.topSuspension
+       ||self.param.menuPosition == PageMenuPositionBottom
+        ||self.param.menuPosition == PageMenuPositionNavi) return NO;
+    if (!self.param.titleArr.count) return NO;
     return YES;
 }
 
@@ -425,14 +425,14 @@
 }
 
 - (NSDictionary *)frameInfo{
-    CGFloat menuCellMarginY = self.param.MenuCellMarginY;
-    if (!UIEdgeInsetsEqualToEdgeInsets(self.param.MenuInsets, UIEdgeInsetsZero)) menuCellMarginY = self.param.MenuInsets.top;
+    CGFloat menuCellMarginY = self.param.menuCellMarginY;
+    if (!UIEdgeInsetsEqualToEdgeInsets(self.param.menuInsets, UIEdgeInsetsZero)) menuCellMarginY = self.param.menuInsets.top;
     _frameInfo = @{
-        @(PageMenuPositionLeft):[NSValue valueWithCGRect:CGRectMake(0, menuCellMarginY , self.param.MenuWidth,self.param.MenuHeight + self.param.MenuInsets.bottom)],
-        @(PageMenuPositionRight):[NSValue valueWithCGRect:CGRectMake(self.pageWidth-self.param.MenuWidth, menuCellMarginY , self.param.MenuWidth,self.param.MenuHeight + self.param.MenuInsets.bottom )],
-        @(PageMenuPositionCenter):[NSValue valueWithCGRect:CGRectMake((self.pageWidth - self.param.MenuWidth)/2, menuCellMarginY , self.param.MenuWidth,self.param.MenuHeight + self.param.MenuInsets.bottom )],
-        @(PageMenuPositionNavi):[NSValue valueWithCGRect:CGRectMake((self.pageWidth - self.param.MenuWidth)/2, menuCellMarginY , self.param.MenuWidth,self.param.MenuHeight + self.param.MenuInsets.bottom )],
-        @(PageMenuPositionBottom):[NSValue valueWithCGRect:CGRectMake(menuCellMarginY, self.pageWidth , self.param.MenuWidth,(PageIsIphoneX?(self.param.MenuHeight + 34):self.param.MenuHeight) + self.param.MenuInsets.bottom )],
+        @(PageMenuPositionLeft):[NSValue valueWithCGRect:CGRectMake(0, menuCellMarginY , self.param.menuWidth,self.param.menuHeight + self.param.menuInsets.bottom)],
+        @(PageMenuPositionRight):[NSValue valueWithCGRect:CGRectMake(self.pageWidth-self.param.menuWidth, menuCellMarginY , self.param.menuWidth,self.param.menuHeight + self.param.menuInsets.bottom )],
+        @(PageMenuPositionCenter):[NSValue valueWithCGRect:CGRectMake((self.pageWidth - self.param.menuWidth)/2, menuCellMarginY , self.param.menuWidth,self.param.menuHeight + self.param.menuInsets.bottom )],
+        @(PageMenuPositionNavi):[NSValue valueWithCGRect:CGRectMake((self.pageWidth - self.param.menuWidth)/2, menuCellMarginY , self.param.menuWidth,self.param.menuHeight + self.param.menuInsets.bottom )],
+        @(PageMenuPositionBottom):[NSValue valueWithCGRect:CGRectMake(menuCellMarginY, self.pageWidth , self.param.menuWidth,(PageIsIphoneX?(self.param.menuHeight + 34):self.param.menuHeight) + self.param.menuInsets.bottom )],
     };
     return _frameInfo;
 }

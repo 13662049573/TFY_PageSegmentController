@@ -10,7 +10,7 @@
 //
 
 #import "SecondNextSonVC.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 @interface SecondNextSonVC ()
 
 @end
@@ -20,22 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     TFY_PageParam *param = PageParam()
-    .TitleArrSet(@[@"推荐",@"赛事",@"短视频",@"专栏"])
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
-        return [TopSuspensionVC new];
+    .titleArrSet(@[@"推荐",@"赛事",@"短视频",@"专栏"])
+    .viewControllerSet(^UIViewController *(NSInteger index) {
+        return [topSuspensionVC new];
     })
-    .TopSuspensionSet(YES)
+    .topSuspensionSet(YES)
     /// 设为NO 则需要手动调整
-    .LazyLoadingSet(NO)
-    .MenuTitleSelectColorSet([UIColor orangeColor])
-    .MenuAnimalSet(PageTitleMenuCircle);
-    param.CustomNaviBarY = ^CGFloat(CGFloat nowY) {
+    .lazyLoadingSet(NO)
+    .menuTitleSelectColorSet([UIColor orangeColor])
+    .menuAnimalSet(PageTitleMenuCircle);
+    param.customNaviBarY = ^CGFloat(CGFloat nowY) {
         return nowY;
     };
-    param.CustomTabbarY = ^CGFloat(CGFloat nowY) {
+    param.customTabbarY = ^CGFloat(CGFloat nowY) {
         return nowY;
     };
-    param.CustomDataViewHeight = ^CGFloat(CGFloat nowY) {
+    param.customDataViewHeight = ^CGFloat(CGFloat nowY) {
         /// 再减掉父类的菜单高度
         return nowY - PageVCTabBarHeight - 55;
     };

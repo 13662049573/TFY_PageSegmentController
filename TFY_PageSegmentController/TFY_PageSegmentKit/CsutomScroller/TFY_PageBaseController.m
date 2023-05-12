@@ -39,13 +39,13 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    if (self.naviBarBackGround && self.param.NaviAlpha)  lastAlpah = @(self.naviBarBackGround.alpha);
+    if (self.naviBarBackGround && self.param.naviAlpha)  lastAlpah = @(self.naviBarBackGround.alpha);
     hadWillDisappeal = YES;
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    if (self.naviBarBackGround && self.param.NaviAlpha) {
+    if (self.naviBarBackGround && self.param.naviAlpha) {
         lastAlpah = @(self.naviBarBackGround.alpha);
         self.naviBarBackGround.alpha = enterAlpah ? enterAlpah.floatValue:1;
     }
@@ -59,13 +59,13 @@
 /// 导航栏设置
 - (void)setNaviUI{
     hadWillDisappeal = NO;
-    if (self.navigationController && self.param.NaviAlpha) {
+    if (self.navigationController && self.param.naviAlpha) {
         self.naviBarBackGround.alpha = 0;
         if (self.naviBarBackGround && lastAlpah){
             self.naviBarBackGround.alpha = lastAlpah.floatValue;
             return;
         }
-        if (self.param.NaviAlphaAll) {
+        if (self.param.naviAlphaAll) {
             self.naviBarBackGround = self.navigationController.navigationBar;
             enterAlpah = @(self.naviBarBackGround.alpha);
             [self.naviBarBackGround setAlpha:0];
@@ -140,18 +140,18 @@
 
 - (void)setParam:(TFY_PageParam *)param{
     _param = param;
-    if (self.param.DeviceChange)
+    if (self.param.deviceChange)
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(change:) name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
-    menuScreen = (self.param.MenuWidth == PageVCWidth);
+    menuScreen = (self.param.menuWidth == PageVCWidth);
     if (self.pageView) {
         [self.pageView removeFromSuperview];
     }
     self.pageView = [[TFY_PageBaseView alloc]initWithFrame:self.view.bounds autoFix:YES source:YES param:param parentReponder:self];
     self.downSc = self.pageView.downSc;
     self.downSc.delegate = self;
-    if (self.param.MenuPosition == PageMenuPositionNavi||
-        self.param.MenuPosition == PageMenuPositionBottom ||
-        !self.param.LazyLoading) {
+    if (self.param.menuPosition == PageMenuPositionNavi||
+        self.param.menuPosition == PageMenuPositionBottom ||
+        !self.param.lazyLoading) {
         [self showData];
     }else{
         [self performSelector:@selector(showData) withObject:nil afterDelay:CGFLOAT_MIN];
@@ -160,7 +160,7 @@
 
 /// 横竖屏通知
 - (void)change:(NSNotification*)notification{
-    if (!self.param.DeviceChange) return;
+    if (!self.param.deviceChange) return;
     BOOL change = ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft ||
                    [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight);
     [self changeLeft:change];
@@ -170,7 +170,7 @@
 - (void)changeLeft:(BOOL)left{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (self->menuScreen) {
-            self.param.MenuWidth = PageVCWidth;
+            self.param.menuWidth = PageVCWidth;
         }
         self.pageView.frame = self.view.bounds;
         [self.pageView setUpUI:NO];
@@ -186,7 +186,7 @@
 }
 
 - (void)dealloc{
-    if (self.param.DeviceChange)
+    if (self.param.deviceChange)
         [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];

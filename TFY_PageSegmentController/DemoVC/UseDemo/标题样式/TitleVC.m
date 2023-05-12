@@ -45,32 +45,32 @@
         NSArray *data = [self performSelector:NSSelectorFromString(dic[@(index)]) withObject:nil];
         TFY_PageParam *param =
         PageParam()
-        .TitleArrSet(data)
-        .ViewControllerSet(^UIViewController *(NSInteger index) {
+        .titleArrSet(data)
+        .viewControllerSet(^UIViewController *(NSInteger index) {
             TestVC *vc = [TestVC new];
             vc.page = index;
             return vc;
         })
-        .CustomMenuViewSet(^(UIView *bgView) {
+        .customMenuViewSet(^(UIView *bgView) {
     //        bgView.alpha = 0.5;
         })
-        .MenuWidthSet(PageVCWidth)
-        .MenuDefaultIndexSet(1)
+        .menuWidthSet(PageVCWidth)
+        .menuDefaultIndexSet(1)
        //自定义红点 调整颜色 位置等
-       .CustomRedViewSet(^(UILabel *redLa,NSDictionary *info) {
+       .customRedViewSet(^(UILabel *redLa,NSDictionary *info) {
 
         })
-        .MenuPositionSet([position[@(index)] intValue]);
+        .menuPositionSet([position[@(index)] intValue]);
         /// 右侧标题
         if (index == 5) {
-            param.MenuFixRightDataSet(@"≡");
+            param.menuFixRightDataSet(@"≡");
         }
     
         /// 右侧图文标题
         if (index == 6) {
-            param.MenuImagePositionSet(PageBtnPositionLeft)
-                 .MenuFixRightDataSet(@{TFY_PageKeyName:@"金币",TFY_PageKeyImage:@"B"})
-            .EventFixedClickSet(^(id anyID, NSInteger index) {
+            param.menuImagePositionSet(PageBtnPositionLeft)
+                 .menuFixRightDataSet(@{TFY_PageKeyName:@"金币",TFY_PageKeyImage:@"B"})
+            .eventFixedClickSet(^(id anyID, NSInteger index) {
                 NSLog(@"固定标题点击%ld",(long)index);
                 //模拟更新
                 [self.upSc.btnArr enumerateObjectsUsingBlock:^(TFY_PageNavBtn*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -84,7 +84,7 @@
     
         /// 固定标题宽度
         if (index == 7) {
-            param.MenuTitleWidthSet(PageVCWidth/3);
+            param.menuTitleWidthSet(PageVCWidth/3);
         }
 
         self.param = param;

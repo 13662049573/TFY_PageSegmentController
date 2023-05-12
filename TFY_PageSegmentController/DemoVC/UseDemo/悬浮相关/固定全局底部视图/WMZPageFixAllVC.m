@@ -19,12 +19,12 @@
     // Do any additional setup after loading the view.
     
     TFY_PageParam *param = TFY_PageParam.new;
-    param.TitleArr = @[@"fixOne",@"fixTwo",@"fixThree"];
-    param.CustomTabbarY = ^CGFloat(CGFloat nowY) {
+    param.titleArr = @[@"fixOne",@"fixTwo",@"fixThree"];
+    param.customTabbarY = ^CGFloat(CGFloat nowY) {
         return 50;
     };
-    param.MenuFixWidth = PageVCWidth/3;
-    param.ViewController = ^UIViewController * _Nullable(NSInteger index) {
+    param.menuFixWidth = PageVCWidth/3;
+    param.viewController = ^UIViewController * _Nullable(NSInteger index) {
         return NSClassFromString(@"TestVC").new;
     };
     self.param = param;

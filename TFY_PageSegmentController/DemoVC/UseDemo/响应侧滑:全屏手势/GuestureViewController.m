@@ -21,19 +21,19 @@
     [self customNavi:@[@"不响应",@"首个响应",@"全部响应"]];
     
     TFY_PageParam *param = TFY_PageParam.new;
-    param.TitleArr = @[@"精选",@"好货",@"精选",@"好货"];
-    param.ViewController = ^UIViewController * _Nullable(NSInteger index) {
+    param.titleArr = @[@"精选",@"好货",@"精选",@"好货"];
+    param.viewController = ^UIViewController * _Nullable(NSInteger index) {
         return NSClassFromString(@"TestVC").new;
     };
     /// 首个响应
-    param.RespondGuestureType = PagePopFirst;
+    param.respondGuestureType = PagePopFirst;
 //    /// 全部响应
-//    param.RespondGuestureType = PagePopAll;
+//    param.respondGuestureType = PagePopAll;
 //    /// 不响应
-//    param.RespondGuestureType = PagePopNone;
+//    param.respondGuestureType = PagePopNone;
     
     ///type为PagePopAll时的响应范围
-    param.GlobalTriggerOffset = PageVCWidth * 0.15;
+    param.globalTriggerOffset = PageVCWidth * 0.15;
     self.param = param;
     
 }
@@ -55,10 +55,10 @@
 }
 
 - (void)onBtnAction:(UIButton*)sender{
-    self.param.MenuDefaultIndex = sender.tag == 2 ? 1 : 0;
+    self.param.menuDefaultIndex = sender.tag == 2 ? 1 : 0;
     
     /// 响应调用代码
-    self.param.RespondGuestureType = sender.tag;
+    self.param.respondGuestureType = sender.tag;
     [self updateMenuData];
 }
 

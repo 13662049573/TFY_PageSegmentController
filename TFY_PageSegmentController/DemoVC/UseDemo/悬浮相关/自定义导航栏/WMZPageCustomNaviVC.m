@@ -7,7 +7,7 @@
 //
 
 #import "WMZPageCustomNaviVC.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "UIImageView+WebCache.h"
 @interface WMZPageCustomNaviVC ()<UITableViewDataSource>
 @property(nonatomic,strong)UIButton *customView;
@@ -35,28 +35,28 @@
     TFY_PageParam *param =
     PageParam()
     //控制器数组
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         /// 带滚动视图需实现协议
-        TopSuspensionVC *vc = [TopSuspensionVC new];
+        topSuspensionVC *vc = [topSuspensionVC new];
         vc.page = index;
         return vc;
     })
-    .TitleArrSet(data)
-    .MenuAnimalSet(PageTitleMenuPDD)
-    .MenuDefaultIndexSet(3)
+    .titleArrSet(data)
+    .menuAnimalSet(PageTitleMenuPDD)
+    .menuDefaultIndexSet(3)
     //调整顶部悬浮的位置 可调到悬浮至状态栏的位置
-    .CustomNaviBarYSet(^CGFloat(CGFloat nowY) {
+    .customNaviBarYSet(^CGFloat(CGFloat nowY) {
        return PageVCNavBarHeight;
      })
     //调整距离底部的位置
-     .CustomTabbarYSet(^CGFloat(CGFloat nowY) {
+     .customTabbarYSet(^CGFloat(CGFloat nowY) {
          return nowY;
      })
     //悬浮开启
-    .TopSuspensionSet(YES)
-    .BouncesSet(YES)
+    .topSuspensionSet(YES)
+    .bouncesSet(YES)
     //No为从自定义导航栏顶部开始 yes为从自定义导航栏底部开始
-    .FromNaviSet(YES);
+    .fromNaviSet(YES);
     self.param = param;
     
     //如果没有出现视图 就延时0.1秒加载

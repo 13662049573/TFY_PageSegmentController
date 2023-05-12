@@ -7,7 +7,7 @@
 //
 
 #import "WMZCustomTwoPage.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "UIImageView+WebCache.h"
 @interface WMZCustomTwoPage ()
 
@@ -22,25 +22,25 @@
         //标题数组
         NSArray *data = @[@"热门",@"男装",@"美妆",@"手机",@"食品",@"电器",@"鞋包",@"百货",@"女装",@"汽车",@"电脑"];
         TFY_PageParam *param = PageParam()
-        .TitleArrSet(data)
+        .titleArrSet(data)
         //控制器数组
-        .ViewControllerSet(^UIViewController *(NSInteger index) {
+        .viewControllerSet(^UIViewController *(NSInteger index) {
             /// 带滚动视图需实现协议
-          return [TopSuspensionVC new];
+          return [topSuspensionVC new];
         })
         //悬浮开启
-        .TopSuspensionSet(YES)
+        .topSuspensionSet(YES)
         //头视图y坐标从0开始
-        .FromNaviSet(NO)
+        .fromNaviSet(NO)
         //导航栏透明度变化
-        .NaviAlphaSet(YES)
+        .naviAlphaSet(YES)
         //背景层
-        .InsertHeadAndMenuBgSet(^(UIView *bgView) {
+        .insertHeadAndMenuBgSet(^(UIView *bgView) {
             //全局背景示例
             bgView.layer.contents = (id)[UIImage imageNamed:@"11111"].CGImage;
         })
         //头部
-        .MenuHeadViewSet(^UIView *{
+        .menuHeadViewSet(^UIView *{
             UIView *back = [UIView new];
             back.frame = CGRectMake(0, 0, PageVCWidth, 270+PageVCStatusBarHeight);
             UIImageView *image = [UIImageView new];

@@ -18,22 +18,22 @@
     [super viewDidLoad];
 
     TFY_PageParam *param = PageParam()
-    .MenuAnimalSet(PageTitleMenuCircleBg)
+    .menuAnimalSet(PageTitleMenuCircleBg)
        //圆角
-//    .MenuTitleRadiosSet(5)
+//    .menuTitleRadiosSet(5)
       // 标题背景颜色
-//    .MenuTitleBackgroundSet([UIColor clearColor])
+//    .menuTitleBackgroundSet([UIColor clearColor])
       // 标题选中背景
-    .MenuSelectTitleBackgroundSet([UIColor blueColor])
-    .MenuTitleColorSet([UIColor orangeColor])
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .menuSelectTitleBackgroundSet([UIColor blueColor])
+    .menuTitleColorSet([UIColor orangeColor])
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         return [TestVC new];
     })
-    .MenuHeightSet(40)
-    .MenuWidthSet(PageVCWidth*0.75 + 8)
-    .MenuPositionSet(PageMenuPositionCenter)
-    .MenuTitleWidthSet(PageVCWidth/4*0.75)
-    .TitleArrSet(@[
+    .menuHeightSet(40)
+    .menuWidthSet(PageVCWidth*0.75 + 8)
+    .menuPositionSet(PageMenuPositionCenter)
+    .menuTitleWidthSet(PageVCWidth/4*0.75)
+    .titleArrSet(@[
         @{TFY_PageKeyName:@"男装",TFY_PageKeyTitleMarginY:@(4),TFY_PageKeyTitleMarginX:@(2)},
         @{TFY_PageKeyName:@"女装",TFY_PageKeyTitleMarginY:@(4)},
         @{TFY_PageKeyName:@"热门",TFY_PageKeyTitleMarginY:@(4)},

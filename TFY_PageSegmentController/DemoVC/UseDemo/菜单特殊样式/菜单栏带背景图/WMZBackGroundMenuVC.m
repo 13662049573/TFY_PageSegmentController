@@ -7,7 +7,7 @@
 //
 
 #import "WMZBackGroundMenuVC.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
 @interface WMZBackGroundMenuVC ()
@@ -33,19 +33,19 @@
     NSArray *data = @[@"热门",@"男装",@"美妆",@"手机",@"食品",@"电器",@"鞋包",@"百货",@"女装",@"汽车",@"电脑"];
     TFY_PageParam *param =
     PageParam()
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
-        TopSuspensionVC *vc = [TopSuspensionVC new];
+    .viewControllerSet(^UIViewController *(NSInteger index) {
+        topSuspensionVC *vc = [topSuspensionVC new];
         vc.page = index;
         return vc;
     })
-    .MenuBgColorSet([UIColor colorWithRed:0 green:0 blue:0 alpha:0])
-    .TitleArrSet(data)
-    .MenuAnimalSet(PageTitleMenuPDD)
-    .MenuDefaultIndexSet(3)
-    .MenuInsetsSet(UIEdgeInsetsMake(PageVCStatusBarHeight + 20, 20, 0, 20))
-    .MenuHeightSet(60)
-    .BouncesSet(YES)
-    .FromNaviSet(NO);
+    .menuBgColorSet([UIColor colorWithRed:0 green:0 blue:0 alpha:0])
+    .titleArrSet(data)
+    .menuAnimalSet(PageTitleMenuPDD)
+    .menuDefaultIndexSet(3)
+    .menuInsetsSet(UIEdgeInsetsMake(PageVCStatusBarHeight + 20, 20, 0, 20))
+    .menuHeightSet(60)
+    .bouncesSet(YES)
+    .fromNaviSet(NO);
     self.param = param;
     
     //延迟0.1秒加载

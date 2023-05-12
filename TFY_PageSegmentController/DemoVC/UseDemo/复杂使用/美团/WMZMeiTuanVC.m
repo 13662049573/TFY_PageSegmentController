@@ -18,19 +18,19 @@
     [super viewDidLoad];
        NSArray *data = @[@"点菜",@"评价",@"商家"];
        TFY_PageParam *param = PageParam()
-       .TitleArrSet(data)
-       .ViewControllerSet(^UIViewController *(NSInteger index) {
+       .titleArrSet(data)
+       .viewControllerSet(^UIViewController *(NSInteger index) {
           return [WMZMeiTuanSonVC new];
         })
        //悬浮开启
-       .TopSuspensionSet(YES)
-       .MenuAnimalSet(PageTitleMenuAiQY)
-       .MenuTitleWidthSet(self.view.frame.size.width / 5)
+       .topSuspensionSet(YES)
+       .menuAnimalSet(PageTitleMenuAiQY)
+       .menuTitleWidthSet(self.view.frame.size.width / 5)
        //头视图y坐标从0开始
-       .FromNaviSet(NO)
-       .NaviAlphaSet(YES)
+       .fromNaviSet(NO)
+       .naviAlphaSet(YES)
        //头部
-       .MenuHeadViewSet(^UIView *{
+       .menuHeadViewSet(^UIView *{
            UIView *back = [UIView new];
            back.frame = CGRectMake(0, 0, PageVCWidth, 300);
            UIImageView *image = [UIImageView new];

@@ -7,7 +7,7 @@
 //
 
 #import "WMZDemoTwo.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 @interface WMZDemoTwo ()
 
 @end
@@ -19,22 +19,22 @@
     // Do any additional setup after loading the view.
 
     TFY_PageParam *param = PageParam()
-    .MenuTitleSelectColorSet([UIColor redColor])
-    .TitleArrSet([self attributesData])
-    .MenuTitleWidthSet(PageVCWidth/4)
-    .MenuCellMarginYSet(10)
-    .MenuCircilRadioSet(20)
-    .HideRedCircleSet(NO)
-    .MenuAnimalSet(PageTitleMenuCircle);
-    param.ViewController = ^UIViewController * _Nullable(NSInteger index) {
-        return [TopSuspensionVC new];
+    .menuTitleSelectColorSet([UIColor redColor])
+    .titleArrSet([self attributesData])
+    .menuTitleWidthSet(PageVCWidth/4)
+    .menuCellMarginYSet(10)
+    .menuCircilRadioSet(20)
+    .hideRedCircleSet(NO)
+    .menuAnimalSet(PageTitleMenuCircle);
+    param.viewController = ^UIViewController * _Nullable(NSInteger index) {
+        return [topSuspensionVC new];
     };
     //也可以此处自定义富文本
-    param.CustomMenuTitle = ^(NSArray<TFY_PageNavBtn *> * _Nullable titleArr) {
+    param.customMenuTitle = ^(NSArray<TFY_PageNavBtn *> * _Nullable titleArr) {
         
     };
     //自定义滑动后标题的变化 如有需要
-    param.CustomMenuSelectTitle = ^(NSArray<TFY_PageNavBtn *> * _Nullable titleArr) {
+    param.customMenuSelectTitle = ^(NSArray<TFY_PageNavBtn *> * _Nullable titleArr) {
         
     };
     

@@ -17,13 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     TFY_PageParam *headParam = PageParam()
-    .TitleArrSet(@[@"关注",@"推荐"])
-    .ViewControllerSet(^UIViewController *(NSInteger num) {
+    .titleArrSet(@[@"关注",@"推荐"])
+    .viewControllerSet(^UIViewController *(NSInteger num) {
         return [ReplaceParentSonVC new];
     })
-    .MenuPositionSet(PageMenuPositionCenter)
-    .MenuAnimalSet(PageTitleMenuPDD)
-    .MenuWidthSet(150);
+    .menuPositionSet(PageMenuPositionCenter)
+    .menuAnimalSet(PageTitleMenuPDD)
+    .menuWidthSet(150);
     self.param = headParam;
 }
 

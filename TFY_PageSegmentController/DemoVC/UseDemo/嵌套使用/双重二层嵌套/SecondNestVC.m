@@ -17,14 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     TFY_PageParam *param = PageParam()
-    .TitleArrSet(@[@"推荐",@"赛事",@"短视频",@"专栏"])
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .titleArrSet(@[@"推荐",@"赛事",@"短视频",@"专栏"])
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         return [SecondNextSonVC new];
     })
     /// 设为NO 则需要手动调整
-    .LazyLoadingSet(NO)
-    .MenuTitleSelectColorSet([UIColor orangeColor])
-    .MenuAnimalSet(PageTitleMenuCircle);
+    .lazyLoadingSet(NO)
+    .menuTitleSelectColorSet([UIColor orangeColor])
+    .menuAnimalSet(PageTitleMenuCircle);
     
     self.param = param;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "WMZPageUseViewVC.h"
-#import "TopSuspensionView.h"
+#import "topSuspensionView.h"
 #import "UIImageView+WebCache.h"
 @interface WMZPageUseViewVC ()
 
@@ -20,21 +20,21 @@
     // Do any additional setup after loading the view.
     
     TFY_PageParam *param = TFY_PageParam.new;
-    param.TitleArr = @[@"TestOne",@"TestTwo",@"TestThree",@"TestFour",@"TestFive",@"TestSix"];
-    param.ViewController = ^UIViewController * _Nullable(NSInteger index) {
+    param.titleArr = @[@"TestOne",@"TestTwo",@"TestThree",@"TestFour",@"TestFive",@"TestSix"];
+    param.viewController = ^UIViewController * _Nullable(NSInteger index) {
         /// WMZPageProtocol协议里有完整的生命周期 实现pageViewWillAppear等方法即可 默认UIView的frame和使用控制器的一样
         /// 带滚动视图需实现协议
-        TopSuspensionView *view = TopSuspensionView.new;
+        topSuspensionView *view = topSuspensionView.new;
         view.page = index;
         /// 这里为了方便使用 使用同一个属性 所以这里为了去除警告强转一下类型 但是实际类型还是UIView
         return (UIViewController*)view;
     };
-    param.TopSuspension = YES;
-    param.Bounces = YES;
-    param.FromNavi = NO;
-    param.NaviAlpha = YES;
+    param.topSuspension = YES;
+    param.bounces = YES;
+    param.fromNavi = NO;
+    param.naviAlpha = YES;
     ///头部
-    param.MenuHeadView = ^UIView * _Nullable{
+    param.menuHeadView = ^UIView * _Nullable{
         UIImageView *image = [UIImageView new];
         [image sd_setImageWithURL:[NSURL URLWithString:@"https://upload-images.jianshu.io/upload_images/9163368-02e26751674a3bc6.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"]];
         image.frame = CGRectMake(0, 0, PageVCWidth, 300);

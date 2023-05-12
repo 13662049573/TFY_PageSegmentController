@@ -42,19 +42,19 @@
     self.btnArr = [NSMutableArray new];
     [self addSubview:self.containView];
     TFY_PageNavBtn *temp = nil;
-    for (int i = 0; i<self.param.TitleArr.count; i++) {
+    for (int i = 0; i<self.param.titleArr.count; i++) {
         TFY_PageNavBtn *btn = [TFY_PageNavBtn buttonWithType:UIButtonTypeCustom];
         [self setPropertiesWithBtn:btn withIndex:i withTemp:temp];
         temp = btn;
     }
-    if (self.param.CustomMenuView) self.param.CustomMenuView(self);
+    if (self.param.customMenuView) self.param.customMenuView(self);
     /// 指示器
     [self setUpIndicator];
     /// 右边固定标题
     [self setUpFixRightBtn:temp];
     if (temp) [self resetMainViewContenSize:temp];
     /// 最底部固定线
-    if (self.param.InsertMenuLine) {
+    if (self.param.insertMenuLine) {
         self.bottomView = [UIView new];
         self.bottomView.backgroundColor = PageColor(0x999999);
         self.bottomView.frame = CGRectMake(0, self.frame.size.height - PageK1px, self.frame.size.width, PageK1px);
@@ -65,7 +65,7 @@
         if (!lineRect.size.width) lineRect.size.width = self.frame.size.width;
         self.bottomView.frame = lineRect;
         [self addSubview:self.bottomView];
-        self.param.InsertMenuLine(self.bottomView);
+        self.param.insertMenuLine(self.bottomView);
     }
 }
 
@@ -73,13 +73,13 @@
     [self.btnArr makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.btnArr removeAllObjects];
     TFY_PageNavBtn *temp = nil;
-    for (int i = 0; i< self.param.TitleArr.count; i++) {
+    for (int i = 0; i< self.param.titleArr.count; i++) {
         TFY_PageNavBtn *btn = [TFY_PageNavBtn buttonWithType:UIButtonTypeCustom];
         if (!btn) continue;
         [self setPropertiesWithBtn:btn withIndex:i withTemp:temp];
         temp = btn;
         
-        if (i == self.param.TitleArr.count - 1)
+        if (i == self.param.titleArr.count - 1)
             [self resetMainViewContenSize:btn];
         
         if (self.lastBTN) {
@@ -102,8 +102,8 @@
     self.contentSize = CGSizeMake(CGRectGetMaxX(btn.frame), 0);
     CGRect rect = self.frame;
     if (self.contentSize.width < self.frame.size.width &&
-        self.param.MenuPosition == PageMenuPositionCenter &&
-        self.param.MenuWidth == PageVCWidth) {
+        self.param.menuPosition == PageMenuPositionCenter &&
+        self.param.menuWidth == PageVCWidth) {
         rect.size.width = self.contentSize.width;
         rect.origin.x = (PageVCWidth - rect.size.width)/2;
         self.frame = rect;
@@ -121,52 +121,52 @@
 /// 初始化指示器
 - (void)setUpIndicator{
     self.lineView = [TFY_PageNavBtn buttonWithType:UIButtonTypeCustom];
-    if (self.param.MenuIndicatorImage) {
-        [self.lineView setImage:[UIImage imageNamed:self.param.MenuIndicatorImage] forState:UIControlStateNormal];
+    if (self.param.menuIndicatorImage) {
+        [self.lineView setImage:[UIImage imageNamed:self.param.menuIndicatorImage] forState:UIControlStateNormal];
     }else{
-        self.lineView.backgroundColor = self.param.MenuIndicatorColor;
+        self.lineView.backgroundColor = self.param.menuIndicatorColor;
     }
     [self addSubview:self.lineView];
-    if (self.param.MenuAnimal == PageTitleMenuCircle) {
+    if (self.param.menuAnimal == PageTitleMenuCircle) {
         self.lineView.userInteractionEnabled = NO;
         [self sendSubviewToBack:self.lineView];
     }
-    self.lineView.hidden = (self.param.MenuAnimal == PageTitleMenuNone||
-                            self.param.MenuAnimal == PageTitleMenuTouTiao||
-                            self.param.MenuAnimal == PageTitleMenuCircleBg||
-                            self.param.MenuAnimal == PageTitleMenuJD);
-    if (self.param.MenuIndicatorRadio) {
-        self.lineView.layer.cornerRadius = self.param.MenuIndicatorRadio;
+    self.lineView.hidden = (self.param.menuAnimal == PageTitleMenuNone||
+                            self.param.menuAnimal == PageTitleMenuTouTiao||
+                            self.param.menuAnimal == PageTitleMenuCircleBg||
+                            self.param.menuAnimal == PageTitleMenuJD);
+    if (self.param.menuIndicatorRadio) {
+        self.lineView.layer.cornerRadius = self.param.menuIndicatorRadio;
         self.lineView.layer.masksToBounds = YES;
     }
 }
 
 - (void)setUpFixRightBtn:(TFY_PageNavBtn*)temp{
-    if (self.param.MenuFixRightData) {
+    if (self.param.menuFixRightData) {
         self.fixBtnArr = [NSMutableArray new];
         NSMutableArray *fixData = [NSMutableArray new];
-        if ([self.param.MenuFixRightData isKindOfClass:[NSArray class]]) {
-            fixData = [NSMutableArray arrayWithArray:self.param.MenuFixRightData];
+        if ([self.param.menuFixRightData isKindOfClass:[NSArray class]]) {
+            fixData = [NSMutableArray arrayWithArray:self.param.menuFixRightData];
         }else{
-            [fixData addObject:self.param.MenuFixRightData];
+            [fixData addObject:self.param.menuFixRightData];
         }
         CGFloat allWidth = 0;
         for (int i = ((int)fixData.count - 1); i >= 0 ; i--) {
             id info = fixData[i];
             TFY_PageNavBtn *fixBtn = [TFY_PageNavBtn buttonWithType:UIButtonTypeCustom];
             fixBtn.config = info;
-            CGFloat menuFixWidth = [self getTitleData:info key:TFY_PageKeyTitleWidth]?[[self getTitleData:info key:TFY_PageKeyTitleWidth] floatValue]:self.param.MenuFixWidth;
-            CGFloat originY = [self getTitleData:info key:TFY_PageKeyTitleMarginY]?[[self getTitleData:info key:TFY_PageKeyTitleMarginY] floatValue]:(temp.frame.origin.y + self.param.MenuInsets.top);
+            CGFloat menuFixWidth = [self getTitleData:info key:TFY_PageKeyTitleWidth]?[[self getTitleData:info key:TFY_PageKeyTitleWidth] floatValue]:self.param.menuFixWidth;
+            CGFloat originY = [self getTitleData:info key:TFY_PageKeyTitleMarginY]?[[self getTitleData:info key:TFY_PageKeyTitleMarginY] floatValue]:(temp.frame.origin.y + self.param.menuInsets.top);
             CGFloat menuFixHeight = [self getTitleData:info key:TFY_PageKeyTitleHeight]?[[self getTitleData:info key:TFY_PageKeyTitleHeight] floatValue]:temp.frame.size.height;
             id text = [self getTitleData:info key:TFY_PageKeyName];
-            if (!text && self.param.CustomTitleContent) {
-                text =  self.param.CustomTitleContent(info,i);
+            if (!text && self.param.customTitleContent) {
+                text =  self.param.customTitleContent(info,i);
             }
             id selectText = [self getTitleData:info key:TFY_PageKeySelectName];
             id image = [self getTitleData:info key:TFY_PageKeyImage];
             id selectImage = [self getTitleData:info key:TFY_PageKeySelectImage];
-            id titleColor = [self getTitleData:info key:TFY_PageKeyTitleColor]?:self.param.MenuTitleColor;
-            id titleSelectColor = [self getTitleData:info key:TFY_PageKeyTitleSelectColor]?:self.param.MenuTitleSelectColor;
+            id titleColor = [self getTitleData:info key:TFY_PageKeyTitleColor]?:self.param.menuTitleColor;
+            id titleSelectColor = [self getTitleData:info key:TFY_PageKeyTitleSelectColor]?:self.param.menuTitleSelectColor;
             if (text) {
                 if ([text isKindOfClass:NSString.class]) [fixBtn setTitle:text forState:UIControlStateNormal];
                 else if ([text isKindOfClass:NSAttributedString.class]) [fixBtn setAttributedTitle:text forState:UIControlStateNormal];
@@ -193,7 +193,7 @@
             }
             if (text && image) menuFixWidth += 30;
             allWidth += menuFixWidth;
-            fixBtn.titleLabel.font = self.param.MenuTitleUIFont;
+            fixBtn.titleLabel.font = self.param.menuTitleUIFont;
             [fixBtn setTitleColor:titleColor forState:UIControlStateNormal];
             [fixBtn setTitleColor:titleSelectColor forState:UIControlStateSelected];
             fixBtn.frame = CGRectMake(CGRectGetMaxX(self.frame)-allWidth, originY, menuFixWidth, menuFixHeight);
@@ -201,9 +201,9 @@
             fixBtn.backgroundColor = temp.backgroundColor;
             [self addSubview:fixBtn];
             [self bringSubviewToFront:fixBtn];
-            CGFloat margin = [self getTitleData:info key:TFY_PageKeyImageOffset]?[[self getTitleData:info key:TFY_PageKeyImageOffset] floatValue]:self.param.MenuImageMargin;
-            if (image) [fixBtn tagSetImagePosition:self.param.MenuImagePosition spacing:margin];
-            if (self.param.MenuFixShadow) {
+            CGFloat margin = [self getTitleData:info key:TFY_PageKeyImageOffset]?[[self getTitleData:info key:TFY_PageKeyImageOffset] floatValue]:self.param.menuImageMargin;
+            if (image) [fixBtn tagSetImagePosition:self.param.menuImagePosition spacing:margin];
+            if (self.param.menuFixShadow) {
                [fixBtn viewShadowPathWithColor:PageColor(0x333333) shadowOpacity:0.8 shadowRadius:3 shadowPathType:PageShadowPathLeft shadowPathWidth:2];
                 fixBtn.alpha = 0.9;
             }
@@ -212,26 +212,26 @@
             [self.fixBtnArr addObject:fixBtn];
         }
         fixAllWidth = allWidth;
-        if (self.param.CustomMenufixTitle) self.param.CustomMenufixTitle(self.fixBtnArr);
+        if (self.param.customMenufixTitle) self.param.customMenufixTitle(self.fixBtnArr);
     }
 }
 
 /// 设置按钮样式
 - (void)setPropertiesWithBtn:(TFY_PageNavBtn*)btn withIndex:(NSInteger)i  withTemp:(TFY_PageNavBtn*)temp{
-    CGFloat margin = self.param.MenuCellMargin;
+    CGFloat margin = self.param.menuCellMargin;
     btn.param = self.param;
-    btn.titleLabel.font = self.param.MenuTitleUIFont;
+    btn.titleLabel.font = self.param.menuTitleUIFont;
     [btn setAdjustsImageWhenHighlighted:NO];
     [btn addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
-    id titleInfo = self.param.TitleArr[i];
+    id titleInfo = self.param.titleArr[i];
     btn.config = titleInfo;
-    id selectColor = [self getTitleData:titleInfo key:TFY_PageKeyTitleSelectColor]?:self.param.MenuTitleSelectColor;
-    id color = [self getTitleData:titleInfo key:TFY_PageKeyTitleColor]?:self.param.MenuTitleColor;
-    [btn setTitleColor:selectColor?:self.param.MenuTitleSelectColor forState:UIControlStateSelected];
+    id selectColor = [self getTitleData:titleInfo key:TFY_PageKeyTitleSelectColor]?:self.param.menuTitleSelectColor;
+    id color = [self getTitleData:titleInfo key:TFY_PageKeyTitleColor]?:self.param.menuTitleColor;
+    [btn setTitleColor:selectColor?:self.param.menuTitleSelectColor forState:UIControlStateSelected];
     [btn setTitleColor:color forState:UIControlStateNormal];
     id name = [self getTitleData:titleInfo key:TFY_PageKeyName];
-    if (!name && self.param.CustomTitleContent) {
-        name =  self.param.CustomTitleContent(titleInfo,i);
+    if (!name && self.param.customTitleContent) {
+        name =  self.param.customTitleContent(titleInfo,i);
     }
     if (name) {
         if ([name isKindOfClass:NSString.class]) [btn setTitle:name forState:UIControlStateNormal];
@@ -251,7 +251,7 @@
     id onlyClick = [self getTitleData:titleInfo key:TFY_PageKeyOnlyClick];
     id onlyAnClick = [self getTitleData:titleInfo key:TFY_PageKeyOnlyClickWithAnimal];
     id titleBackground = [self getTitleData:titleInfo key:TFY_PageKeyTitleBackground];
-    if (!titleBackground) titleBackground = self.param.MenuTitleBackground ?: UIColor.clearColor;
+    if (!titleBackground) titleBackground = self.param.menuTitleBackground ?: UIColor.clearColor;
     if (titleBackground) btn.backgroundColor = titleBackground;
     if (image) {
         if ([image isKindOfClass:NSString.class]) {
@@ -274,26 +274,26 @@
     if (size.height == 0 && image) size.height = 20.0f;
     btn.maxSize = size;
     if (image) {
-        if (self.param.MenuImagePosition == PageBtnPositionLeft || self.param.MenuImagePosition == PageBtnPositionRight ) {
+        if (self.param.menuImagePosition == PageBtnPositionLeft || self.param.menuImagePosition == PageBtnPositionRight ) {
             margin += 20;
-            margin += self.param.MenuImageMargin;
+            margin += self.param.menuImageMargin;
         }
-        if (self.param.MenuImagePosition == PageBtnPositionTop || self.param.MenuImagePosition == PageBtnPositionBottom ) {
+        if (self.param.menuImagePosition == PageBtnPositionTop || self.param.menuImagePosition == PageBtnPositionBottom ) {
             btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             btn.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         }
     }
-    if (self.param.MenuPosition != PageMenuPositionNavi) {
+    if (self.param.menuPosition != PageMenuPositionNavi) {
         btn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
     }
-    CGFloat btnWidth = [self getTitleData:titleInfo key:TFY_PageKeyTitleWidth]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleWidth] floatValue]:(self.param.MenuTitleWidth?:(size.width + margin));
+    CGFloat btnWidth = [self getTitleData:titleInfo key:TFY_PageKeyTitleWidth]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleWidth] floatValue]:(self.param.menuTitleWidth?:(size.width + margin));
     CGFloat marginX = 0;
     CGFloat originY = [self getTitleData:titleInfo key:TFY_PageKeyTitleMarginY]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleMarginY] floatValue]:0;
-    CGFloat btnHeight = [self getTitleData:titleInfo key:TFY_PageKeyTitleHeight]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleHeight] floatValue]:self.param.MenuHeight;
+    CGFloat btnHeight = [self getTitleData:titleInfo key:TFY_PageKeyTitleHeight]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleHeight] floatValue]:self.param.menuHeight;
     btn.tag = i;
     if (temp) {
-        marginX = [self getTitleData:titleInfo key:TFY_PageKeyTitleMarginX]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleMarginX] floatValue]:self.param.MenuTitleOffset;
+        marginX = [self getTitleData:titleInfo key:TFY_PageKeyTitleMarginX]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleMarginX] floatValue]:self.param.menuTitleOffset;
         btn.frame = CGRectMake((CGRectGetMaxX(temp.frame)+marginX), originY, btnWidth, btnHeight);
     }else{
         marginX = [self getTitleData:titleInfo key:TFY_PageKeyTitleMarginX]?[[self getTitleData:titleInfo key:TFY_PageKeyTitleMarginX] floatValue]:0;
@@ -301,12 +301,12 @@
     }
     /// 设置右上角红点
     NSString *badge = [self getTitleData:titleInfo key:TFY_PageKeyBadge];
-    if (badge) [btn showBadgeWithTopMagin:self.param.TitleArr[i]];
-    if (self.param.MenuAnimal == PageTitleMenuCircleBg &&
-        self.param.MenuTitleRadios == 0) self.param.MenuTitleRadios = btnHeight/2;
-    if (self.param.MenuTitleRadios) btn.layer.cornerRadius = self.param.MenuTitleRadios;
-    CGFloat imageMargin = [self getTitleData:titleInfo key:TFY_PageKeyImageOffset]?[[self getTitleData:titleInfo key:TFY_PageKeyImageOffset] floatValue]:self.param.MenuImageMargin;
-    if (image) [btn tagSetImagePosition:self.param.MenuImagePosition spacing:imageMargin];
+    if (badge) [btn showBadgeWithTopMagin:self.param.titleArr[i]];
+    if (self.param.menuAnimal == PageTitleMenuCircleBg &&
+        self.param.menuTitleRadios == 0) self.param.menuTitleRadios = btnHeight/2;
+    if (self.param.menuTitleRadios) btn.layer.cornerRadius = self.param.menuTitleRadios;
+    CGFloat imageMargin = [self getTitleData:titleInfo key:TFY_PageKeyImageOffset]?[[self getTitleData:titleInfo key:TFY_PageKeyImageOffset] floatValue]:self.param.menuImageMargin;
+    if (image) [btn tagSetImagePosition:self.param.menuImagePosition spacing:imageMargin];
 
     if (self.btnArr.count>i) {
         if ([self.btnArr indexOfObject:btn] == NSNotFound)
@@ -334,7 +334,7 @@
 /// 点击
 - (void)tap:(TFY_PageNavBtn*)btn{
     if (self.lastBTN == btn && !btn.tapType) {
-        if (self.param.EventClick) self.param.EventClick(btn, btn.tag);
+        if (self.param.eventClick) self.param.eventClick(btn, btn.tag);
         return;
     }
     NSInteger index = [self.btnArr indexOfObject:btn];
@@ -350,7 +350,7 @@
 - (void)fixTap:(TFY_PageNavBtn*)btn{
     if (self.fixLastBtn)  self.fixLastBtn.selected = NO;
     btn.selected = YES;
-    if (self.param.EventFixedClick) self.param.EventFixedClick(btn, btn.tag);
+    if (self.param.eventFixedClick) self.param.eventFixedClick(btn, btn.tag);
     self.fixLastBtn = btn;
     if (self.menuDelegate&&[self.menuDelegate respondsToSelector:@selector(titleClick:fix:)]) [self.menuDelegate titleClick:btn fix:YES];
 }
@@ -361,13 +361,13 @@
     TFY_PageNavBtn *btn = self.btnArr[newIndex];
     if (self.lastBTN) {
         self.lastBTN.selected = NO;
-        self.lastBTN.titleLabel.font = self.param.MenuTitleUIFont;
-        if (self.param.MenuTitleBackground) self.lastBTN.layer.backgroundColor = self.param.MenuTitleBackground.CGColor;
-        if (self.lastBTN.layer.backgroundColor && !self.param.MenuTitleBackground) self.lastBTN.layer.backgroundColor = UIColor.clearColor.CGColor;
+        self.lastBTN.titleLabel.font = self.param.menuTitleUIFont;
+        if (self.param.menuTitleBackground) self.lastBTN.layer.backgroundColor = self.param.menuTitleBackground.CGColor;
+        if (self.lastBTN.layer.backgroundColor && !self.param.menuTitleBackground) self.lastBTN.layer.backgroundColor = UIColor.clearColor.CGColor;
         if ([self getTitleData:self.lastBTN.config key:TFY_PageKeyImage]) {
-            [self.lastBTN tagSetImagePosition:self.param.MenuImagePosition spacing:[self getTitleData:self.lastBTN.config key:TFY_PageKeyImageOffset]?[[self getTitleData:self.lastBTN.config key:TFY_PageKeyImageOffset] floatValue]:self.param.MenuImageMargin];
+            [self.lastBTN tagSetImagePosition:self.param.menuImagePosition spacing:[self getTitleData:self.lastBTN.config key:TFY_PageKeyImageOffset]?[[self getTitleData:self.lastBTN.config key:TFY_PageKeyImageOffset] floatValue]:self.param.menuImageMargin];
         }
-        if (self.param.MenuAnimal == PageTitleMenuJD && self.lastBTN != btn){
+        if (self.param.menuAnimal == PageTitleMenuJD && self.lastBTN != btn){
             [self.lastBTN jdRemoveLayer];
         }
     }
@@ -375,11 +375,11 @@
     /// 隐藏右上角红点
     [btn hidenBadge];
     /// 改变背景色
-    NSArray* backgroundColor = (NSArray*)[self getTitleData:self.param.TitleArr[newIndex] key:TFY_PageKeyBackgroundColor];
+    NSArray* backgroundColor = (NSArray*)[self getTitleData:self.param.titleArr[newIndex] key:TFY_PageKeyBackgroundColor];
     /// 改变指示器颜色
-    id indicatorColor = [self getTitleData:self.param.TitleArr[newIndex] key:TFY_PageKeyIndicatorColor];
-    UIColor *tempBackgroundColor = self.param.MenuBgColor;
-    UIColor *fixBackgroundColor = self.param.MenuBgColor;
+    id indicatorColor = [self getTitleData:self.param.titleArr[newIndex] key:TFY_PageKeyIndicatorColor];
+    UIColor *tempBackgroundColor = self.param.menuBgColor;
+    UIColor *fixBackgroundColor = self.param.menuBgColor;
     if (backgroundColor) {
         /// 渐变色
         if ([backgroundColor isKindOfClass:[NSArray class]]) {
@@ -395,30 +395,30 @@
                  fixBackgroundColor = tempBackgroundColor;
         }
     }
-    if (!self.param.InsertHeadAndMenuBg && self.param.DidScrollMenuColorChange)
+    if (!self.param.insertHeadAndMenuBg && self.param.didScrollMenuColorChange)
         self.backgroundColor = tempBackgroundColor;
-    if (!self.param.MenuIndicatorImage) self.lineView.backgroundColor = indicatorColor?:self.param.MenuIndicatorColor;
+    if (!self.param.menuIndicatorImage) self.lineView.backgroundColor = indicatorColor?:self.param.menuIndicatorColor;
     [self.fixBtnArr enumerateObjectsUsingBlock:^(TFY_PageNavBtn * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (self.param.DidScrollMenuColorChange) {
+        if (self.param.didScrollMenuColorChange) {
             obj.backgroundColor = fixBackgroundColor;
         }
-        if (!CGColorEqualToColor(self.param.MenuBgColor.CGColor, fixBackgroundColor.CGColor)) {
+        if (!CGColorEqualToColor(self.param.menuBgColor.CGColor, fixBackgroundColor.CGColor)) {
             [obj setTitleColor:[btn titleColorForState:UIControlStateSelected] forState:UIControlStateNormal];
         }
     }];
-    btn.titleLabel.font = self.param.MenuTitleSelectUIFont;
-    if (self.param.MenuSelectTitleBackground) btn.layer.backgroundColor = self.param.MenuSelectTitleBackground.CGColor;
+    btn.titleLabel.font = self.param.menuTitleSelectUIFont;
+    if (self.param.menuSelectTitleBackground) btn.layer.backgroundColor = self.param.menuSelectTitleBackground.CGColor;
     if ([self getTitleData:btn.config key:TFY_PageKeyImage]) {
-        [btn tagSetImagePosition:self.param.MenuImagePosition spacing:[self getTitleData:btn.config key:TFY_PageKeyImageOffset]?[[self getTitleData:btn.config key:TFY_PageKeyImageOffset] floatValue]:self.param.MenuImageMargin];
+        [btn tagSetImagePosition:self.param.menuImagePosition spacing:[self getTitleData:btn.config key:TFY_PageKeyImageOffset]?[[self getTitleData:btn.config key:TFY_PageKeyImageOffset] floatValue]:self.param.menuImageMargin];
     }
     
     /// 滚动到中间
     CGFloat centerX = self.frame.size.width / 2 ;
     CGRect indexFrame = btn.frame;
-    CGFloat contenSizeWidth = self.contentSize.width  + self.param.MenuInsets.right;
+    CGFloat contenSizeWidth = self.contentSize.width  + self.param.menuInsets.right;
     CGPoint point = CGPointZero;
-    if ((ceil(indexFrame.origin.x) + self.param.MenuInsets.left) < centerX) {
-        point = CGPointMake(-self.param.MenuInsets.left, 0);
+    if ((ceil(indexFrame.origin.x) + self.param.menuInsets.left) < centerX) {
+        point = CGPointMake(-self.param.menuInsets.left, 0);
     }else if (ceil(CGRectGetMaxX(indexFrame)) > (contenSizeWidth - centerX)) {
         point = CGPointMake(contenSizeWidth - self.frame.size.width , 0);
     }else{
@@ -429,18 +429,18 @@
     CGFloat dataWidth = btn.titleLabel.frame.size.width?:btn.maxSize.width;
     /// 改变指示器frame
     CGRect lineRect = indexFrame;
-    if (self.param.MenuAnimal == PageTitleMenuCircle) {
+    if (self.param.menuAnimal == PageTitleMenuCircle) {
         lineRect = indexFrame;
         lineRect.origin.x =  indexFrame.origin.x ;
         lineRect.size.width =  indexFrame.size.width ;
-        lineRect.size.height =  self.param.MenuIndicatorHeight?:(btn.maxSize.height + 8);
+        lineRect.size.height =  self.param.menuIndicatorHeight?:(btn.maxSize.height + 8);
         lineRect.origin.y =  (indexFrame.size.height -  lineRect.size.height)/2;
         self.lineView.layer.masksToBounds = YES;
-        self.lineView.layer.cornerRadius =  self.param.MenuCircilRadio?:(lineRect.size.height/2);
+        self.lineView.layer.cornerRadius =  self.param.menuCircilRadio?:(lineRect.size.height/2);
     }else{
-        lineRect.size.height = self.param.MenuIndicatorHeight?:PageK1px;
-        lineRect.origin.y = [self getMainHeight] - lineRect.size.height/2 - self.param.MenuIndicatorY;
-        lineRect.size.width =  self.param.MenuIndicatorWidth?: (dataWidth + self.param.MenuIndicatorTitleRelativeWidth);
+        lineRect.size.height = self.param.menuIndicatorHeight?:PageK1px;
+        lineRect.origin.y = [self getMainHeight] - lineRect.size.height/2 - self.param.menuIndicatorY;
+        lineRect.size.width =  self.param.menuIndicatorWidth?: (dataWidth + self.param.menuIndicatorTitleRelativeWidth);
         lineRect.origin.x =  (indexFrame.size.width - lineRect.size.width)/2 + indexFrame.origin.x;
     }
     if (!animal) {
@@ -452,17 +452,17 @@
     }
     
     self.currentTitleIndex = newIndex;
-    if (self.param.InsertHeadAndMenuBg) self.backgroundColor = [UIColor clearColor];
-    if (self.param.CustomMenuSelectTitle) self.param.CustomMenuSelectTitle(self.btnArr);
-    if (self.param.MenuAnimal == PageTitleMenuJD){
+    if (self.param.insertHeadAndMenuBg) self.backgroundColor = [UIColor clearColor];
+    if (self.param.customMenuSelectTitle) self.param.customMenuSelectTitle(self.btnArr);
+    if (self.param.menuAnimal == PageTitleMenuJD){
         if (self.lastBTN != btn) {
-            btn.jdLayer.backgroundColor = self.param.MenuIndicatorColor;
-            if (self.param.EventCustomJDAnimal) self.param.EventCustomJDAnimal(btn, btn.jdLayer);
+            btn.jdLayer.backgroundColor = self.param.menuIndicatorColor;
+            if (self.param.eventCustomJDAnimal) self.param.eventCustomJDAnimal(btn, btn.jdLayer);
             [btn jdAddLayer];
         }
     }
     self.lastBTN = btn;
-    if(self.param.MenuAnimalTitleScale){
+    if(self.param.menuAnimalTitleScale){
         [self.btnArr enumerateObjectsUsingBlock:^(TFY_PageNavBtn * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             obj.transform = CGAffineTransformIdentity;
         }];
@@ -490,37 +490,37 @@
         _btnLeft = [self safeObjectAtIndex:selectIndex data:self.btnArr];
     }
     /// 跟随滑动
-    if (self.param.MenuAnimal == PageTitleMenuAiQY) {
+    if (self.param.menuAnimal == PageTitleMenuAiQY) {
         CGRect rect = self.lineView.frame;
         if (scale < 0.5 ) {
-            rect.origin.x = _btnLeft.center.x -self.param.MenuIndicatorWidth/2;
-            rect.size.width = self.param.MenuIndicatorWidth + (_btnRight.center.x-_btnLeft.center.x) * scale*2;
+            rect.origin.x = _btnLeft.center.x -self.param.menuIndicatorWidth/2;
+            rect.size.width = self.param.menuIndicatorWidth + (_btnRight.center.x-_btnLeft.center.x) * scale*2;
         }else if(scale >= 0.5 ){
-            rect.origin.x = _btnLeft.center.x +  2 * (scale - 0.5) * (_btnRight.center.x - _btnLeft.center.x) - self.param.MenuIndicatorWidth / 2;
-            rect.size.width =  self.param.MenuIndicatorWidth + (_btnRight.center.x-_btnLeft.center.x) * (1-scale)*2;
+            rect.origin.x = _btnLeft.center.x +  2 * (scale - 0.5) * (_btnRight.center.x - _btnLeft.center.x) - self.param.menuIndicatorWidth / 2;
+            rect.size.width =  self.param.menuIndicatorWidth + (_btnRight.center.x-_btnLeft.center.x) * (1-scale)*2;
         }
-        if (rect.size.height!= (self.param.MenuIndicatorHeight?:PageK1px))
-            rect.size.height = self.param.MenuIndicatorHeight?:PageK1px;
-        if (rect.origin.y != ([self getMainHeight]-self.param.MenuIndicatorY-rect.size.height/2))
-            rect.origin.y = [self getMainHeight]-self.param.MenuIndicatorY-rect.size.height/2;
+        if (rect.size.height!= (self.param.menuIndicatorHeight?:PageK1px))
+            rect.size.height = self.param.menuIndicatorHeight?:PageK1px;
+        if (rect.origin.y != ([self getMainHeight]-self.param.menuIndicatorY-rect.size.height/2))
+            rect.origin.y = [self getMainHeight]-self.param.menuIndicatorY-rect.size.height/2;
         self.lineView.frame = rect;
-    }else if (self.param.MenuAnimal == PageTitleMenuPDD) {
+    }else if (self.param.menuAnimal == PageTitleMenuPDD) {
         CGRect rect = self.lineView.frame;
-        rect.size.width = self.param.MenuIndicatorWidth?:rect.size.width;
+        rect.size.width = self.param.menuIndicatorWidth?:rect.size.width;
         self.lineView.frame = rect;
         CGPoint center = self.lineView.center;
         center.x = _btnLeft.center.x +  (scale)*(_btnRight.center.x - _btnLeft.center.x);
         self.lineView.center = center;
-    }else if (self.param.MenuAnimal == PageTitleMenuNewAiQY) {
+    }else if (self.param.menuAnimal == PageTitleMenuNewAiQY) {
         CGPoint center = self.lineView.center;
         CGRect rect = self.lineView.frame;
         if (scale < 0.5) {
-            rect.size.width = (1 - scale * 2) * self.param.MenuIndicatorWidth;
+            rect.size.width = (1 - scale * 2) * self.param.menuIndicatorWidth;
             self.lineView.frame = rect;
             self.lineView.alpha = (1 - scale * 2);
             center.x = _btnLeft.center.x;
         }else{
-            rect.size.width =  (scale - 0.5) * 2 * self.param.MenuIndicatorWidth;
+            rect.size.width =  (scale - 0.5) * 2 * self.param.menuIndicatorWidth;
             self.lineView.alpha = scale;
             self.lineView.frame = rect;
             center.x = _btnRight.center.x;
@@ -528,7 +528,7 @@
         self.lineView.center = center;
     }
     /// 渐变
-    if (self.param.MenuAnimalTitleGradient) {
+    if (self.param.menuAnimalTitleGradient) {
         TFY_PageNavBtn *tempBtn = _btnLeft?:_btnRight;
         CGFloat difR =  tempBtn.selectedColorR - tempBtn.unSelectedColorR;
         CGFloat difG = tempBtn.selectedColorG - tempBtn.unSelectedColorG;
@@ -546,16 +546,16 @@
         _btnRight.titleLabel.textColor = leftItemColor;
     }
     ///标题字体缩放过渡
-    if (self.param.MenuAnimalTitleScale &&
-        self.param.MenuTitleSelectUIFont.pointSize > self.param.MenuTitleUIFont.pointSize &&
+    if (self.param.menuAnimalTitleScale &&
+        self.param.menuTitleSelectUIFont.pointSize > self.param.menuTitleUIFont.pointSize &&
         _btnLeft && _btnRight) {
-        CGFloat difference =  (self.param.MenuTitleSelectUIFont.pointSize - self.param.MenuTitleUIFont.pointSize) / self.param.MenuTitleSelectUIFont.pointSize;
+        CGFloat difference =  (self.param.menuTitleSelectUIFont.pointSize - self.param.menuTitleUIFont.pointSize) / self.param.menuTitleSelectUIFont.pointSize;
         CGFloat samllValue = 0;
         CGFloat bigValue = 0;
         if(!left){
             samllValue = 1 - difference * scale;
             bigValue = 1 + difference * scale;
-            if(samllValue == self.param.MenuTitleUIFont.pointSize/ self.param.MenuTitleSelectUIFont.pointSize ){
+            if(samllValue == self.param.menuTitleUIFont.pointSize/ self.param.menuTitleSelectUIFont.pointSize ){
                 _btnLeft.transform = CGAffineTransformIdentity;
                 _btnRight.transform = CGAffineTransformIdentity;
             }else{
@@ -565,7 +565,7 @@
         }else{
             samllValue = 1 - difference * (1 - scale);
             bigValue = 1 + difference * (1 - scale);
-            if(samllValue == self.param.MenuTitleUIFont.pointSize / self.param.MenuTitleSelectUIFont.pointSize ){
+            if(samllValue == self.param.menuTitleUIFont.pointSize / self.param.menuTitleSelectUIFont.pointSize ){
                 _btnLeft.transform = CGAffineTransformIdentity;
                 _btnRight.transform = CGAffineTransformIdentity;
             }else{
@@ -581,10 +581,10 @@
 }
 
 - (CGFloat)getMainHeight{
-    if ((PageIsIphoneX && self.param.MenuPosition == PageMenuPositionBottom)) return (self.frame.size.height - 15);
-    else if (self.param.MenuPosition == PageMenuPositionNavi) return 44;
-    else if (self.param.MenuAddSubView){
-        return self.frame.size.height - self.param.MenuInsets.bottom;
+    if ((PageIsIphoneX && self.param.menuPosition == PageMenuPositionBottom)) return (self.frame.size.height - 15);
+    else if (self.param.menuPosition == PageMenuPositionNavi) return 44;
+    else if (self.param.menuAddSubView){
+        return self.frame.size.height - self.param.menuInsets.bottom;
     }
     return self.frame.size.height;
 }

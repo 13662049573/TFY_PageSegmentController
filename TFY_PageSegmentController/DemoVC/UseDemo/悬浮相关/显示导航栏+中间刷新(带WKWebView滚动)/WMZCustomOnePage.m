@@ -8,7 +8,7 @@
 //
 
 #import "WMZCustomOnePage.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "UIImageView+WebCache.h"
 #import "WKViewController.h"
 
@@ -24,22 +24,22 @@
     TFY_PageParam *param =
     PageParam()
     //控制器数组
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         /// 带滚动视图需实现协议 wkwebView需返回内容视图scrollview
         if (index == 2)  return WKViewController.new;
-        TopSuspensionVC *vc = [TopSuspensionVC new];
+        topSuspensionVC *vc = [topSuspensionVC new];
         vc.page = index;
         return vc;
     })
-    .TitleArrSet(data)
-    .MenuAnimalSet(PageTitleMenuAiQY)
-    .MenuDefaultIndexSet(3)
+    .titleArrSet(data)
+    .menuAnimalSet(PageTitleMenuAiQY)
+    .menuDefaultIndexSet(3)
     //悬浮开启
-    .TopSuspensionSet(YES)
+    .topSuspensionSet(YES)
     //头视图y坐标从导航栏开始
-    .FromNaviSet(YES)
+    .fromNaviSet(YES)
     //头部
-    .MenuHeadViewSet(^UIView *{
+    .menuHeadViewSet(^UIView *{
         UIView *back = [UIView new];
         back.frame = CGRectMake(0, 0, PageVCWidth, 270);
         UIImageView *image = [UIImageView new];
@@ -53,7 +53,7 @@
     
     //   模拟更新头部
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        self.param.MenuHeadViewSet(^UIView *{
+//        self.param.menuHeadViewSet(^UIView *{
 //            UIView *back = [UIView new];
 //            //如果要更新隐藏顶部 高度需设为CGFLOAT_MIN 不能设为0
 //            back.frame = CGRectMake(0, 0, PageVCWidth, 200);

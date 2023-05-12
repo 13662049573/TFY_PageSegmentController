@@ -1,22 +1,22 @@
 //
-//  TopSuspensionVC.m
+//  topSuspensionVC.m
 //  TFY_PageBaseController
 //
 //  Created by TFY_ on 2019/12/13.
 //  Copyright © 2019 TFY_. All rights reserved.
 //
 
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "TFY_PageProtocol.h"
 #import "TFY_PageConfig.h"
 #import "MJRefresh.h"
 #import "Masonry.h"
 
-@interface TopSuspensionVC ()<UITableViewDelegate,UITableViewDataSource,TFY_PageProtocol>
+@interface topSuspensionVC ()<UITableViewDelegate,UITableViewDataSource,TFY_PageProtocol>
 @property (nonatomic, strong) UITableView *ta;
 @end
 
-@implementation TopSuspensionVC
+@implementation topSuspensionVC
 
 #pragma mark 注意 可以重新适配tableview的frame 如果你已经适配好了tableview的frame就不用
 //- (void)viewDidLayoutSubviews{
@@ -76,7 +76,7 @@
     }];
 
     // 下拉刷新
-    __weak TopSuspensionVC *weakSelf = self;
+    __weak topSuspensionVC *weakSelf = self;
     self.ta.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.ta.mj_header endRefreshing];

@@ -22,26 +22,26 @@
        NSArray *data = @[@"全部\n猜你喜欢",@"直播\n新品搭配购",@"便宜好货\n低价抢购",@"买家秀\n真实晒单"];
        TFY_PageParam *param =
        PageParam()
-       .TitleArrSet(data)
-       .ViewControllerSet(^UIViewController *(NSInteger index) {
+       .titleArrSet(data)
+       .viewControllerSet(^UIViewController *(NSInteger index) {
           return [CollectionViewPopDemo new];
         })
-       .MenuHeightSet(80)
+       .menuHeightSet(80)
        //⚠️此为改变菜单栏高度的属性  传入正数为高度减少的数值 负数为高度增加的数值
-       .TopChangeHeightSet(20)
+       .topChangeHeightSet(20)
        //悬浮开启
-       .TopSuspensionSet(YES)
-       .MenuIndicatorColorSet([UIColor orangeColor])
-       .MenuAnimalSet(PageTitleMenuAiQY)
-       .MenuTitleWidthSet(self.view.frame.size.width / 4)
+       .topSuspensionSet(YES)
+       .menuIndicatorColorSet([UIColor orangeColor])
+       .menuAnimalSet(PageTitleMenuAiQY)
+       .menuTitleWidthSet(self.view.frame.size.width / 4)
        //顶部可下拉
-       .BouncesSet(YES)
-       .MenuAnimalTitleGradientSet(NO)
+       .bouncesSet(YES)
+       .menuAnimalTitleGradientSet(NO)
        //头视图y坐标从0开始
-       .FromNaviSet(NO)
-       .NaviAlphaSet(YES)
+       .fromNaviSet(NO)
+       .naviAlphaSet(YES)
        //头部
-       .MenuHeadViewSet(^UIView *{
+       .menuHeadViewSet(^UIView *{
            UIView *back = [UIView new];
            back.frame = CGRectMake(0, 0, PageVCWidth, 300);
            UIImageView *image = [UIImageView new];
@@ -51,14 +51,14 @@
            return back;
        })
         //自定义常态富文本
-        .CustomMenuTitleSet(^(NSArray *titleArr) {
+        .customMenuTitleSet(^(NSArray *titleArr) {
              __strong WMZTaoBaoDemo *strongSelf = weakSelf;
             [titleArr enumerateObjectsUsingBlock:^(TFY_PageNavBtn*  _Nonnull btn, NSUInteger idx, BOOL * _Nonnull stop) {
                 [strongSelf customBtn:btn];
             }];
         })
         //⚠️自定义改变高度的UI变化
-       .EventMenuChangeHeightSet(^(NSArray<TFY_PageNavBtn *> *titleArr, CGFloat offset) {
+       .eventMenuChangeHeightSet(^(NSArray<TFY_PageNavBtn *> *titleArr, CGFloat offset) {
             __strong WMZTaoBaoDemo *strongSelf = weakSelf;
            if (offset >= 20) {
                [titleArr enumerateObjectsUsingBlock:^(TFY_PageNavBtn * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -68,7 +68,7 @@
            }
         })
         //⚠️自定义恢复高度的UI变化
-       .EventMenuNormalHeightSet(^(NSArray<TFY_PageNavBtn *> *titleArr) {
+       .eventMenuNormalHeightSet(^(NSArray<TFY_PageNavBtn *> *titleArr) {
             __strong WMZTaoBaoDemo *strongSelf = weakSelf;
            [titleArr enumerateObjectsUsingBlock:^(TFY_PageNavBtn * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                [strongSelf customBtn:obj];

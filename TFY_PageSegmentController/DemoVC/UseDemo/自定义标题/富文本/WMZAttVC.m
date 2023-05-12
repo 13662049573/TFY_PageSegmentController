@@ -20,7 +20,7 @@
     [self customNavi];
     
     TFY_PageParam *param = TFY_PageParam.new;
-    param.TitleArr = @[
+    param.titleArr = @[
         /// 富文本需成对出现   TFY_PageKeyName/TFY_PageKeySelectName
         @{TFY_PageKeyName:[self getNormalStr:@"未使用" smallStr:@"(0)"],
           TFY_PageKeySelectName:[self getSelectStr:@"未使用" smallStr:@"(0)"],},
@@ -34,12 +34,12 @@
         @{TFY_PageKeyName:[self getNormalStr:@"已完成" smallStr:@"(99)"],
           TFY_PageKeySelectName:[self getSelectStr:@"已完成" smallStr:@"(99)"],},
     ];
-    param.MenuIndicatorColor = UIColor.orangeColor;
-    param.MenuAnimalTitleGradient = NO;
-    param.MenuAnimal = PageTitleMenuAiQY;
-    param.MenuTitleWidth = PageVCWidth/4;
-    param.MenuTitleSelectColor = UIColor.orangeColor;
-    param.ViewController = ^UIViewController * _Nullable(NSInteger index) {
+    param.menuIndicatorColor = UIColor.orangeColor;
+    param.menuAnimalTitleGradient = NO;
+    param.menuAnimal = PageTitleMenuAiQY;
+    param.menuTitleWidth = PageVCWidth/4;
+    param.menuTitleSelectColor = UIColor.orangeColor;
+    param.viewController = ^UIViewController * _Nullable(NSInteger index) {
         return NSClassFromString(@"TestVC").new;
     };
     self.param = param;
@@ -73,7 +73,7 @@
 }
 
 - (void)onBtnAction{
-    self.param.TitleArr = @[
+    self.param.titleArr = @[
         /// 富文本需成对出现   WMZPageKeyName/WMZPageKeySelectName
         @{TFY_PageKeyName:[self getNormalStr:@"未使用" smallStr:@"(222)"],
           TFY_PageKeySelectName:[self getSelectStr:@"未使用" smallStr:@"(222)"],},

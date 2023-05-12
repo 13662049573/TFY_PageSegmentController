@@ -7,7 +7,7 @@
 //
 
 #import "WZSecondController.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "WZThirdController.h"
 #import "UIImageView+WebCache.h"
 @interface WZSecondController ()
@@ -20,16 +20,16 @@
     [super viewDidLoad];
     
     TFY_PageParam *param = PageParam()
-    .TitleArrSet(@[@"推荐",@"赛事",@"短视频",@"专栏",@"新时代",@"电竞",@"游戏",@"汽车"])
-    .TopSuspensionSet(YES)
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .titleArrSet(@[@"推荐",@"赛事",@"短视频",@"专栏",@"新时代",@"电竞",@"游戏",@"汽车"])
+    .topSuspensionSet(YES)
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         if (index == 1) {
             return [WZThirdController new];
         }
-        return [TopSuspensionVC new];
+        return [topSuspensionVC new];
     })
-    .MenuTitleSelectColorSet([UIColor orangeColor])
-    .MenuAnimalSet(PageTitleMenuCircle);
+    .menuTitleSelectColorSet([UIColor orangeColor])
+    .menuAnimalSet(PageTitleMenuCircle);
     self.param = param;
 }
 

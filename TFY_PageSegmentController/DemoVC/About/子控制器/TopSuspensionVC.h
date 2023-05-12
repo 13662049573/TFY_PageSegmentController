@@ -1,5 +1,5 @@
 //
-//  TopSuspensionVC.h
+//  topSuspensionVC.h
 //  TFY_PageBaseController
 //
 //  Created by TFY_ on 2019/12/13.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TopSuspensionVC : UIViewController
+@interface topSuspensionVC : UIViewController
 @property(nonatomic,assign)NSInteger page;
 @end
 

@@ -12,7 +12,7 @@
 #import "CollectionViewPopDemo.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "TestVC.h"
 #define random(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
 #define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
@@ -32,36 +32,36 @@
     //标题数组
     NSArray *data = @[@"热门",@"男装",@"美妆",@"手机",@"食品",@"电器",@"鞋包",@"百货",@"女装",@"汽车",@"电脑"];
     TFY_PageParam *param = PageParam()
-//    param.CustomTitleContentSet(^NSString * _Nullable(id  _Nullable model, NSInteger index) {
+//    param.customTitleContentSet(^NSString * _Nullable(id  _Nullable model, NSInteger index) {
 //        ///model为自定义model
 //        return @"自定义文本";
 //    })
-    .TitleArrSet(data)
+    .titleArrSet(data)
     //控制器数组
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         /// 带滚动视图需实现协议
-        TopSuspensionVC *vc = TopSuspensionVC.new;
+        topSuspensionVC *vc = topSuspensionVC.new;
         vc.page = index;
         return vc;  
     })
     //悬浮开启
-    .TopSuspensionSet(YES)
+    .topSuspensionSet(YES)
     //顶部可下拉
-    .BouncesSet(YES)
+    .bouncesSet(YES)
     //头视图y坐标从导航栏开始
-    .FromNaviSet(NO)
+    .fromNaviSet(NO)
     //导航栏透明度变化
-    .NaviAlphaSet(YES)
-    .MenuAnimalSet(PageTitleMenuAiQY)
+    .naviAlphaSet(YES)
+    .menuAnimalSet(PageTitleMenuAiQY)
     //头部
-    .MenuHeadViewSet(^UIView *{
+    .menuHeadViewSet(^UIView *{
         UIImageView *image = [UIImageView new];
         [image sd_setImageWithURL:[NSURL URLWithString:@"https://upload-images.jianshu.io/upload_images/9163368-02e26751674a3bc6.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"]];
         image.frame = CGRectMake(0, 0, PageVCWidth, 300);
         return image;
     })
     //导航栏标题透明度变化
-    .EventChildVCDidSrollSet(^(UIViewController *pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView *currentScrollView) {
+    .eventChildVCDidSrollSet(^(UIViewController *pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView *currentScrollView) {
         __strong WMZCustomThreePage* strongSelf = weakSelf;
         [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:newPonit.y/(300-PageVCNavBarHeight)]}];
     });
@@ -72,9 +72,9 @@
         //模拟更新数据
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 NSArray *data1 = @[@"热门",@"男装",@"美妆"];
-                strongSelf.param.TitleArrSet(data1)
+                strongSelf.param.titleArrSet(data1)
                    //控制器数组
-                .ViewControllerSet(^UIViewController *(NSInteger index) {
+                .viewControllerSet(^UIViewController *(NSInteger index) {
                     CollectionViewPopDemo *vc = [CollectionViewPopDemo new];
                     return vc;
                 });

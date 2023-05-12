@@ -37,7 +37,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if (self.param.CustomSimultaneouslyGesture) return self.param.CustomSimultaneouslyGesture(gestureRecognizer, otherGestureRecognizer);
+    if (self.param.customSimultaneouslyGesture) return self.param.customSimultaneouslyGesture(gestureRecognizer, otherGestureRecognizer);
     if (([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"TFY_PageDataView"] ||
          [NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"UIScrollView"]) &&
         [NSStringFromClass([otherGestureRecognizer class]) isEqualToString:@"UIScrollViewPanGestureRecognizer"]){
@@ -47,9 +47,9 @@
         [NSStringFromClass([otherGestureRecognizer class]) isEqualToString:@"_UIParallaxTransitionPanGestureRecognizer"]) {
         return NO;
     }
-    if([self.param.StopSimultaneouslyClassNameArray isKindOfClass:NSArray.class] &&
-       self.param.StopSimultaneouslyClassNameArray.count &&
-       [self.param.StopSimultaneouslyClassNameArray indexOfObject:NSStringFromClass(otherGestureRecognizer.view.class)] != NSNotFound){
+    if([self.param.stopSimultaneouslyClassNameArray isKindOfClass:NSArray.class] &&
+       self.param.stopSimultaneouslyClassNameArray.count &&
+       [self.param.stopSimultaneouslyClassNameArray indexOfObject:NSStringFromClass(otherGestureRecognizer.view.class)] != NSNotFound){
         return NO;
     }
     if (self.sonCanScroll || !self.canScroll || self.contentOffset.y < 0) return NO;
@@ -57,7 +57,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if (self.param.CustomFailGesture)  return  self.param.CustomFailGesture(gestureRecognizer, otherGestureRecognizer);
+    if (self.param.customFailGesture)  return  self.param.customFailGesture(gestureRecognizer, otherGestureRecognizer);
     if (!self.currentScroll) return NO;
     if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"UITableViewWrapperView"] &&
         [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) return YES;

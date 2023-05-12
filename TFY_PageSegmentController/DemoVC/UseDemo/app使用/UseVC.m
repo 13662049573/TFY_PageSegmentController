@@ -45,48 +45,48 @@
            //爱奇艺
            case 0:
            {
-             param.TitleArrSet(data)
-            .ViewControllerSet(^UIViewController *(NSInteger index) {
+             param.titleArrSet(data)
+            .viewControllerSet(^UIViewController *(NSInteger index) {
                 TestVC *vc = [TestVC new];
                 vc.page = index;
                 return vc;
              })
-             .MenuDefaultIndexSet(3)
-             .MenuIndicatorYSet(5)
-             .MenuTitleUIFontSet([UIFont systemFontOfSize:17.0f])
-             .MenuTitleWeightSet(50)
-             .MenuTitleColorSet(PageColor(0xeeeeee))
-             .MenuTitleSelectColorSet(PageColor(0xffffff))
-             .MenuIndicatorColorSet(PageColor(0x00dea3))
-             .MenuIndicatorWidthSet(10.0f)
-             .MenuFixRightDataSet(@"≡")
-             .MenuAnimalTitleGradientSet(NO)
-             .MenuAnimalSet(PageTitleMenuAiQY);
+             .menuDefaultIndexSet(3)
+             .menuIndicatorYSet(5)
+             .menuTitleUIFontSet([UIFont systemFontOfSize:17.0f])
+             .menuTitleWeightSet(50)
+             .menuTitleColorSet(PageColor(0xeeeeee))
+             .menuTitleSelectColorSet(PageColor(0xffffff))
+             .menuIndicatorColorSet(PageColor(0x00dea3))
+             .menuIndicatorWidthSet(10.0f)
+             .menuFixRightDataSet(@"≡")
+             .menuAnimalTitleGradientSet(NO)
+             .menuAnimalSet(PageTitleMenuAiQY);
            }
           break;
            //拼多多
            case 1:{
-               param.TitleArrSet(data)
-               .ViewControllerSet(^UIViewController *(NSInteger index) {
+               param.titleArrSet(data)
+               .viewControllerSet(^UIViewController *(NSInteger index) {
                     TestVC *vc = [TestVC new];
                     vc.page = index;
                     return vc;
                 })
-               .MenuPositionSet(PageMenuPositionNavi)
-               .MenuAnimalTitleGradientSet(NO)
-               .MenuAnimalSet(PageTitleMenuPDD);
+               .menuPositionSet(PageMenuPositionNavi)
+               .menuAnimalTitleGradientSet(NO)
+               .menuAnimalSet(PageTitleMenuPDD);
                }
           break;
          //今日头条
           case 2:{
-               param.TitleArrSet(data)
-               .ViewControllerSet(^UIViewController *(NSInteger index) {
+               param.titleArrSet(data)
+               .viewControllerSet(^UIViewController *(NSInteger index) {
                        TestVC *vc = [TestVC new];
                        vc.page = index;
                         return vc;
                 })
-               .MenuFixRightDataSet(@"+")
-               .MenuAnimalSet(PageTitleMenuTouTiao);
+               .menuFixRightDataSet(@"+")
+               .menuAnimalSet(PageTitleMenuTouTiao);
            }
          break;
        //  京东
@@ -94,102 +94,102 @@
              
              
                
-               param.TitleArrSet(data)
-               .ViewControllerSet(^UIViewController *(NSInteger index) {
+               param.titleArrSet(data)
+               .viewControllerSet(^UIViewController *(NSInteger index) {
                    TestVC *vc = [TestVC new];
                     vc.page = index;
                     return vc;
                 })
-               .MenuTitleSelectColorSet(PageColor(0xFFFBF0))
-               .MenuBgColorSet(PageColor(0xff183b))
-               .MenuTitleColorSet(PageColor(0xffffff))
-               .MenuAnimalTitleGradientSet(NO)
-               .MenuIndicatorImageSet(@"E")
-               .MenuIndicatorHeightSet(15)
-               .MenuIndicatorWidthSet(20)
-               .MenuAnimalSet(PageTitleMenuLine);
+               .menuTitleSelectColorSet(PageColor(0xFFFBF0))
+               .menuBgColorSet(PageColor(0xff183b))
+               .menuTitleColorSet(PageColor(0xffffff))
+               .menuAnimalTitleGradientSet(NO)
+               .menuIndicatorImageSet(@"E")
+               .menuIndicatorHeightSet(15)
+               .menuIndicatorWidthSet(20)
+               .menuAnimalSet(PageTitleMenuLine);
            }
            break;
           //简书
            case 4:{
                      
-           param.TitleArrSet(data)
-           .ViewControllerSet(^UIViewController *(NSInteger index) {
+           param.titleArrSet(data)
+           .viewControllerSet(^UIViewController *(NSInteger index) {
                TestVC *vc = [TestVC new];
                 vc.page = index;
                 return vc;
             })
-           .MenuIndicatorColorSet(PageColor(0xfe6e5d))
-           .MenuTitleSelectColorSet(PageColor(0x333333))
-           .MenuTitleColorSet(PageColor(0x666666))
-           .MenuAnimalTitleGradientSet(NO)
-           .MenuFixRightDataSet(@{TFY_PageKeyImage:@"G"})
-           .MenuFixWidthSet(70)
-           .MenuFixShadowSet(NO)
-           .MenuIndicatorHeightSet(3)
-           .MenuTitleWeightSet(100)
-           .MenuIndicatorWidthSet(15)
-           .MenuAnimalSet(PageTitleMenuPDD);
+           .menuIndicatorColorSet(PageColor(0xfe6e5d))
+           .menuTitleSelectColorSet(PageColor(0x333333))
+           .menuTitleColorSet(PageColor(0x666666))
+           .menuAnimalTitleGradientSet(NO)
+           .menuFixRightDataSet(@{TFY_PageKeyImage:@"G"})
+           .menuFixWidthSet(70)
+           .menuFixShadowSet(NO)
+           .menuIndicatorHeightSet(3)
+           .menuTitleWeightSet(100)
+           .menuIndicatorWidthSet(15)
+           .menuAnimalSet(PageTitleMenuPDD);
            }
            break;
            case 5:{
-             param.TitleArrSet(data)
-             .ViewControllerSet(^UIViewController *(NSInteger index) {
+             param.titleArrSet(data)
+             .viewControllerSet(^UIViewController *(NSInteger index) {
                  TestVC *vc = [TestVC new];
                   vc.page = index;
                   return vc;
               })
-             .MenuAnimalSet(PageTitleMenuCircle);
+             .menuAnimalSet(PageTitleMenuCircle);
            }
           break;
          case 6:{
-           param.TitleArrSet(data)
-           .ViewControllerSet(^UIViewController *(NSInteger index) {
+           param.titleArrSet(data)
+           .viewControllerSet(^UIViewController *(NSInteger index) {
                TestVC *vc = [TestVC new];
                 vc.page = index;
                 return vc;
             })
-           .MenuAnimalSet(PageTitleMenuAiQY)
+           .menuAnimalSet(PageTitleMenuAiQY)
            //菜单标题颜色
-           .MenuTitleColorSet(PageDarkColor(PageColor(0x333333), PageColor(0xffffff)))
+           .menuTitleColorSet(PageDarkColor(PageColor(0x333333), PageColor(0xffffff)))
            //菜单标题选中的颜色
-           .MenuTitleSelectColorSet(PageDarkColor(PageColor(0xE5193E), [UIColor orangeColor]))
+           .menuTitleSelectColorSet(PageDarkColor(PageColor(0xE5193E), [UIColor orangeColor]))
            //指示器颜色
-           .MenuIndicatorColorSet(PageDarkColor(PageColor(0xE5193E), [UIColor orangeColor]))
+           .menuIndicatorColorSet(PageDarkColor(PageColor(0xE5193E), [UIColor orangeColor]))
            //菜单背景颜色
-           .MenuBgColorSet(PageDarkColor(PageColor(0xffffff), PageColor(0x666666)));
+           .menuBgColorSet(PageDarkColor(PageColor(0xffffff), PageColor(0x666666)));
          }
         break;
         //新爱奇艺
         case 7:
         {
-            param.TitleArrSet(data)
-            .ViewControllerSet(^UIViewController *(NSInteger index) {
+            param.titleArrSet(data)
+            .viewControllerSet(^UIViewController *(NSInteger index) {
                TestVC *vc = [TestVC new];
                 vc.page = index;
                 return vc;
             })
-            .MenuIndicatorWidthSet(17)
-            .MenuIndicatorHeightSet(4)
-            .MenuIndicatorYSet(5)
-            .MenuAnimalSet(PageTitleMenuNewAiQY);
+            .menuIndicatorWidthSet(17)
+            .menuIndicatorHeightSet(4)
+            .menuIndicatorYSet(5)
+            .menuAnimalSet(PageTitleMenuNewAiQY);
             break;
         }
         //新京东
         case 8:
         {
-           param.TitleArrSet(data)
+           param.titleArrSet(data)
             /// 自定义jdlayer的frame
-           .EventCustomJDAnimalSet(^(TFY_PageNavBtn * _Nullable sender, UIView * _Nullable jdLayer) {
+           .eventCustomJDAnimalSet(^(TFY_PageNavBtn * _Nullable sender, UIView * _Nullable jdLayer) {
                jdLayer.frame = CGRectMake(CGRectGetWidth(sender.frame) - 20, CGRectGetHeight(sender.frame) - 20, 13, 8);
             })
-           .ViewControllerSet(^UIViewController *(NSInteger index) {
+           .viewControllerSet(^UIViewController *(NSInteger index) {
               TestVC *vc = [TestVC new];
                vc.page = index;
                return vc;
            })
-           .MenuIndicatorColorSet(UIColor.orangeColor)
-           .MenuAnimalSet(PageTitleMenuJD);
+           .menuIndicatorColorSet(UIColor.orangeColor)
+           .menuAnimalSet(PageTitleMenuJD);
            break;
         }
          default:

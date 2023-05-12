@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  viewController.m
 //  TFY_PageSegmentController
 //
 //  Created by 田风有 on 2021/1/17.
 //
 
-#import "ViewController.h"
+#import "viewController.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface viewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *ta;
 @property (nonatomic, strong) NSArray *taData;
 @end
 
-@implementation ViewController
+@implementation viewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -29,12 +29,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     TFY_PageParam *param = PageParam()
-    .TitleArrSet(@[@"关注",@"推荐"])
-    .MenuWidthSet(PageVCWidth - 40)
-    .MenuPositionSet(PageMenuPositionCenter)
-    .MenuFixShadowSet(NO)
-    .MenuFixRightDataSet(@[@{TFY_PageKeyName:@"固定",TFY_PageKeySelectName:@"固定1",TFY_PageKeyTitleColor:[UIColor redColor],TFY_PageKeyTitleSelectColor:[UIColor blueColor]},@{TFY_PageKeyImage:@"C"}])
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .titleArrSet(@[@"关注",@"推荐"])
+    .menuWidthSet(PageVCWidth - 40)
+    .menuPositionSet(PageMenuPositionCenter)
+    .menuFixShadowSet(NO)
+    .menuFixRightDataSet(@[@{TFY_PageKeyName:@"固定",TFY_PageKeySelectName:@"固定1",TFY_PageKeyTitleColor:[UIColor redColor],TFY_PageKeyTitleSelectColor:[UIColor blueColor]},@{TFY_PageKeyImage:@"C"}])
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         if (index == 1) {
             return [WZSecondController new];
         }
@@ -43,8 +43,8 @@
     ///如果第一层嵌套开启悬浮  二三层也要开启
     ///举一反三 只有第二层开启的话 第三层也要开启
     ///如果是最后一层开启则上级不需要开启
-    .TopSuspensionSet(YES)
-    .MenuHeadViewSet(^UIView *{
+    .topSuspensionSet(YES)
+    .menuHeadViewSet(^UIView *{
         UIView *back = [UIView new];
         back.frame = CGRectMake(0, 0, PageVCWidth, 200);
         UIImageView *image = [UIImageView new];
@@ -53,9 +53,9 @@
         [back addSubview:image];
         return back;
     })
-    .MenuIndicatorColorSet([UIColor orangeColor])
-    .MenuTitleSelectColorSet([UIColor orangeColor])
-    .MenuAnimalSet(PageTitleMenuPDD);
+    .menuIndicatorColorSet([UIColor orangeColor])
+    .menuTitleSelectColorSet([UIColor orangeColor])
+    .menuAnimalSet(PageTitleMenuPDD);
     self.param = param;
 }
 

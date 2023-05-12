@@ -7,7 +7,7 @@
 //
 
 #import "WMZCustomAddMenuVC.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "UIImageView+WebCache.h"
 
 @interface WMZCustomAddMenuVC ()
@@ -18,16 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     TFY_PageParam *param = PageParam()
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
+    .viewControllerSet(^UIViewController *(NSInteger index) {
         /// 带滚动视图需实现协议
-        return [TopSuspensionVC new];
+        return [topSuspensionVC new];
     })
-    .TitleArrSet(@[@"热门",@"男装",@"美妆",@"手机",@"食品",@"电器",@"鞋包",@"百货",@"女装",@"汽车",@"电脑"])
-    .MenuAnimalSet(PageTitleMenuAiQY)
-    .TopSuspensionSet(YES)
+    .titleArrSet(@[@"热门",@"男装",@"美妆",@"手机",@"食品",@"电器",@"鞋包",@"百货",@"女装",@"汽车",@"电脑"])
+    .menuAnimalSet(PageTitleMenuAiQY)
+    .topSuspensionSet(YES)
     /// 自定义内间距
-    .MenuInsetsSet(UIEdgeInsetsMake(10, 10, 10, 10))
-    .MenuHeadViewSet(^UIView *{
+    .menuInsetsSet(UIEdgeInsetsMake(10, 10, 10, 10))
+    .menuHeadViewSet(^UIView *{
         UIView *back = [UIView new];
         back.frame = CGRectMake(0, 0, PageVCWidth, 270);
         UIImageView *image = [UIImageView new];
@@ -38,7 +38,7 @@
     })
     /// 在菜单栏插入一个固定的自定义视图 例如 筛选视图等
     /// 筛选视图可使用 WMZDropDownMenu github地址为 https://github.com/wwmz/WMZDropDownMenu
-    .MenuAddSubViewSet(^UIView * _Nullable{
+    .menuAddSubViewSet(^UIView * _Nullable{
         UIView *menuAddCustomView = UIView.new;
         /// 20为距离菜单栏的纵向间距 此处要先确定好高度
         menuAddCustomView.frame = CGRectMake(0, 10, PageVCWidth, 50);
@@ -50,7 +50,7 @@
         [menuAddCustomView addSubview:nameLB];
         return menuAddCustomView;
     });
-    param.CustomMenufixTitleSet(^(NSArray<TFY_PageNavBtn *> * _Nullable titleArr) {
+    param.customMenufixTitleSet(^(NSArray<TFY_PageNavBtn *> * _Nullable titleArr) {
         
     });
     self.param = param;

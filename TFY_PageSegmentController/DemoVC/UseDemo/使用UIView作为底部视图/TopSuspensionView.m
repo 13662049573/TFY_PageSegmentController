@@ -1,22 +1,22 @@
 //
-//  TopSuspensionView.m
+//  topSuspensionView.m
 //  TFY_PageBaseController
 //
 //  Created by TFY_ on 2021/8/9.
 //  Copyright © 2021 TFY_. All rights reserved.
 //
 
-#import "TopSuspensionView.h"
+#import "topSuspensionView.h"
 #import "TFY_PageProtocol.h"
 #import "TFY_PageConfig.h"
 #import "MJRefresh.h"
 #import "Masonry.h"
 
-@interface TopSuspensionView ()<UITableViewDelegate,UITableViewDataSource,TFY_PageProtocol>
+@interface topSuspensionView ()<UITableViewDelegate,UITableViewDataSource,TFY_PageProtocol>
 @property(nonatomic,strong)UITableView *ta;
 @end
 
-@implementation TopSuspensionView
+@implementation topSuspensionView
 - (void)pageViewWillAppear{
     NSLog(@"pageViewWillAppear");
 }
@@ -58,7 +58,7 @@
     }];
     
     
-    __weak TopSuspensionView *weakSelf = self;
+    __weak topSuspensionView *weakSelf = self;
     self.ta.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.ta.mj_header endRefreshing];

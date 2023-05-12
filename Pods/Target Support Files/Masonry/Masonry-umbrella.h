@@ -24,7 +24,7 @@
 #import "NSLayoutConstraint+MASDebugAdditions.h"
 #import "View+MASAdditions.h"
 #import "View+MASShorthandAdditions.h"
-#import "ViewController+MASAdditions.h"
+#import "viewController+MASAdditions.h"
 
 FOUNDATION_EXPORT double MasonryVersionNumber;
 FOUNDATION_EXPORT const unsigned char MasonryVersionString[];

@@ -8,7 +8,7 @@
 
 #import "ReplaceParentSonVC.h"
 #import "MJRefresh.h"
-#import "TopSuspensionVC.h"
+#import "topSuspensionVC.h"
 #import "UIImageView+WebCache.h"
 @interface ReplaceParentSonVC ()
 @property(nonatomic,assign)CGRect rect;
@@ -23,17 +23,17 @@
     __weak ReplaceParentSonVC *weakSelf = self;
     CGFloat parentMenuHeight = 55.0;
     TFY_PageParam *param = PageParam()
-    .TitleArrSet(@[@"热门",@"同城",@"榜单",@"抽奖",@"新时代",@"电竞",@"游戏",@"汽车"])
-    .MenuFixRightDataSet(@" + ")
-    .ViewControllerSet(^UIViewController *(NSInteger index) {
-        TopSuspensionVC *vc = [TopSuspensionVC new];
+    .titleArrSet(@[@"热门",@"同城",@"榜单",@"抽奖",@"新时代",@"电竞",@"游戏",@"汽车"])
+    .menuFixRightDataSet(@" + ")
+    .viewControllerSet(^UIViewController *(NSInteger index) {
+        topSuspensionVC *vc = [topSuspensionVC new];
          vc.page = index;
          return vc;
      })
-    .TopSuspensionSet(YES)
-    .MenuTitleSelectColorSet([UIColor orangeColor])
+    .topSuspensionSet(YES)
+    .menuTitleSelectColorSet([UIColor orangeColor])
     //头部
-    .MenuHeadViewSet(^UIView *{
+    .menuHeadViewSet(^UIView *{
         UIView *back = [UIView new];
         back.frame = CGRectMake(0, 0, PageVCWidth, 270);
         UIImageView *image = [UIImageView new];
@@ -42,8 +42,8 @@
         [back addSubview:image];
         return back;
     })
-    .MenuAnimalSet(PageTitleMenuNone);
-    param.EventChildVCDidSroll = ^(UIViewController * _Nullable pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView * _Nullable currentScrollView) {
+    .menuAnimalSet(PageTitleMenuNone);
+    param.eventChildVCDidSroll = ^(UIViewController * _Nullable pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView * _Nullable currentScrollView) {
         __strong ReplaceParentSonVC *stongSelf = weakSelf;
         TFY_PageBaseController *parentVC = (TFY_PageBaseController*)stongSelf.parentViewController;
         if (CGRectIsEmpty(stongSelf.rect)) stongSelf.rect = parentVC.upSc.dataView.frame;
@@ -63,7 +63,7 @@
             }
         }
     };
-    param.CustomDataViewHeight = ^CGFloat(CGFloat nowY) {
+    param.customDataViewHeight = ^CGFloat(CGFloat nowY) {
         return nowY + parentMenuHeight;
     };
     self.param = param;

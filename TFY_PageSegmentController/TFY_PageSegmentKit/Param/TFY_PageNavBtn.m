@@ -67,11 +67,11 @@ static NSInteger const pointWidth = 7; //小红点的宽高
     self.badge.alpha = 1;
     [self addSubview:self.badge];
     [self bringSubviewToFront:self.badge];
-    if (self.param.CustomRedView) self.param.CustomRedView(self.badge,info);
+    if (self.param.customRedView) self.param.customRedView(self.badge,info);
 }
 
 - (void)hidenBadge{
-    if (!self.param.HideRedCircle) return;;
+    if (!self.param.hideRedCircle) return;;
     if (self.badge){
         [UIView animateWithDuration:0.1 animations:^{
             self.badge.alpha = 0;
@@ -281,7 +281,7 @@ static NSInteger const pointWidth = 7; //小红点的宽高
 - (CGSize)maxSize{
     if (!_maxSize.width||!_maxSize.height) {
         _maxSize = [self boundingRectWithSize:self.titleLabel.text Font:self.titleLabel.font Size:
-                    CGSizeMake(CGFLOAT_MAX, self.param.MenuPosition == PageMenuPositionNavi?35:CGFLOAT_MAX)];
+                    CGSizeMake(CGFLOAT_MAX, self.param.menuPosition == PageMenuPositionNavi?35:CGFLOAT_MAX)];
     }
     
     return _maxSize;

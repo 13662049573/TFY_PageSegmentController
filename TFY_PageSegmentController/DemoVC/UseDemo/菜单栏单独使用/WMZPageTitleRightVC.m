@@ -33,8 +33,8 @@
     [self.view addSubview:self.menuView];
     self.menuView.menuDelegate = self;
     TFY_PageParam *param = TFY_PageParam.new;
-    param.TitleArr = [NSArray arrayWithArray:self.dataSource];
-    param.MenuAnimal = PageTitleMenuAiQY;
+    param.titleArr = [NSArray arrayWithArray:self.dataSource];
+    param.menuAnimal = PageTitleMenuAiQY;
     self.menuView.param = param;
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
