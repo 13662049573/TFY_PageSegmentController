@@ -10,6 +10,7 @@
 @interface TFY_PageMunuView (){
     TFY_PageNavBtn *_btnLeft;
     TFY_PageNavBtn *_btnRight;
+    TFY_PageNavBtn *_btnDownRepeat;
     CGFloat fixAllWidth;
 }
 @end
@@ -333,6 +334,7 @@
 
 /// 点击
 - (void)tap:(TFY_PageNavBtn*)btn{
+    [self showDistination:btn];
     if (self.lastBTN == btn && !btn.tapType) {
         if (self.param.eventClick) self.param.eventClick(btn, btn.tag);
         return;
@@ -344,6 +346,15 @@
         [self scrollToIndex:index animal:YES];
     }
     if (self.menuDelegate&&[self.menuDelegate respondsToSelector:@selector(titleClick:fix:)])[self.menuDelegate titleClick:btn fix:NO];
+}
+
+- (void)showDistination:(TFY_PageNavBtn *)sender {
+    if (sender == _btnDownRepeat) {
+        _btnDownRepeat.selected = !_btnDownRepeat.selected;
+        if (self.param.eventDownRepeatClick) self.param.eventDownRepeatClick(_btnDownRepeat, !_btnDownRepeat.selected);
+    } else {
+        _btnDownRepeat = sender;
+    }
 }
 
 /// 固定标题点击

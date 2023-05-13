@@ -28,21 +28,20 @@
     .titleArrSet(@[@"精选",@"好货",@"精选",@"好货"])
     .viewControllerSet(^UIViewController * _Nullable(NSInteger index) {
         return NSClassFromString(@"topSuspensionVC").new;
+    })
+    .eventDownRepeatClickSet(^(TFY_PageNavBtn  *_Nullable btn, BOOL isSelected) {
+        NSLog(@"再次点击切换===%u",isSelected);
+    })
+    .eventClickSet(^(TFY_PageNavBtn  *_Nullable btn, NSInteger index) {
+        NSLog(@"点击切换===%ld",index);
     });
 
     /// frame可以设置任意frame autoFix为YES
     TFY_PageBaseView *pageView = [[TFY_PageBaseView alloc]initWithFrame:self.view.bounds autoFix:YES param:param parentReponder:self];
     [self.view addSubview:pageView];
 
-    
-    param.eventClickSet(^(id  _Nullable anyID, NSInteger index) {
-        NSLog(@"%@ %ld",pageView.upSc.currentVC,pageView.upSc.currentTitleIndex);
-    });
-    
-    
-    /// autoFix为NO 自己调整frame
-//    WMZPageView *pageView = [[WMZPageView alloc]initWithFrame:CGRectMake(0, 0, PageVCWidth, PageVCHeight - PageVCNavBarHeight) autoFix:NO param:param parentReponder:self];
-//    [self.view addSubview:pageView];
 }
+
+
 
 @end

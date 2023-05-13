@@ -230,9 +230,10 @@ TFY_PagePropertyStatement(assign, TFY_PageParam, CGFloat,               menuIndi
 TFY_PageParam * PageParam(void);
 /// 右边固定标题点击
 TFY_PagePropertyStatement(copy,   TFY_PageParam, PageClickBlock,        eventFixedClick)
-
 /// 标题点击
 TFY_PagePropertyStatement(copy,   TFY_PageParam, PageClickBlock,        eventClick)
+/// 切换再次点击按钮，实现下拉展开和关闭事件
+TFY_PagePropertyStatement(copy,   TFY_PageParam, PageDownRepeatClickBlock,        eventDownRepeatClick)
 /// 控制器开始切换
 TFY_PagePropertyStatement(copy,   TFY_PageParam, PageVCChangeBlock,     eventBeganTransferController)
 /// 控制器结束切换

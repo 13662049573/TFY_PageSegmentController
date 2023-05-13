@@ -93,6 +93,7 @@ TFY_PagePropertyImplementation(TFY_PageParam, PageCustomMenuTitle,    customMenu
 TFY_PagePropertyImplementation(TFY_PageParam, PageCustomMenuSelectTitle,customMenuSelectTitle)
 TFY_PagePropertyImplementation(TFY_PageParam, PageClickBlock,         eventFixedClick)
 TFY_PagePropertyImplementation(TFY_PageParam, PageClickBlock,         eventClick)
+TFY_PagePropertyImplementation(TFY_PageParam, PageDownRepeatClickBlock,eventDownRepeatClick)
 TFY_PagePropertyImplementation(TFY_PageParam, PageVCChangeBlock,      eventBeganTransferController)
 TFY_PagePropertyImplementation(TFY_PageParam, PageVCChangeBlock,      eventEndTransferController)
 TFY_PagePropertyImplementation(TFY_PageParam, PageChildVCScroll,      eventChildVCDidSroll)

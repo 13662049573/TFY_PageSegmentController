@@ -208,7 +208,10 @@ typedef enum :NSInteger{
 }PageBTNTapType;
 
 ///标题点击
-typedef void (^PageClickBlock)(id _Nullable anyID,NSInteger index);
+typedef void (^PageClickBlock)(TFY_PageNavBtn *_Nullable btn,NSInteger index);
+
+/// 切换再次点击按钮，实现下拉展开和关闭事件
+typedef void (^PageDownRepeatClickBlock)(TFY_PageNavBtn *_Nullable btn,BOOL isSelected);
 
 ///控制器切换
 typedef void (^PageVCChangeBlock)(UIViewController* _Nullable oldVC,UIViewController * _Nullable newVC,NSInteger oldIndex,NSInteger newIndex);
