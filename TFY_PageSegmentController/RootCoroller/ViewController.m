@@ -7,7 +7,7 @@
 
 #import "viewController.h"
 
-@interface viewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface viewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UITableView *ta;
 @property (nonatomic, strong) NSArray *taData;
 @end
@@ -167,7 +167,7 @@
             ]},
             @{@"title":@"菜单栏带自定义视图（筛选等）",@"data":@[
                 @{@"name":@"菜单栏带自定义视图（筛选等）",@"vc":@"WMZCustomAddMenuVC"}]},
-            @{@"title":@"使用WMZPageView（无须继承），加在任意地方",@"data":@[
+            @{@"title":@"使用TFY_PageBaseView（无须继承），加在任意地方",@"data":@[
                @{@"name":@"使用TFY_PageBaseView（无须继承）",@"vc":@"UsePageViewController"},
             ]},
         ];

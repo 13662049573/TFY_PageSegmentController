@@ -349,11 +349,13 @@
 }
 
 - (void)showDistination:(TFY_PageNavBtn *)sender {
-    if (sender == _btnDownRepeat) {
-        _btnDownRepeat.selected = !_btnDownRepeat.selected;
-        if (self.param.eventDownRepeatClick) self.param.eventDownRepeatClick(_btnDownRepeat, !_btnDownRepeat.selected);
-    } else {
-        _btnDownRepeat = sender;
+    if (self.param.eventDownRepeatClick) {
+        if (sender == _btnDownRepeat) {
+            _btnDownRepeat.selected = !_btnDownRepeat.selected;
+            self.param.eventDownRepeatClick(_btnDownRepeat, !_btnDownRepeat.selected);
+        } else {
+            _btnDownRepeat = sender;
+        }
     }
 }
 

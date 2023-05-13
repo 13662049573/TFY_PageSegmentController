@@ -55,6 +55,9 @@
      .eventChildVCDidSrollSet(^(UIViewController *pageVC, CGPoint oldPoint, CGPoint newPonit, UIScrollView *currentScrollView) {
           __strong WMZUsePageVC* strongSelf = weakSelf;
          [strongSelf.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:10/255.0 green:10/255.0 blue:20/255.0 alpha:newPonit.y/(500+300-2*PageVCNavBarHeight)]}];
+     })
+     .eventDownRepeatClickSet(^(TFY_PageNavBtn  *_Nullable btn, BOOL isSelected) {
+         NSLog(@"再次点击切换===%u",isSelected);
      });
     
     self.param = param;
