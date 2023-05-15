@@ -280,7 +280,7 @@
 				364AE2062A0C9AC5005E3051 /* 菜单栏单独使用 */,
 				364AE2092A0C9AC5005E3051 /* 菜单特殊样式 */,
 				364AE21B2A0C9AC5005E3051 /* 标题样式 */,
-				364AE21E2A0C9AC5005E3051 /* 使用WMZPageView无需继承 */,
+				364AE21E2A0C9AC5005E3051 /* 使用TFY_PageBaseView无需继承 */,
 			);
 			path = UseDemo;
 			sourceTree = "<group>";
@@ -618,13 +618,13 @@
 			path = "标题样式";
 			sourceTree = "<group>";
 		};
-		364AE21E2A0C9AC5005E3051 /* 使用WMZPageView无需继承 */ = {
+		364AE21E2A0C9AC5005E3051 /* 使用TFY_PageBaseView无需继承 */ = {
 			isa = PBXGroup;
 			children = (
 				364AE21F2A0C9AC5005E3051 /* UsePageViewController.m */,
 				364AE2202A0C9AC5005E3051 /* UsePageViewController.h */,
 			);
-			path = "使用WMZPageView无需继承";
+			path = "使用TFY_PageBaseView无需继承";
 			sourceTree = "<group>";
 		};
 		364AE2212A0C9AC5005E3051 /* About */ = {
