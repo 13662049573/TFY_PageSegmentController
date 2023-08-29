@@ -53,7 +53,7 @@ static NSInteger const pointWidth = 7; //小红点的宽高
         self.badge.backgroundColor = UIColor.redColor;
         self.badge.textColor = UIColor.whiteColor;
         self.badge.text = [NSString stringWithFormat:@"%@",info[TFY_PageKeyBadge]];
-        self.badge.pageEdgeInsets = UIEdgeInsetsMake(4, 7.5, 4, 7.5);
+        self.badge.pageEdgeInsets = UIEdgeInsetsMake(2, 5, 2, 5);
         CGSize size =  [self boundingRectWithSize:self.badge.text Font:self.badge.font Size:CGSizeMake(self.bounds.size.width/2, 10)];
         
         CGRect rect = CGRectZero;
@@ -292,7 +292,7 @@ static NSInteger const pointWidth = 7; //小红点的宽高
         _badge = TFY_PageLabel.new;
         _badge.backgroundColor = PageColor(0xff5153);
         _badge.layer.cornerRadius = pointWidth / 2;
-        _badge.font = [UIFont systemFontOfSize:12];
+        _badge.font = [UIFont systemFontOfSize:8];
         _badge.layer.masksToBounds = YES;
         _badge.alpha = 0;
         _badge.textAlignment = NSTextAlignmentCenter;
